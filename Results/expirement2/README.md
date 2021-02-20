@@ -10,5 +10,12 @@ The vertical axis of the images is the maximum acceptable distance between the c
 
 For `numbers.csv`, the value of each pixel is the total difference between the number of boxes for each image obtained through volunteers and the Mega detector.
 
+<p align="center">
+<img src="./matches.png" alt="drawing" width="350"/>
+</p>
+
 For `box_acc.csv`, the value of each pixel is the total number of boxes labeled by the volunteers that don't have a corresponding box to match with from the Mega detector labeling that is sufficiently close. (_number of "missed" boxes from above._)
 
+<p align="center">
+<img src="./box_acc.png" alt="drawing" width="350"/>
+</p>
