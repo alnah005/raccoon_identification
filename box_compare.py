@@ -8,7 +8,7 @@ file: box_compare.py
 
 @created: 2021-02-15T10:20:13.627Z-06:00
 
-@last-modified: 2021-02-19T13:58:55.824Z-06:00
+@last-modified: 2021-02-19T16:10:36.590Z-06:00
 """
 
 # standard library
@@ -55,10 +55,10 @@ class ImageDetection:
         assert 'jpg' in self.fileName
 
 
-with open('raccoon.json') as json_file:
+with open('raccoon_mega_detector_labels.json') as json_file:
     data = json.load(json_file)
 
-with open('raccoon_true.json') as json_file:
+with open('raccoon_volunteer_labels.json') as json_file:
     data2 = json.load(json_file)
 
     
@@ -123,6 +123,7 @@ def getCenterPairs(det1,det2):
         centers1 = [i for i in centers2]
         centers2 = temp
         rev = True
+        print("Reversed order. Make sure this doesn't affect final result.")
 
     center_pref_distance = [None for i in range(len(centers1))]
 
@@ -164,8 +165,8 @@ def compare_predictions(detections1,detections2,threshold=0.,radius=50,distanceM
     return numbersMatch,box_accuracy
 
 import numpy as np
-x = np.arange(0, 1, 0.05)
-y = np.arange(5, 2000, 15)
+x = np.arange(0, 1, 0.025)
+y = np.arange(5, 2000, 25)
 xx, yy = np.meshgrid(x, y)
 z1 = np.zeros(xx.shape)
 z2 = np.zeros(xx.shape)
@@ -187,3 +188,4 @@ plt.show()
 plt.figure()
 h2 = plt.contourf(x,y,z2)
 plt.show()
+print(1)
