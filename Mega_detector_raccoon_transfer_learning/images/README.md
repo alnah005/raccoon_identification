@@ -1,0 +1,1 @@
+# Raccoon jpg images are stored here
