@@ -8,7 +8,7 @@ file: images_to_records.py
 
 @created: 2021-02-22T22:09:11.241Z-06:00
 
-@last-modified: 2021-02-23T17:19:57.656Z-06:00
+@last-modified: 2021-02-25T11:38:54.888Z-06:00
 """
 
 # standard library
@@ -25,8 +25,7 @@ flags = tf.app.flags
 flags.DEFINE_string('output_path', 'data', 'Path to output TFRecord')
 FLAGS = flags.FLAGS
 
-labels = {0: b'animal', 1:b'animal',2:b'animal',3:b'person',4:b'animal',5:b'animal'}
-labelNumbers = {0: 1, 1:1,2:1,3:2,4:1,5:1}
+labels = {0: b'raccoon', 1:b'skunk',2:b'cat',3:b'human',4:b'fox',5:b'other'}
 def create_tf_example(image_data):
     """Creates a tf.Example proto from sample cat image.
     
@@ -62,7 +61,6 @@ def create_tf_example(image_data):
     ymaxs = [i['bbox'][3] / height for i in detections]
     classIndex = [i['category'] for i in detections]
     classes_text = [labels[i] for i in classIndex]
-    classes = [labelNumbers[i] for i in classIndex]
 
     tf_example = tf.train.Example(features=tf.train.Features(feature={
         'image/height': dataset_util.int64_feature(height),
@@ -76,7 +74,7 @@ def create_tf_example(image_data):
         'image/object/bbox/ymin': dataset_util.float_list_feature(ymins),
         'image/object/bbox/ymax': dataset_util.float_list_feature(ymaxs),
         'image/object/class/text': dataset_util.bytes_list_feature(classes_text),
-        'image/object/class/label': dataset_util.int64_list_feature(classes),
+        'image/object/class/label': dataset_util.int64_list_feature(classIndex),
     }))
     return tf_example, trainBool
 
