@@ -8,7 +8,7 @@ file: images_to_records.py
 
 @created: 2021-02-22T22:09:11.241Z-06:00
 
-@last-modified: 2021-02-25T11:38:54.888Z-06:00
+@last-modified: 2021-02-26T14:15:11.783Z-06:00
 """
 
 # standard library
@@ -39,6 +39,8 @@ def create_tf_example(image_data):
     detections = image_data['detections']
     height = 1080
     width = 1920
+    scaledHeight = 500.0/1080
+    scaledWidth = 888.0/1920
     filename = str.encode(image_data['file'])
     image_format = b'jpg'
     trainBool = True
@@ -63,8 +65,8 @@ def create_tf_example(image_data):
     classes_text = [labels[i] for i in classIndex]
 
     tf_example = tf.train.Example(features=tf.train.Features(feature={
-        'image/height': dataset_util.int64_feature(height),
-        'image/width': dataset_util.int64_feature(width),
+        'image/height': dataset_util.int64_feature(int(height*scaledHeight)),
+        'image/width': dataset_util.int64_feature(int(width*scaledWidth)),
         'image/filename': dataset_util.bytes_feature(filename),
         'image/source_id': dataset_util.bytes_feature(filename),
         'image/encoded': dataset_util.bytes_feature(encoded_image),

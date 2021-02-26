@@ -1,0 +1,24 @@
+item {
+  id:0
+  name:'raccoon'
+}
+item {
+  id:1
+  name:'skunk'
+}
+item {
+  id:2
+  name:'cat'
+}
+item {
+  id:3
+  name:'human'
+}
+item {
+  id:4
+  name:'fox'
+}
+item {
+  id:5
+  name:'other'
+}
