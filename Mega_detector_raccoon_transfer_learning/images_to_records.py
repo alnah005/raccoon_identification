@@ -8,7 +8,7 @@ file: images_to_records.py
 
 @created: 2021-02-22T22:09:11.241Z-06:00
 
-@last-modified: 2021-02-26T14:15:11.783Z-06:00
+@last-modified: 2021-02-26T18:16:05.804Z-06:00
 """
 
 # standard library
@@ -25,7 +25,7 @@ flags = tf.app.flags
 flags.DEFINE_string('output_path', 'data', 'Path to output TFRecord')
 FLAGS = flags.FLAGS
 
-labels = {0: b'raccoon', 1:b'skunk',2:b'cat',3:b'human',4:b'fox',5:b'other'}
+labels = {1: b'raccoon', 2:b'skunk',3:b'cat',4:b'human',5:b'fox',6:b'other'}
 def create_tf_example(image_data):
     """Creates a tf.Example proto from sample cat image.
     
@@ -61,7 +61,7 @@ def create_tf_example(image_data):
     xmaxs = [i['bbox'][2] / width for i in detections]
     ymins = [i['bbox'][1] / height for i in detections]
     ymaxs = [i['bbox'][3] / height for i in detections]
-    classIndex = [i['category'] for i in detections]
+    classIndex = [i['category']+1 for i in detections]
     classes_text = [labels[i] for i in classIndex]
 
     tf_example = tf.train.Example(features=tf.train.Features(feature={
