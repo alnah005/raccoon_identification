@@ -64,7 +64,9 @@ def main(unused_argv):
   # session_config = tf.ConfigProto(log_device_placement=True)
   session_config = tf.ConfigProto()
   session_config.gpu_options.per_process_gpu_memory_fraction = 0.6
-
+  session_config.gpu_options.visible_device_list = '0,1'
+  session_config.gpu_options.allow_growth = False
+  
   # strategy = tf.contrib.MirroredStrategy(devices=["/device:GPU:0", "/device:GPU:1"])
 
   # config = tf.estimator.RunConfig(model_dir=FLAGS.model_dir, session_config=session_config,save_checkpoints_secs=FLAGS.save_checkpoints_secs,save_checkpoints_steps=2000,train_distribute=strategy)
