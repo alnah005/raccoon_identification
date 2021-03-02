@@ -8,7 +8,7 @@ file: box_compare.py
 
 @created: 2021-02-15T10:20:13.627Z-06:00
 
-@last-modified: 2021-02-19T16:10:36.590Z-06:00
+@last-modified: 2021-03-01T23:42:10.107Z-06:00
 """
 
 # standard library
@@ -17,6 +17,13 @@ file: box_compare.py
 
 import json
 from dataclasses import dataclass
+from tqdm import tqdm
+
+fileName1 = 'measuring_fine_tuning/raccoon_eval_mega_transfer.json'
+fileName2 = 'measuring_fine_tuning/raccoon_volunteer_labels.json'
+matchesOutput: str = 'numbers_with_finetuning.csv'
+boxAccOutput: str = 'box_acc_with_finetuning.csv'
+swapBool = True
 
 def convert_y1_x1_y2_x2(tf_coords):
     return [tf_coords[0]*1920, tf_coords[1]*1080, (tf_coords[0]+tf_coords[2])*1920,(tf_coords[1]+tf_coords[3])*1080]
@@ -55,10 +62,10 @@ class ImageDetection:
         assert 'jpg' in self.fileName
 
 
-with open('raccoon_mega_detector_labels.json') as json_file:
+with open(fileName1) as json_file:
     data = json.load(json_file)
 
-with open('raccoon_volunteer_labels.json') as json_file:
+with open(fileName2) as json_file:
     data2 = json.load(json_file)
 
     
@@ -123,7 +130,10 @@ def getCenterPairs(det1,det2):
         centers1 = [i for i in centers2]
         centers2 = temp
         rev = True
-        print("Reversed order. Make sure this doesn't affect final result.")
+        global swapBool
+        if (swapBool):
+            print("Reversed order. Make sure this doesn't affect final result.")
+            swapBool = False
 
     center_pref_distance = [None for i in range(len(centers1))]
 
@@ -164,28 +174,53 @@ def compare_predictions(detections1,detections2,threshold=0.,radius=50,distanceM
     box_accuracy = compare_center_distance(det1,det2,radius,distanceMeasure)
     return numbersMatch,box_accuracy
 
+import sys
+
+def progressbar(it, prefix="", size=60, file=sys.stdout):
+    count = len(it)
+    def show(j):
+        x = int(size*j/count)
+        file.write("%s[%s%s] %i/%i\r" % (prefix, "#"*x, "."*(size-x), j, count))
+        file.flush()        
+    show(0)
+    for i, item in enumerate(it):
+        yield item
+        show(i+1)
+    file.write("\n")
+    file.flush()
+
 import numpy as np
 x = np.arange(0, 1, 0.025)
 y = np.arange(5, 2000, 25)
 xx, yy = np.meshgrid(x, y)
 z1 = np.zeros(xx.shape)
 z2 = np.zeros(xx.shape)
-for i in range(len(y)):
+for i in progressbar(range(len(y))):
     for j in range(len(x)):
         numbersTotal = 0
         box_accuracyTotal = 0
-        for k in range(min(len(imagePreds),len(imagePreds2))):
-            numbers, box_accuracy = compare_predictions(imagePreds[k].detections,imagePreds2[k].detections,threshold=xx[i,j],radius=yy[i,j])
+        indexer = imageDict
+        if (len(imageDict) > len(imageDict2)):
+            indexer = imageDict2
+        for k in indexer:
+            numbers, box_accuracy = compare_predictions(imageDict[k].detections,imageDict2[k].detections,threshold=xx[i,j],radius=yy[i,j])
             numbersTotal += numbers
             box_accuracyTotal += box_accuracy
         z1[i,j] = numbersTotal
         z2[i,j] = box_accuracyTotal
 
 import matplotlib.pyplot as plt
-plt.figure()
+import pandas as pd
+import numpy as np
+
+fig = plt.figure()
 h1 = plt.contourf(x,y,z1)
 plt.show()
-plt.figure()
+fig.savefig(matchesOutput.split('.')[0])
+pd.DataFrame(data=np.concatenate((y.reshape(-1,1),z1),axis=1),columns=np.concatenate((np.asarray([0]),x))).to_csv(matchesOutput,index=False)
+fig = plt.figure()
 h2 = plt.contourf(x,y,z2)
 plt.show()
+fig.savefig(boxAccOutput.split('.')[0])
+pd.DataFrame(data=np.concatenate((y.reshape(-1,1),z2),axis=1),columns=np.concatenate((np.asarray([0]),x))).to_csv(boxAccOutput,index=False)
 print(1)
