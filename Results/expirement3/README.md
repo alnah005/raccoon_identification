@@ -19,3 +19,9 @@ Second, the data had to be converted into Tensorflow records. To do that we used
 Third, using the resources mentioned above with the configurations and scripts found in `raccoon_identification/Mega_detector_raccoon_transfer_learning`, we finetuned the Megadetector and obtained the results that can be founf in `highlighted_results.xlsx` (in this directory.)
 
 Using the results, we identified the model from step 42000 to be the best performing one on the evaluation datapoints, thus it will be used in further experiments.
+
+Below is a graph of the training loss captured after every 100 timesteps.
+
+<p align="center">
+<img src="./loss.png" alt="drawing" width="700"/>
+</p>
