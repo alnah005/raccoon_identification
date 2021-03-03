@@ -1,4 +1,4 @@
-# Hyperparameter Tuning Expirement Comparison with/out Finetuning
+# Hyperparameter Tuning Experiment Comparison with/out Finetuning
 
 Here we try to find the distance threshold between boxes generated from volunteers and boxes obtained from the Mega detector before and after finetuning.
 

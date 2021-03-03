@@ -1,4 +1,4 @@
-# Hyperparameter Tuning Expirement
+# Hyperparameter Tuning Experiment
 
 Here we try to find the distance threshold between boxes generated from volunteers and boxes obtained from the Mega detector.
 
