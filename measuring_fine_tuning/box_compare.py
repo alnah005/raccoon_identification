@@ -8,7 +8,7 @@ file: box_compare.py
 
 @created: 2021-02-15T10:20:13.627Z-06:00
 
-@last-modified: 2021-03-01T23:42:10.107Z-06:00
+@last-modified: 2021-03-15T12:42:02.792Z-05:00
 """
 
 # standard library
@@ -19,8 +19,8 @@ import json
 from dataclasses import dataclass
 from tqdm import tqdm
 
-fileName1 = 'measuring_fine_tuning/raccoon_eval_mega_transfer.json'
-fileName2 = 'measuring_fine_tuning/raccoon_volunteer_labels.json'
+fileName1 = 'raccoon_eval_mega_transfer_2.json'
+fileName2 = 'raccoon_volunteer_labels.json'
 matchesOutput: str = 'numbers_with_finetuning.csv'
 boxAccOutput: str = 'box_acc_with_finetuning.csv'
 swapBool = True
