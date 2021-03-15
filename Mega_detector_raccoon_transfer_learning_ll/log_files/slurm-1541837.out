@@ -1,0 +1,397 @@
+WARNING:tensorflow:Forced number of epochs for all eval validations to be 1.
+W0314 22:57:24.518560 140308362360640 model_lib.py:813] Forced number of epochs for all eval validations to be 1.
+INFO:tensorflow:Maybe overwriting train_steps: 200000
+I0314 22:57:24.524033 140308362360640 config_util.py:552] Maybe overwriting train_steps: 200000
+INFO:tensorflow:Maybe overwriting use_bfloat16: False
+I0314 22:57:24.528863 140308362360640 config_util.py:552] Maybe overwriting use_bfloat16: False
+INFO:tensorflow:Maybe overwriting sample_1_of_n_eval_examples: 6
+I0314 22:57:24.533828 140308362360640 config_util.py:552] Maybe overwriting sample_1_of_n_eval_examples: 6
+INFO:tensorflow:Maybe overwriting eval_num_epochs: 1
+I0314 22:57:24.538959 140308362360640 config_util.py:552] Maybe overwriting eval_num_epochs: 1
+WARNING:tensorflow:Expected number of evaluation epochs is 1, but instead encountered `eval_on_train_input_config.num_epochs` = 0. Overwriting `num_epochs` to 1.
+W0314 22:57:24.543906 140308362360640 model_lib.py:829] Expected number of evaluation epochs is 1, but instead encountered `eval_on_train_input_config.num_epochs` = 0. Overwriting `num_epochs` to 1.
+INFO:tensorflow:create_estimator_and_inputs: use_tpu False, export_to_tpu None
+I0314 22:57:24.548903 140308362360640 model_lib.py:866] create_estimator_and_inputs: use_tpu False, export_to_tpu None
+INFO:tensorflow:Using config: {'_model_dir': '/home/fortson/alnah005/transferLearning/mymodel_experiement2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 2000, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.6
+  visible_device_list: "0,1"
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f9ba3924ba8>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+I0314 22:57:24.554047 140308362360640 estimator.py:212] Using config: {'_model_dir': '/home/fortson/alnah005/transferLearning/mymodel_experiement2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 2000, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.6
+  visible_device_list: "0,1"
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f9ba3924ba8>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+WARNING:tensorflow:Estimator's model_fn (<function create_model_fn.<locals>.model_fn at 0x7f9ba38ba1e0>) includes params argument, but params are not passed to Estimator.
+W0314 22:57:24.559565 140308362360640 model_fn.py:630] Estimator's model_fn (<function create_model_fn.<locals>.model_fn at 0x7f9ba38ba1e0>) includes params argument, but params are not passed to Estimator.
+INFO:tensorflow:Not using Distribute Coordinator.
+I0314 22:57:24.565403 140308362360640 estimator_training.py:186] Not using Distribute Coordinator.
+INFO:tensorflow:Running training and evaluation locally (non-distributed).
+I0314 22:57:24.570394 140308362360640 training.py:612] Running training and evaluation locally (non-distributed).
+INFO:tensorflow:Start train and evaluate loop. The evaluate will happen after every checkpoint. Checkpoint frequency is determined based on RunConfig arguments: save_checkpoints_steps 2000 or save_checkpoints_secs None.
+I0314 22:57:24.575381 140308362360640 training.py:700] Start train and evaluate loop. The evaluate will happen after every checkpoint. Checkpoint frequency is determined based on RunConfig arguments: save_checkpoints_steps 2000 or save_checkpoints_secs None.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+W0314 22:57:24.600107 140308362360640 deprecation.py:323] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/train-?????-of-00001.tfrecord']
+I0314 22:57:24.638883 140308362360640 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/train-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/train-?????-of-00001.tfrecord']
+I0314 22:57:43.964649 140308362360640 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/train-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 21176
+I0314 22:57:43.970367 140308362360640 dataset_builder.py:81] Number of filenames to read: 21176
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/builders/dataset_builder.py:105: parallel_interleave (from tensorflow.python.data.experimental.ops.interleave_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.interleave(map_func, cycle_length, block_length, num_parallel_calls=tf.data.experimental.AUTOTUNE)` instead. If sloppy execution is desired, use `tf.data.Options.experimental_determinstic`.
+W0314 22:57:44.082977 140308362360640 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/builders/dataset_builder.py:105: parallel_interleave (from tensorflow.python.data.experimental.ops.interleave_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.interleave(map_func, cycle_length, block_length, num_parallel_calls=tf.data.experimental.AUTOTUNE)` instead. If sloppy execution is desired, use `tf.data.Options.experimental_determinstic`.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/builders/dataset_builder.py:237: DatasetV1.map_with_legacy_function (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.map()
+W0314 22:57:44.114149 140308362360640 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/builders/dataset_builder.py:237: DatasetV1.map_with_legacy_function (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.map()
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:110: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W0314 22:57:55.291343 140308362360640 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:110: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:94: sparse_to_dense (from tensorflow.python.ops.sparse_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Create a `tf.sparse.SparseTensor` and use `tf.sparse.to_dense` instead.
+W0314 22:57:55.456354 140308362360640 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:94: sparse_to_dense (from tensorflow.python.ops.sparse_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Create a `tf.sparse.SparseTensor` and use `tf.sparse.to_dense` instead.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:282: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W0314 22:57:59.938854 140308362360640 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:282: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+INFO:tensorflow:Calling model_fn.
+I0314 22:58:04.528751 140308362360640 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0314 22:58:04.586506 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0314 22:58:04.591729 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/tf_slim/layers/layers.py:1089: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+W0314 22:58:04.598107 140308362360640 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/tf_slim/layers/layers.py:1089: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0314 22:58:12.608335 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0314 22:58:12.802019 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0314 22:58:12.807759 140308362360640 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/utils/spatial_transform_ops.py:478: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+W0314 22:58:14.535072 140308362360640 deprecation.py:506] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/utils/spatial_transform_ops.py:478: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0314 22:58:14.556658 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0314 22:58:14.561628 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/tf_slim/layers/layers.py:1666: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+W0314 22:58:15.986446 140308362360640 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/tf_slim/layers/layers.py:1666: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0314 22:58:15.994441 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0314 22:58:16.016422 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/core/losses.py:453: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0314 22:58:16.708251 140308362360640 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/core/losses.py:453: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+/usr/local/lib/python3.6/dist-packages/tensorflow_core/python/framework/indexed_slices.py:424: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+/usr/local/lib/python3.6/dist-packages/tensorflow_core/python/framework/indexed_slices.py:424: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+INFO:tensorflow:Done calling model_fn.
+I0314 22:58:29.223772 140308362360640 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Create CheckpointSaverHook.
+I0314 22:58:29.230478 140308362360640 basic_session_run_hooks.py:541] Create CheckpointSaverHook.
+INFO:tensorflow:Graph was finalized.
+I0314 22:58:35.993483 140308362360640 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-198000
+I0314 22:58:42.258408 140308362360640 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-198000
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/saver.py:1069: get_checkpoint_mtimes (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file utilities to get mtimes.
+W0314 22:58:51.663184 140308362360640 deprecation.py:323] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/saver.py:1069: get_checkpoint_mtimes (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file utilities to get mtimes.
+INFO:tensorflow:Running local_init_op.
+I0314 22:58:54.610490 140308362360640 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0314 22:58:55.471283 140308362360640 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Saving checkpoints for 198000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0314 22:59:15.003469 140308362360640 basic_session_run_hooks.py:606] Saving checkpoints for 198000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:loss = 0.06675628, step = 198000
+I0314 23:00:03.420699 140308362360640 basic_session_run_hooks.py:262] loss = 0.06675628, step = 198000
+INFO:tensorflow:global_step/sec: 0.292876
+I0314 23:05:44.861455 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.292876
+INFO:tensorflow:loss = 0.14302218, step = 198100 (341.448 sec)
+I0314 23:05:44.868078 140308362360640 basic_session_run_hooks.py:260] loss = 0.14302218, step = 198100 (341.448 sec)
+INFO:tensorflow:global_step/sec: 0.307125
+I0314 23:11:10.461420 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.307125
+INFO:tensorflow:loss = 0.08307949, step = 198200 (325.600 sec)
+I0314 23:11:10.467839 140308362360640 basic_session_run_hooks.py:260] loss = 0.08307949, step = 198200 (325.600 sec)
+INFO:tensorflow:global_step/sec: 0.307378
+I0314 23:16:35.793220 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.307378
+INFO:tensorflow:loss = 0.13371943, step = 198300 (325.332 sec)
+I0314 23:16:35.800172 140308362360640 basic_session_run_hooks.py:260] loss = 0.13371943, step = 198300 (325.332 sec)
+INFO:tensorflow:global_step/sec: 0.307436
+I0314 23:22:01.064596 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.307436
+INFO:tensorflow:loss = 0.09733854, step = 198400 (325.271 sec)
+I0314 23:22:01.071216 140308362360640 basic_session_run_hooks.py:260] loss = 0.09733854, step = 198400 (325.271 sec)
+INFO:tensorflow:global_step/sec: 0.307465
+I0314 23:27:26.305160 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.307465
+INFO:tensorflow:loss = 0.13344029, step = 198500 (325.241 sec)
+I0314 23:27:26.311848 140308362360640 basic_session_run_hooks.py:260] loss = 0.13344029, step = 198500 (325.241 sec)
+INFO:tensorflow:global_step/sec: 0.30743
+I0314 23:32:51.582287 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.30743
+INFO:tensorflow:loss = 0.059361886, step = 198600 (325.286 sec)
+I0314 23:32:51.597374 140308362360640 basic_session_run_hooks.py:260] loss = 0.059361886, step = 198600 (325.286 sec)
+INFO:tensorflow:global_step/sec: 0.307449
+I0314 23:38:16.839419 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.307449
+INFO:tensorflow:loss = 0.026588332, step = 198700 (325.274 sec)
+I0314 23:38:16.871744 140308362360640 basic_session_run_hooks.py:260] loss = 0.026588332, step = 198700 (325.274 sec)
+INFO:tensorflow:global_step/sec: 0.30743
+I0314 23:43:42.116672 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.30743
+INFO:tensorflow:loss = 0.060237415, step = 198800 (325.253 sec)
+I0314 23:43:42.124391 140308362360640 basic_session_run_hooks.py:260] loss = 0.060237415, step = 198800 (325.253 sec)
+INFO:tensorflow:global_step/sec: 0.307427
+I0314 23:49:07.397033 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.307427
+INFO:tensorflow:loss = 0.10652507, step = 198900 (325.279 sec)
+I0314 23:49:07.403285 140308362360640 basic_session_run_hooks.py:260] loss = 0.10652507, step = 198900 (325.279 sec)
+INFO:tensorflow:global_step/sec: 0.307455
+I0314 23:54:32.648416 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.307455
+INFO:tensorflow:loss = 0.06243358, step = 199000 (325.252 sec)
+I0314 23:54:32.654858 140308362360640 basic_session_run_hooks.py:260] loss = 0.06243358, step = 199000 (325.252 sec)
+INFO:tensorflow:global_step/sec: 0.30722
+I0314 23:59:58.148540 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.30722
+INFO:tensorflow:loss = 0.06586377, step = 199100 (325.501 sec)
+I0314 23:59:58.156205 140308362360640 basic_session_run_hooks.py:260] loss = 0.06586377, step = 199100 (325.501 sec)
+INFO:tensorflow:global_step/sec: 0.306517
+I0315 00:05:24.394627 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.306517
+INFO:tensorflow:loss = 0.051570237, step = 199200 (326.245 sec)
+I0315 00:05:24.401174 140308362360640 basic_session_run_hooks.py:260] loss = 0.051570237, step = 199200 (326.245 sec)
+INFO:tensorflow:global_step/sec: 0.306717
+I0315 00:10:50.427559 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.306717
+INFO:tensorflow:loss = 0.0687667, step = 199300 (326.033 sec)
+I0315 00:10:50.434118 140308362360640 basic_session_run_hooks.py:260] loss = 0.0687667, step = 199300 (326.033 sec)
+INFO:tensorflow:global_step/sec: 0.306943
+I0315 00:16:16.220845 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.306943
+INFO:tensorflow:loss = 0.052981485, step = 199400 (325.794 sec)
+I0315 00:16:16.227660 140308362360640 basic_session_run_hooks.py:260] loss = 0.052981485, step = 199400 (325.794 sec)
+INFO:tensorflow:global_step/sec: 0.307146
+I0315 00:21:41.798914 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.307146
+INFO:tensorflow:loss = 0.14258644, step = 199500 (325.579 sec)
+I0315 00:21:41.806782 140308362360640 basic_session_run_hooks.py:260] loss = 0.14258644, step = 199500 (325.579 sec)
+INFO:tensorflow:global_step/sec: 0.306996
+I0315 00:27:07.535654 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.306996
+INFO:tensorflow:loss = 0.11340444, step = 199600 (325.736 sec)
+I0315 00:27:07.542316 140308362360640 basic_session_run_hooks.py:260] loss = 0.11340444, step = 199600 (325.736 sec)
+INFO:tensorflow:global_step/sec: 0.30692
+I0315 00:32:33.353362 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.30692
+INFO:tensorflow:loss = 0.09160537, step = 199700 (325.818 sec)
+I0315 00:32:33.360249 140308362360640 basic_session_run_hooks.py:260] loss = 0.09160537, step = 199700 (325.818 sec)
+INFO:tensorflow:global_step/sec: 0.306667
+I0315 00:37:59.439907 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.306667
+INFO:tensorflow:loss = 0.07175232, step = 199800 (326.086 sec)
+I0315 00:37:59.446634 140308362360640 basic_session_run_hooks.py:260] loss = 0.07175232, step = 199800 (326.086 sec)
+INFO:tensorflow:global_step/sec: 0.307455
+I0315 00:43:24.690599 140308362360640 basic_session_run_hooks.py:692] global_step/sec: 0.307455
+INFO:tensorflow:loss = 0.11954805, step = 199900 (325.251 sec)
+I0315 00:43:24.697341 140308362360640 basic_session_run_hooks.py:260] loss = 0.11954805, step = 199900 (325.251 sec)
+INFO:tensorflow:Saving checkpoints for 200000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0315 00:48:46.605494 140308362360640 basic_session_run_hooks.py:606] Saving checkpoints for 200000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+W0315 00:48:48.054479 140308362360640 deprecation.py:323] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0315 00:48:50.833495 140308362360640 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0315 00:48:57.911856 140308362360640 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0315 00:48:57.917014 140308362360640 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0315 00:48:58.960259 140308362360640 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 00:48:58.989143 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 00:48:58.994240 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 00:49:06.932729 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 00:49:07.111500 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0315 00:49:07.119002 140308362360640 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 00:49:07.601047 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 00:49:07.606510 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 00:49:08.877904 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 00:49:08.899938 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/util/dispatch.py:180: batch_gather (from tensorflow.python.ops.array_ops) is deprecated and will be removed after 2017-10-25.
+Instructions for updating:
+`tf.batch_gather` is deprecated, please use `tf.gather` with `batch_dims=-1` instead.
+W0315 00:49:12.321349 140308362360640 deprecation.py:323] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/util/dispatch.py:180: batch_gather (from tensorflow.python.ops.array_ops) is deprecated and will be removed after 2017-10-25.
+Instructions for updating:
+`tf.batch_gather` is deprecated, please use `tf.gather` with `batch_dims=-1` instead.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/eval_util.py:929: to_int64 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W0315 00:49:12.870760 140308362360640 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/eval_util.py:929: to_int64 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/utils/visualization_utils.py:618: py_func (from tensorflow.python.ops.script_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+tf.py_func is deprecated in TF V2. Instead, there are two
+    options available in V2.
+    - tf.py_function takes a python function which manipulates tf eager
+    tensors instead of numpy arrays. It's easy to convert a tf eager tensor to
+    an ndarray (just call tensor.numpy()) but having access to eager tensors
+    means `tf.py_function`s can use accelerators such as GPUs as well as
+    being differentiable using a gradient tape.
+    - tf.numpy_function maintains the semantics of the deprecated tf.py_func
+    (it is not differentiable, and manipulates numpy arrays). It drops the
+    stateful argument making all functions stateful.
+    
+W0315 00:49:13.064176 140308362360640 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/utils/visualization_utils.py:618: py_func (from tensorflow.python.ops.script_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+tf.py_func is deprecated in TF V2. Instead, there are two
+    options available in V2.
+    - tf.py_function takes a python function which manipulates tf eager
+    tensors instead of numpy arrays. It's easy to convert a tf eager tensor to
+    an ndarray (just call tensor.numpy()) but having access to eager tensors
+    means `tf.py_function`s can use accelerators such as GPUs as well as
+    being differentiable using a gradient tape.
+    - tf.numpy_function maintains the semantics of the deprecated tf.py_func
+    (it is not differentiable, and manipulates numpy arrays). It drops the
+    stateful argument making all functions stateful.
+    
+INFO:tensorflow:Done calling model_fn.
+I0315 00:49:14.055172 140308362360640 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-15T00:49:14Z
+I0315 00:49:14.077640 140308362360640 evaluation.py:255] Starting evaluation at 2021-03-15T00:49:14Z
+INFO:tensorflow:Graph was finalized.
+I0315 00:49:15.131672 140308362360640 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-200000
+I0315 00:49:15.146908 140308362360640 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-200000
+INFO:tensorflow:Running local_init_op.
+I0315 00:49:18.933103 140308362360640 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0315 00:49:19.444114 140308362360640 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0315 01:11:06.023536 140303763764992 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0315 01:11:06.036500 140303763764992 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0315 01:11:06.100570 140303763764992 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-15-01:11:11
+I0315 01:11:11.734545 140308362360640 evaluation.py:275] Finished evaluation at 2021-03-15-01:11:11
+INFO:tensorflow:Saving dict for global step 200000: DetectionBoxes_Precision/mAP = 0.18953724, DetectionBoxes_Precision/mAP (large) = 0.28035942, DetectionBoxes_Precision/mAP (medium) = 0.16812848, DetectionBoxes_Precision/mAP (small) = 0.06524023, DetectionBoxes_Precision/mAP@.50IOU = 0.35032243, DetectionBoxes_Precision/mAP@.75IOU = 0.18647927, DetectionBoxes_Recall/AR@1 = 0.3522604, DetectionBoxes_Recall/AR@10 = 0.4636934, DetectionBoxes_Recall/AR@100 = 0.47859538, DetectionBoxes_Recall/AR@100 (large) = 0.61029255, DetectionBoxes_Recall/AR@100 (medium) = 0.29779342, DetectionBoxes_Recall/AR@100 (small) = 0.10346154, Loss/BoxClassifierLoss/classification_loss = 0.11090241, Loss/BoxClassifierLoss/localization_loss = 0.036205534, Loss/RPNLoss/localization_loss = 0.026529973, Loss/RPNLoss/objectness_loss = 0.35807028, Loss/total_loss = 0.5317085, global_step = 200000, learning_rate = 1e-05, loss = 0.5317085
+I0315 01:11:11.740158 140308362360640 estimator.py:2049] Saving dict for global step 200000: DetectionBoxes_Precision/mAP = 0.18953724, DetectionBoxes_Precision/mAP (large) = 0.28035942, DetectionBoxes_Precision/mAP (medium) = 0.16812848, DetectionBoxes_Precision/mAP (small) = 0.06524023, DetectionBoxes_Precision/mAP@.50IOU = 0.35032243, DetectionBoxes_Precision/mAP@.75IOU = 0.18647927, DetectionBoxes_Recall/AR@1 = 0.3522604, DetectionBoxes_Recall/AR@10 = 0.4636934, DetectionBoxes_Recall/AR@100 = 0.47859538, DetectionBoxes_Recall/AR@100 (large) = 0.61029255, DetectionBoxes_Recall/AR@100 (medium) = 0.29779342, DetectionBoxes_Recall/AR@100 (small) = 0.10346154, Loss/BoxClassifierLoss/classification_loss = 0.11090241, Loss/BoxClassifierLoss/localization_loss = 0.036205534, Loss/RPNLoss/localization_loss = 0.026529973, Loss/RPNLoss/objectness_loss = 0.35807028, Loss/total_loss = 0.5317085, global_step = 200000, learning_rate = 1e-05, loss = 0.5317085
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 200000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-200000
+I0315 01:11:15.011611 140308362360640 estimator.py:2109] Saving 'checkpoint_path' summary for global step 200000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-200000
+INFO:tensorflow:Performing the final export in the end of training.
+I0315 01:11:15.017642 140308362360640 exporter.py:410] Performing the final export in the end of training.
+INFO:tensorflow:Calling model_fn.
+I0315 01:11:15.328268 140308362360640 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 01:11:15.336342 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 01:11:15.341804 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 01:11:23.013802 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 01:11:23.190856 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0315 01:11:23.253355 140308362360640 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 01:11:23.736759 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 01:11:23.741998 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 01:11:25.020831 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0315 01:11:25.043564 140308362360640 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0315 01:11:29.283929 140308362360640 estimator.py:1150] Done calling model_fn.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/saved_model/signature_def_utils_impl.py:201: build_tensor_info (from tensorflow.python.saved_model.utils_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This function will only be available through the v1 compatibility library as tf.compat.v1.saved_model.utils.build_tensor_info or tf.compat.v1.saved_model.build_tensor_info.
+W0315 01:11:29.289688 140308362360640 deprecation.py:323] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/saved_model/signature_def_utils_impl.py:201: build_tensor_info (from tensorflow.python.saved_model.utils_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This function will only be available through the v1 compatibility library as tf.compat.v1.saved_model.utils.build_tensor_info or tf.compat.v1.saved_model.build_tensor_info.
+INFO:tensorflow:Signatures INCLUDED in export for Classify: None
+I0315 01:11:29.295733 140308362360640 export_utils.py:170] Signatures INCLUDED in export for Classify: None
+INFO:tensorflow:Signatures INCLUDED in export for Regress: None
+I0315 01:11:29.301235 140308362360640 export_utils.py:170] Signatures INCLUDED in export for Regress: None
+INFO:tensorflow:Signatures INCLUDED in export for Predict: ['tensorflow/serving/predict', 'serving_default']
+I0315 01:11:29.306755 140308362360640 export_utils.py:170] Signatures INCLUDED in export for Predict: ['tensorflow/serving/predict', 'serving_default']
+INFO:tensorflow:Signatures INCLUDED in export for Train: None
+I0315 01:11:29.311650 140308362360640 export_utils.py:170] Signatures INCLUDED in export for Train: None
+INFO:tensorflow:Signatures INCLUDED in export for Eval: None
+I0315 01:11:29.316593 140308362360640 export_utils.py:170] Signatures INCLUDED in export for Eval: None
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-200000
+I0315 01:11:29.334586 140308362360640 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-200000
+INFO:tensorflow:Assets added to graph.
+I0315 01:11:31.447539 140308362360640 builder_impl.py:665] Assets added to graph.
+INFO:tensorflow:No assets to write.
+I0315 01:11:31.453152 140308362360640 builder_impl.py:460] No assets to write.
+INFO:tensorflow:SavedModel written to: /home/fortson/alnah005/transferLearning/mymodel_experiement2/export/Servo/temp-b'1615788675'/saved_model.pb
+I0315 01:11:36.083157 140308362360640 builder_impl.py:425] SavedModel written to: /home/fortson/alnah005/transferLearning/mymodel_experiement2/export/Servo/temp-b'1615788675'/saved_model.pb
+INFO:tensorflow:Loss for final step: 0.057649583.
+I0315 01:11:37.107010 140308362360640 estimator.py:371] Loss for final step: 0.057649583.
+creating index...
+index created!
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=2.89s).
+Accumulating evaluation results...
+DONE (t=1.10s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.190
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.350
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.186
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.065
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.168
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.280
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.352
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.464
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.479
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.103
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.298
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.610

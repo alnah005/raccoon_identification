@@ -1,0 +1,1635 @@
+WARNING:tensorflow:Forced number of epochs for all eval validations to be 1.
+W0311 20:23:03.143786 139807195846464 model_lib.py:813] Forced number of epochs for all eval validations to be 1.
+INFO:tensorflow:Maybe overwriting train_steps: 200000
+I0311 20:23:03.143978 139807195846464 config_util.py:552] Maybe overwriting train_steps: 200000
+INFO:tensorflow:Maybe overwriting use_bfloat16: False
+I0311 20:23:03.144068 139807195846464 config_util.py:552] Maybe overwriting use_bfloat16: False
+INFO:tensorflow:Maybe overwriting sample_1_of_n_eval_examples: 6
+I0311 20:23:03.144147 139807195846464 config_util.py:552] Maybe overwriting sample_1_of_n_eval_examples: 6
+INFO:tensorflow:Maybe overwriting eval_num_epochs: 1
+I0311 20:23:03.144465 139807195846464 config_util.py:552] Maybe overwriting eval_num_epochs: 1
+WARNING:tensorflow:Expected number of evaluation epochs is 1, but instead encountered `eval_on_train_input_config.num_epochs` = 0. Overwriting `num_epochs` to 1.
+W0311 20:23:03.144583 139807195846464 model_lib.py:829] Expected number of evaluation epochs is 1, but instead encountered `eval_on_train_input_config.num_epochs` = 0. Overwriting `num_epochs` to 1.
+INFO:tensorflow:create_estimator_and_inputs: use_tpu False, export_to_tpu None
+I0311 20:23:03.144702 139807195846464 model_lib.py:866] create_estimator_and_inputs: use_tpu False, export_to_tpu None
+INFO:tensorflow:Using config: {'_model_dir': '/home/fortson/alnah005/transferLearning/mymodel_experiement2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 2000, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.6
+  visible_device_list: "0,1"
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f26f3b83c18>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+I0311 20:23:03.144951 139807195846464 estimator.py:212] Using config: {'_model_dir': '/home/fortson/alnah005/transferLearning/mymodel_experiement2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 2000, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+  per_process_gpu_memory_fraction: 0.6
+  visible_device_list: "0,1"
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f26f3b83c18>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+WARNING:tensorflow:Estimator's model_fn (<function create_model_fn.<locals>.model_fn at 0x7f26f3b181e0>) includes params argument, but params are not passed to Estimator.
+W0311 20:23:03.145839 139807195846464 model_fn.py:630] Estimator's model_fn (<function create_model_fn.<locals>.model_fn at 0x7f26f3b181e0>) includes params argument, but params are not passed to Estimator.
+INFO:tensorflow:Not using Distribute Coordinator.
+I0311 20:23:03.146402 139807195846464 estimator_training.py:186] Not using Distribute Coordinator.
+INFO:tensorflow:Running training and evaluation locally (non-distributed).
+I0311 20:23:03.146570 139807195846464 training.py:612] Running training and evaluation locally (non-distributed).
+INFO:tensorflow:Start train and evaluate loop. The evaluate will happen after every checkpoint. Checkpoint frequency is determined based on RunConfig arguments: save_checkpoints_steps 2000 or save_checkpoints_secs None.
+I0311 20:23:03.146799 139807195846464 training.py:700] Start train and evaluate loop. The evaluate will happen after every checkpoint. Checkpoint frequency is determined based on RunConfig arguments: save_checkpoints_steps 2000 or save_checkpoints_secs None.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+W0311 20:23:03.218730 139807195846464 deprecation.py:323] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/train-?????-of-00001.tfrecord']
+I0311 20:23:03.252493 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/train-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/train-?????-of-00001.tfrecord']
+I0311 20:23:32.026155 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/train-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 21176
+I0311 20:23:32.032069 139807195846464 dataset_builder.py:81] Number of filenames to read: 21176
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/builders/dataset_builder.py:105: parallel_interleave (from tensorflow.python.data.experimental.ops.interleave_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.interleave(map_func, cycle_length, block_length, num_parallel_calls=tf.data.experimental.AUTOTUNE)` instead. If sloppy execution is desired, use `tf.data.Options.experimental_determinstic`.
+W0311 20:23:32.145213 139807195846464 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/builders/dataset_builder.py:105: parallel_interleave (from tensorflow.python.data.experimental.ops.interleave_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.interleave(map_func, cycle_length, block_length, num_parallel_calls=tf.data.experimental.AUTOTUNE)` instead. If sloppy execution is desired, use `tf.data.Options.experimental_determinstic`.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/builders/dataset_builder.py:237: DatasetV1.map_with_legacy_function (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.map()
+W0311 20:23:32.176735 139807195846464 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/builders/dataset_builder.py:237: DatasetV1.map_with_legacy_function (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.map()
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:110: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W0311 20:23:43.346833 139807195846464 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:110: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:94: sparse_to_dense (from tensorflow.python.ops.sparse_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Create a `tf.sparse.SparseTensor` and use `tf.sparse.to_dense` instead.
+W0311 20:23:43.512916 139807195846464 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:94: sparse_to_dense (from tensorflow.python.ops.sparse_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Create a `tf.sparse.SparseTensor` and use `tf.sparse.to_dense` instead.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:282: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W0311 20:23:48.129112 139807195846464 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/inputs.py:282: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+INFO:tensorflow:Calling model_fn.
+I0311 20:23:52.721093 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 20:23:52.779065 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 20:23:52.784513 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/tf_slim/layers/layers.py:1089: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+W0311 20:23:52.789730 139807195846464 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/tf_slim/layers/layers.py:1089: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 20:24:00.854299 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 20:24:01.053743 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0311 20:24:01.059028 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/utils/spatial_transform_ops.py:478: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+W0311 20:24:02.806855 139807195846464 deprecation.py:506] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/utils/spatial_transform_ops.py:478: calling crop_and_resize_v1 (from tensorflow.python.ops.image_ops_impl) with box_ind is deprecated and will be removed in a future version.
+Instructions for updating:
+box_ind is deprecated, use box_indices instead
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 20:24:02.828407 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 20:24:02.833107 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/tf_slim/layers/layers.py:1666: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+W0311 20:24:04.269075 139807195846464 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/tf_slim/layers/layers.py:1666: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 20:24:04.276905 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 20:24:04.298573 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/core/losses.py:453: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0311 20:24:04.993590 139807195846464 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/core/losses.py:453: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+/usr/local/lib/python3.6/dist-packages/tensorflow_core/python/framework/indexed_slices.py:424: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+/usr/local/lib/python3.6/dist-packages/tensorflow_core/python/framework/indexed_slices.py:424: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+INFO:tensorflow:Done calling model_fn.
+I0311 20:24:17.583460 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Create CheckpointSaverHook.
+I0311 20:24:17.589980 139807195846464 basic_session_run_hooks.py:541] Create CheckpointSaverHook.
+INFO:tensorflow:Graph was finalized.
+I0311 20:24:24.363655 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-132000
+I0311 20:24:30.556479 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-132000
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/saver.py:1069: get_checkpoint_mtimes (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file utilities to get mtimes.
+W0311 20:24:41.731050 139807195846464 deprecation.py:323] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/saver.py:1069: get_checkpoint_mtimes (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file utilities to get mtimes.
+INFO:tensorflow:Running local_init_op.
+I0311 20:24:44.799941 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0311 20:24:45.657832 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Saving checkpoints for 132000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0311 20:25:05.328402 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 132000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:loss = 0.23864858, step = 132000
+I0311 20:25:54.487417 139807195846464 basic_session_run_hooks.py:262] loss = 0.23864858, step = 132000
+INFO:tensorflow:global_step/sec: 0.292912
+I0311 20:31:35.885855 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.292912
+INFO:tensorflow:loss = 0.07942238, step = 132100 (341.405 sec)
+I0311 20:31:35.892404 139807195846464 basic_session_run_hooks.py:260] loss = 0.07942238, step = 132100 (341.405 sec)
+INFO:tensorflow:global_step/sec: 0.306397
+I0311 20:37:02.260233 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306397
+INFO:tensorflow:loss = 0.09739484, step = 132200 (326.375 sec)
+I0311 20:37:02.266981 139807195846464 basic_session_run_hooks.py:260] loss = 0.09739484, step = 132200 (326.375 sec)
+INFO:tensorflow:global_step/sec: 0.30652
+I0311 20:42:28.503011 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30652
+INFO:tensorflow:loss = 0.04986651, step = 132300 (326.242 sec)
+I0311 20:42:28.508745 139807195846464 basic_session_run_hooks.py:260] loss = 0.04986651, step = 132300 (326.242 sec)
+INFO:tensorflow:global_step/sec: 0.306363
+I0311 20:47:54.913259 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306363
+INFO:tensorflow:loss = 0.094456814, step = 132400 (326.411 sec)
+I0311 20:47:54.919821 139807195846464 basic_session_run_hooks.py:260] loss = 0.094456814, step = 132400 (326.411 sec)
+INFO:tensorflow:global_step/sec: 0.306348
+I0311 20:53:21.339514 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306348
+INFO:tensorflow:loss = 0.032367818, step = 132500 (326.425 sec)
+I0311 20:53:21.345316 139807195846464 basic_session_run_hooks.py:260] loss = 0.032367818, step = 132500 (326.425 sec)
+INFO:tensorflow:global_step/sec: 0.30638
+I0311 20:58:47.731944 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30638
+INFO:tensorflow:loss = 0.21354067, step = 132600 (326.393 sec)
+I0311 20:58:47.738639 139807195846464 basic_session_run_hooks.py:260] loss = 0.21354067, step = 132600 (326.393 sec)
+INFO:tensorflow:global_step/sec: 0.306282
+I0311 21:04:14.228511 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306282
+INFO:tensorflow:loss = 0.09779188, step = 132700 (326.496 sec)
+I0311 21:04:14.234798 139807195846464 basic_session_run_hooks.py:260] loss = 0.09779188, step = 132700 (326.496 sec)
+INFO:tensorflow:global_step/sec: 0.306546
+I0311 21:09:40.444191 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306546
+INFO:tensorflow:loss = 0.09664102, step = 132800 (326.216 sec)
+I0311 21:09:40.450666 139807195846464 basic_session_run_hooks.py:260] loss = 0.09664102, step = 132800 (326.216 sec)
+INFO:tensorflow:global_step/sec: 0.306367
+I0311 21:15:06.849582 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306367
+INFO:tensorflow:loss = 0.05635861, step = 132900 (326.405 sec)
+I0311 21:15:06.855618 139807195846464 basic_session_run_hooks.py:260] loss = 0.05635861, step = 132900 (326.405 sec)
+INFO:tensorflow:global_step/sec: 0.306497
+I0311 21:20:33.117328 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306497
+INFO:tensorflow:loss = 0.16627453, step = 133000 (326.269 sec)
+I0311 21:20:33.124982 139807195846464 basic_session_run_hooks.py:260] loss = 0.16627453, step = 133000 (326.269 sec)
+INFO:tensorflow:global_step/sec: 0.306521
+I0311 21:25:59.358704 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306521
+INFO:tensorflow:loss = 0.08436516, step = 133100 (326.240 sec)
+I0311 21:25:59.365154 139807195846464 basic_session_run_hooks.py:260] loss = 0.08436516, step = 133100 (326.240 sec)
+INFO:tensorflow:global_step/sec: 0.30651
+I0311 21:31:25.612335 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30651
+INFO:tensorflow:loss = 0.12543264, step = 133200 (326.255 sec)
+I0311 21:31:25.619902 139807195846464 basic_session_run_hooks.py:260] loss = 0.12543264, step = 133200 (326.255 sec)
+INFO:tensorflow:global_step/sec: 0.306502
+I0311 21:36:51.874372 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306502
+INFO:tensorflow:loss = 0.1421937, step = 133300 (326.260 sec)
+I0311 21:36:51.880052 139807195846464 basic_session_run_hooks.py:260] loss = 0.1421937, step = 133300 (326.260 sec)
+INFO:tensorflow:global_step/sec: 0.306541
+I0311 21:42:18.094937 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306541
+INFO:tensorflow:loss = 0.06592026, step = 133400 (326.222 sec)
+I0311 21:42:18.101686 139807195846464 basic_session_run_hooks.py:260] loss = 0.06592026, step = 133400 (326.222 sec)
+INFO:tensorflow:global_step/sec: 0.30661
+I0311 21:47:44.242590 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30661
+INFO:tensorflow:loss = 0.17615788, step = 133500 (326.149 sec)
+I0311 21:47:44.250213 139807195846464 basic_session_run_hooks.py:260] loss = 0.17615788, step = 133500 (326.149 sec)
+INFO:tensorflow:global_step/sec: 0.306497
+I0311 21:53:10.510551 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306497
+INFO:tensorflow:loss = 0.12528908, step = 133600 (326.267 sec)
+I0311 21:53:10.516991 139807195846464 basic_session_run_hooks.py:260] loss = 0.12528908, step = 133600 (326.267 sec)
+INFO:tensorflow:global_step/sec: 0.306523
+I0311 21:58:36.750283 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306523
+INFO:tensorflow:loss = 0.10585088, step = 133700 (326.239 sec)
+I0311 21:58:36.756334 139807195846464 basic_session_run_hooks.py:260] loss = 0.10585088, step = 133700 (326.239 sec)
+INFO:tensorflow:global_step/sec: 0.30629
+I0311 22:04:03.237881 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30629
+INFO:tensorflow:loss = 0.2259568, step = 133800 (326.491 sec)
+I0311 22:04:03.247148 139807195846464 basic_session_run_hooks.py:260] loss = 0.2259568, step = 133800 (326.491 sec)
+INFO:tensorflow:global_step/sec: 0.306386
+I0311 22:09:29.623562 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306386
+INFO:tensorflow:loss = 0.042754404, step = 133900 (326.383 sec)
+I0311 22:09:29.629909 139807195846464 basic_session_run_hooks.py:260] loss = 0.042754404, step = 133900 (326.383 sec)
+INFO:tensorflow:Saving checkpoints for 134000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0311 22:14:52.574474 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 134000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+W0311 22:14:54.030497 139807195846464 deprecation.py:323] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0311 22:14:56.723012 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0311 22:15:03.634962 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0311 22:15:03.640344 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0311 22:15:04.696297 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 22:15:04.725870 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 22:15:04.731426 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 22:15:12.712469 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 22:15:12.890667 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0311 22:15:12.896277 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 22:15:13.379375 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 22:15:13.384387 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 22:15:14.665950 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0311 22:15:14.688136 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/util/dispatch.py:180: batch_gather (from tensorflow.python.ops.array_ops) is deprecated and will be removed after 2017-10-25.
+Instructions for updating:
+`tf.batch_gather` is deprecated, please use `tf.gather` with `batch_dims=-1` instead.
+W0311 22:15:18.127875 139807195846464 deprecation.py:323] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/util/dispatch.py:180: batch_gather (from tensorflow.python.ops.array_ops) is deprecated and will be removed after 2017-10-25.
+Instructions for updating:
+`tf.batch_gather` is deprecated, please use `tf.gather` with `batch_dims=-1` instead.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/eval_util.py:929: to_int64 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W0311 22:15:18.681658 139807195846464 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/eval_util.py:929: to_int64 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+WARNING:tensorflow:From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/utils/visualization_utils.py:618: py_func (from tensorflow.python.ops.script_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+tf.py_func is deprecated in TF V2. Instead, there are two
+    options available in V2.
+    - tf.py_function takes a python function which manipulates tf eager
+    tensors instead of numpy arrays. It's easy to convert a tf eager tensor to
+    an ndarray (just call tensor.numpy()) but having access to eager tensors
+    means `tf.py_function`s can use accelerators such as GPUs as well as
+    being differentiable using a gradient tape.
+    - tf.numpy_function maintains the semantics of the deprecated tf.py_func
+    (it is not differentiable, and manipulates numpy arrays). It drops the
+    stateful argument making all functions stateful.
+    
+W0311 22:15:18.880648 139807195846464 deprecation.py:323] From /home/fortson/alnah005/.local/lib/python3.6/site-packages/object_detection/utils/visualization_utils.py:618: py_func (from tensorflow.python.ops.script_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+tf.py_func is deprecated in TF V2. Instead, there are two
+    options available in V2.
+    - tf.py_function takes a python function which manipulates tf eager
+    tensors instead of numpy arrays. It's easy to convert a tf eager tensor to
+    an ndarray (just call tensor.numpy()) but having access to eager tensors
+    means `tf.py_function`s can use accelerators such as GPUs as well as
+    being differentiable using a gradient tape.
+    - tf.numpy_function maintains the semantics of the deprecated tf.py_func
+    (it is not differentiable, and manipulates numpy arrays). It drops the
+    stateful argument making all functions stateful.
+    
+INFO:tensorflow:Done calling model_fn.
+I0311 22:15:19.879997 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-11T22:15:19Z
+I0311 22:15:19.901462 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-11T22:15:19Z
+INFO:tensorflow:Graph was finalized.
+I0311 22:15:20.972581 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-134000
+I0311 22:15:20.988615 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-134000
+INFO:tensorflow:Running local_init_op.
+I0311 22:15:24.776678 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0311 22:15:25.286086 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0311 22:37:08.869752 139802594768640 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0311 22:37:08.883502 139802594768640 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0311 22:37:08.947171 139802594768640 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-11-22:37:14
+I0311 22:37:14.952490 139807195846464 evaluation.py:275] Finished evaluation at 2021-03-11-22:37:14
+INFO:tensorflow:Saving dict for global step 134000: DetectionBoxes_Precision/mAP = 0.16686822, DetectionBoxes_Precision/mAP (large) = 0.24969403, DetectionBoxes_Precision/mAP (medium) = 0.1329352, DetectionBoxes_Precision/mAP (small) = 0.050165016, DetectionBoxes_Precision/mAP@.50IOU = 0.31743976, DetectionBoxes_Precision/mAP@.75IOU = 0.17188874, DetectionBoxes_Recall/AR@1 = 0.41881895, DetectionBoxes_Recall/AR@10 = 0.5116132, DetectionBoxes_Recall/AR@100 = 0.5198059, DetectionBoxes_Recall/AR@100 (large) = 0.60840523, DetectionBoxes_Recall/AR@100 (medium) = 0.3090191, DetectionBoxes_Recall/AR@100 (small) = 0.04842105, Loss/BoxClassifierLoss/classification_loss = 0.111452475, Loss/BoxClassifierLoss/localization_loss = 0.040144023, Loss/RPNLoss/localization_loss = 0.02553459, Loss/RPNLoss/objectness_loss = 0.35276592, Loss/total_loss = 0.52989686, global_step = 134000, learning_rate = 2e-05, loss = 0.52989686
+I0311 22:37:14.957941 139807195846464 estimator.py:2049] Saving dict for global step 134000: DetectionBoxes_Precision/mAP = 0.16686822, DetectionBoxes_Precision/mAP (large) = 0.24969403, DetectionBoxes_Precision/mAP (medium) = 0.1329352, DetectionBoxes_Precision/mAP (small) = 0.050165016, DetectionBoxes_Precision/mAP@.50IOU = 0.31743976, DetectionBoxes_Precision/mAP@.75IOU = 0.17188874, DetectionBoxes_Recall/AR@1 = 0.41881895, DetectionBoxes_Recall/AR@10 = 0.5116132, DetectionBoxes_Recall/AR@100 = 0.5198059, DetectionBoxes_Recall/AR@100 (large) = 0.60840523, DetectionBoxes_Recall/AR@100 (medium) = 0.3090191, DetectionBoxes_Recall/AR@100 (small) = 0.04842105, Loss/BoxClassifierLoss/classification_loss = 0.111452475, Loss/BoxClassifierLoss/localization_loss = 0.040144023, Loss/RPNLoss/localization_loss = 0.02553459, Loss/RPNLoss/objectness_loss = 0.35276592, Loss/total_loss = 0.52989686, global_step = 134000, learning_rate = 2e-05, loss = 0.52989686
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 134000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-134000
+I0311 22:37:18.201113 139807195846464 estimator.py:2109] Saving 'checkpoint_path' summary for global step 134000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-134000
+INFO:tensorflow:global_step/sec: 0.0598134
+I0311 22:37:21.488547 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.0598134
+INFO:tensorflow:loss = 0.10877809, step = 134000 (1671.865 sec)
+I0311 22:37:21.494480 139807195846464 basic_session_run_hooks.py:260] loss = 0.10877809, step = 134000 (1671.865 sec)
+INFO:tensorflow:global_step/sec: 0.306631
+I0311 22:42:47.613952 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306631
+INFO:tensorflow:loss = 0.059946623, step = 134100 (326.127 sec)
+I0311 22:42:47.621383 139807195846464 basic_session_run_hooks.py:260] loss = 0.059946623, step = 134100 (326.127 sec)
+INFO:tensorflow:global_step/sec: 0.30663
+I0311 22:48:13.740432 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30663
+INFO:tensorflow:loss = 0.09224175, step = 134200 (326.126 sec)
+I0311 22:48:13.746934 139807195846464 basic_session_run_hooks.py:260] loss = 0.09224175, step = 134200 (326.126 sec)
+INFO:tensorflow:global_step/sec: 0.306646
+I0311 22:53:39.849477 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306646
+INFO:tensorflow:loss = 0.06435495, step = 134300 (326.111 sec)
+I0311 22:53:39.858280 139807195846464 basic_session_run_hooks.py:260] loss = 0.06435495, step = 134300 (326.111 sec)
+INFO:tensorflow:global_step/sec: 0.306599
+I0311 22:59:06.008918 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306599
+INFO:tensorflow:loss = 0.06966601, step = 134400 (326.157 sec)
+I0311 22:59:06.015194 139807195846464 basic_session_run_hooks.py:260] loss = 0.06966601, step = 134400 (326.157 sec)
+INFO:tensorflow:global_step/sec: 0.306654
+I0311 23:04:32.109712 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306654
+INFO:tensorflow:loss = 0.1661966, step = 134500 (326.110 sec)
+I0311 23:04:32.125353 139807195846464 basic_session_run_hooks.py:260] loss = 0.1661966, step = 134500 (326.110 sec)
+INFO:tensorflow:global_step/sec: 0.306653
+I0311 23:09:58.210982 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306653
+INFO:tensorflow:loss = 0.1322394, step = 134600 (326.094 sec)
+I0311 23:09:58.219527 139807195846464 basic_session_run_hooks.py:260] loss = 0.1322394, step = 134600 (326.094 sec)
+INFO:tensorflow:global_step/sec: 0.306657
+I0311 23:15:24.308057 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306657
+INFO:tensorflow:loss = 0.063207865, step = 134700 (326.094 sec)
+I0311 23:15:24.313969 139807195846464 basic_session_run_hooks.py:260] loss = 0.063207865, step = 134700 (326.094 sec)
+INFO:tensorflow:global_step/sec: 0.306687
+I0311 23:20:50.373899 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306687
+INFO:tensorflow:loss = 0.30686706, step = 134800 (326.066 sec)
+I0311 23:20:50.380132 139807195846464 basic_session_run_hooks.py:260] loss = 0.30686706, step = 134800 (326.066 sec)
+INFO:tensorflow:global_step/sec: 0.306675
+I0311 23:26:16.451906 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306675
+INFO:tensorflow:loss = 0.088350534, step = 134900 (326.079 sec)
+I0311 23:26:16.458654 139807195846464 basic_session_run_hooks.py:260] loss = 0.088350534, step = 134900 (326.079 sec)
+INFO:tensorflow:global_step/sec: 0.306596
+I0311 23:31:42.614212 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306596
+INFO:tensorflow:loss = 0.059441227, step = 135000 (326.265 sec)
+I0311 23:31:42.723565 139807195846464 basic_session_run_hooks.py:260] loss = 0.059441227, step = 135000 (326.265 sec)
+INFO:tensorflow:global_step/sec: 0.306324
+I0311 23:37:09.066348 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306324
+INFO:tensorflow:loss = 0.07540004, step = 135100 (326.495 sec)
+I0311 23:37:09.218283 139807195846464 basic_session_run_hooks.py:260] loss = 0.07540004, step = 135100 (326.495 sec)
+INFO:tensorflow:global_step/sec: 0.306261
+I0311 23:42:35.585297 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306261
+INFO:tensorflow:loss = 0.094504744, step = 135200 (326.373 sec)
+I0311 23:42:35.591717 139807195846464 basic_session_run_hooks.py:260] loss = 0.094504744, step = 135200 (326.373 sec)
+INFO:tensorflow:global_step/sec: 0.306629
+I0311 23:48:01.712158 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306629
+INFO:tensorflow:loss = 0.20326738, step = 135300 (326.127 sec)
+I0311 23:48:01.718707 139807195846464 basic_session_run_hooks.py:260] loss = 0.20326738, step = 135300 (326.127 sec)
+INFO:tensorflow:global_step/sec: 0.306579
+I0311 23:53:27.892097 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306579
+INFO:tensorflow:loss = 0.19846901, step = 135400 (326.180 sec)
+I0311 23:53:27.898641 139807195846464 basic_session_run_hooks.py:260] loss = 0.19846901, step = 135400 (326.180 sec)
+INFO:tensorflow:global_step/sec: 0.306494
+I0311 23:58:54.162461 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306494
+INFO:tensorflow:loss = 0.032719065, step = 135500 (326.271 sec)
+I0311 23:58:54.170037 139807195846464 basic_session_run_hooks.py:260] loss = 0.032719065, step = 135500 (326.271 sec)
+INFO:tensorflow:global_step/sec: 0.306456
+I0312 00:04:20.473274 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306456
+INFO:tensorflow:loss = 0.04727192, step = 135600 (326.310 sec)
+I0312 00:04:20.480489 139807195846464 basic_session_run_hooks.py:260] loss = 0.04727192, step = 135600 (326.310 sec)
+INFO:tensorflow:global_step/sec: 0.306499
+I0312 00:09:46.738973 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306499
+INFO:tensorflow:loss = 0.069529675, step = 135700 (326.266 sec)
+I0312 00:09:46.746377 139807195846464 basic_session_run_hooks.py:260] loss = 0.069529675, step = 135700 (326.266 sec)
+INFO:tensorflow:global_step/sec: 0.306454
+I0312 00:15:13.051833 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306454
+INFO:tensorflow:loss = 0.054124534, step = 135800 (326.311 sec)
+I0312 00:15:13.057731 139807195846464 basic_session_run_hooks.py:260] loss = 0.054124534, step = 135800 (326.311 sec)
+INFO:tensorflow:global_step/sec: 0.306431
+I0312 00:20:39.389155 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306431
+INFO:tensorflow:loss = 0.07211585, step = 135900 (326.338 sec)
+I0312 00:20:39.396073 139807195846464 basic_session_run_hooks.py:260] loss = 0.07211585, step = 135900 (326.338 sec)
+INFO:tensorflow:Saving checkpoints for 136000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0312 00:26:02.433992 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 136000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 00:26:08.016190 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 00:26:08.207772 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0312 00:26:08.207942 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0312 00:26:09.010915 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 00:26:09.033535 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 00:26:09.033644 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 00:26:16.583206 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 00:26:16.755718 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0312 00:26:16.755989 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 00:26:17.230406 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 00:26:17.230540 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 00:26:18.492902 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 00:26:18.509218 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0312 00:26:24.433310 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-12T00:26:24Z
+I0312 00:26:24.449409 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-12T00:26:24Z
+INFO:tensorflow:Graph was finalized.
+I0312 00:26:25.509861 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-136000
+I0312 00:26:25.519659 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-136000
+INFO:tensorflow:Running local_init_op.
+I0312 00:26:29.220244 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0312 00:26:29.712878 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0312 00:48:06.401118 139802594768640 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0312 00:48:06.406860 139802594768640 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0312 00:48:06.466073 139802594768640 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-12-00:48:12
+I0312 00:48:12.684474 139807195846464 evaluation.py:275] Finished evaluation at 2021-03-12-00:48:12
+INFO:tensorflow:Saving dict for global step 136000: DetectionBoxes_Precision/mAP = 0.17139123, DetectionBoxes_Precision/mAP (large) = 0.21542639, DetectionBoxes_Precision/mAP (medium) = 0.15003547, DetectionBoxes_Precision/mAP (small) = 0.060088344, DetectionBoxes_Precision/mAP@.50IOU = 0.31766847, DetectionBoxes_Precision/mAP@.75IOU = 0.18241434, DetectionBoxes_Recall/AR@1 = 0.40037483, DetectionBoxes_Recall/AR@10 = 0.502098, DetectionBoxes_Recall/AR@100 = 0.5056844, DetectionBoxes_Recall/AR@100 (large) = 0.6090911, DetectionBoxes_Recall/AR@100 (medium) = 0.34323338, DetectionBoxes_Recall/AR@100 (small) = 0.09012539, Loss/BoxClassifierLoss/classification_loss = 0.11119393, Loss/BoxClassifierLoss/localization_loss = 0.038048066, Loss/RPNLoss/localization_loss = 0.027633052, Loss/RPNLoss/objectness_loss = 0.3569935, Loss/total_loss = 0.53386873, global_step = 136000, learning_rate = 2e-05, loss = 0.53386873
+I0312 00:48:12.684811 139807195846464 estimator.py:2049] Saving dict for global step 136000: DetectionBoxes_Precision/mAP = 0.17139123, DetectionBoxes_Precision/mAP (large) = 0.21542639, DetectionBoxes_Precision/mAP (medium) = 0.15003547, DetectionBoxes_Precision/mAP (small) = 0.060088344, DetectionBoxes_Precision/mAP@.50IOU = 0.31766847, DetectionBoxes_Precision/mAP@.75IOU = 0.18241434, DetectionBoxes_Recall/AR@1 = 0.40037483, DetectionBoxes_Recall/AR@10 = 0.502098, DetectionBoxes_Recall/AR@100 = 0.5056844, DetectionBoxes_Recall/AR@100 (large) = 0.6090911, DetectionBoxes_Recall/AR@100 (medium) = 0.34323338, DetectionBoxes_Recall/AR@100 (small) = 0.09012539, Loss/BoxClassifierLoss/classification_loss = 0.11119393, Loss/BoxClassifierLoss/localization_loss = 0.038048066, Loss/RPNLoss/localization_loss = 0.027633052, Loss/RPNLoss/objectness_loss = 0.3569935, Loss/total_loss = 0.53386873, global_step = 136000, learning_rate = 2e-05, loss = 0.53386873
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 136000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-136000
+I0312 00:48:12.691983 139807195846464 estimator.py:2109] Saving 'checkpoint_path' summary for global step 136000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-136000
+INFO:tensorflow:global_step/sec: 0.060365
+I0312 00:48:15.977436 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.060365
+INFO:tensorflow:loss = 0.09956117, step = 136000 (1656.583 sec)
+I0312 00:48:15.978887 139807195846464 basic_session_run_hooks.py:260] loss = 0.09956117, step = 136000 (1656.583 sec)
+INFO:tensorflow:global_step/sec: 0.30648
+I0312 00:53:42.263597 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30648
+INFO:tensorflow:loss = 0.05473311, step = 136100 (326.286 sec)
+I0312 00:53:42.264817 139807195846464 basic_session_run_hooks.py:260] loss = 0.05473311, step = 136100 (326.286 sec)
+INFO:tensorflow:global_step/sec: 0.306597
+I0312 00:59:08.424848 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306597
+INFO:tensorflow:loss = 0.083772786, step = 136200 (326.161 sec)
+I0312 00:59:08.426085 139807195846464 basic_session_run_hooks.py:260] loss = 0.083772786, step = 136200 (326.161 sec)
+INFO:tensorflow:global_step/sec: 0.306584
+I0312 01:04:34.600241 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306584
+INFO:tensorflow:loss = 0.15617687, step = 136300 (326.175 sec)
+I0312 01:04:34.601463 139807195846464 basic_session_run_hooks.py:260] loss = 0.15617687, step = 136300 (326.175 sec)
+INFO:tensorflow:global_step/sec: 0.306553
+I0312 01:10:00.808148 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306553
+INFO:tensorflow:loss = 0.10373682, step = 136400 (326.208 sec)
+I0312 01:10:00.809822 139807195846464 basic_session_run_hooks.py:260] loss = 0.10373682, step = 136400 (326.208 sec)
+INFO:tensorflow:global_step/sec: 0.306606
+I0312 01:15:26.959851 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306606
+INFO:tensorflow:loss = 0.06863782, step = 136500 (326.151 sec)
+I0312 01:15:26.961064 139807195846464 basic_session_run_hooks.py:260] loss = 0.06863782, step = 136500 (326.151 sec)
+INFO:tensorflow:global_step/sec: 0.306543
+I0312 01:20:53.178140 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306543
+INFO:tensorflow:loss = 0.20549656, step = 136600 (326.218 sec)
+I0312 01:20:53.179364 139807195846464 basic_session_run_hooks.py:260] loss = 0.20549656, step = 136600 (326.218 sec)
+INFO:tensorflow:global_step/sec: 0.306559
+I0312 01:26:19.379928 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306559
+INFO:tensorflow:loss = 0.12475545, step = 136700 (326.202 sec)
+I0312 01:26:19.381144 139807195846464 basic_session_run_hooks.py:260] loss = 0.12475545, step = 136700 (326.202 sec)
+INFO:tensorflow:global_step/sec: 0.306552
+I0312 01:31:45.588694 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306552
+INFO:tensorflow:loss = 0.077221684, step = 136800 (326.209 sec)
+I0312 01:31:45.590394 139807195846464 basic_session_run_hooks.py:260] loss = 0.077221684, step = 136800 (326.209 sec)
+INFO:tensorflow:global_step/sec: 0.306576
+I0312 01:37:11.772156 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306576
+INFO:tensorflow:loss = 0.06650806, step = 136900 (326.183 sec)
+I0312 01:37:11.773379 139807195846464 basic_session_run_hooks.py:260] loss = 0.06650806, step = 136900 (326.183 sec)
+INFO:tensorflow:global_step/sec: 0.306564
+I0312 01:42:37.968204 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306564
+INFO:tensorflow:loss = 0.11621358, step = 137000 (326.197 sec)
+I0312 01:42:37.969943 139807195846464 basic_session_run_hooks.py:260] loss = 0.11621358, step = 137000 (326.197 sec)
+INFO:tensorflow:global_step/sec: 0.306459
+I0312 01:48:04.276527 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306459
+INFO:tensorflow:loss = 0.134877, step = 137100 (326.313 sec)
+I0312 01:48:04.283362 139807195846464 basic_session_run_hooks.py:260] loss = 0.134877, step = 137100 (326.313 sec)
+INFO:tensorflow:global_step/sec: 0.306481
+I0312 01:53:30.560658 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306481
+INFO:tensorflow:loss = 0.10356524, step = 137200 (326.279 sec)
+I0312 01:53:30.562687 139807195846464 basic_session_run_hooks.py:260] loss = 0.10356524, step = 137200 (326.279 sec)
+INFO:tensorflow:global_step/sec: 0.306495
+I0312 01:58:56.830177 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306495
+INFO:tensorflow:loss = 0.060604755, step = 137300 (326.269 sec)
+I0312 01:58:56.831372 139807195846464 basic_session_run_hooks.py:260] loss = 0.060604755, step = 137300 (326.269 sec)
+INFO:tensorflow:global_step/sec: 0.306526
+I0312 02:04:23.066718 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306526
+INFO:tensorflow:loss = 0.08198365, step = 137400 (326.237 sec)
+I0312 02:04:23.067918 139807195846464 basic_session_run_hooks.py:260] loss = 0.08198365, step = 137400 (326.237 sec)
+INFO:tensorflow:global_step/sec: 0.306439
+I0312 02:09:49.396267 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306439
+INFO:tensorflow:loss = 0.20696513, step = 137500 (326.330 sec)
+I0312 02:09:49.398288 139807195846464 basic_session_run_hooks.py:260] loss = 0.20696513, step = 137500 (326.330 sec)
+INFO:tensorflow:global_step/sec: 0.306436
+I0312 02:15:15.728869 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306436
+INFO:tensorflow:loss = 0.111594185, step = 137600 (326.332 sec)
+I0312 02:15:15.730087 139807195846464 basic_session_run_hooks.py:260] loss = 0.111594185, step = 137600 (326.332 sec)
+INFO:tensorflow:global_step/sec: 0.30652
+I0312 02:20:41.971608 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30652
+INFO:tensorflow:loss = 0.108730584, step = 137700 (326.243 sec)
+I0312 02:20:41.972887 139807195846464 basic_session_run_hooks.py:260] loss = 0.108730584, step = 137700 (326.243 sec)
+INFO:tensorflow:global_step/sec: 0.306459
+I0312 02:26:08.280039 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306459
+INFO:tensorflow:loss = 0.11714897, step = 137800 (326.308 sec)
+I0312 02:26:08.281252 139807195846464 basic_session_run_hooks.py:260] loss = 0.11714897, step = 137800 (326.308 sec)
+INFO:tensorflow:global_step/sec: 0.306429
+I0312 02:31:34.620412 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306429
+INFO:tensorflow:loss = 0.102923356, step = 137900 (326.341 sec)
+I0312 02:31:34.622116 139807195846464 basic_session_run_hooks.py:260] loss = 0.102923356, step = 137900 (326.341 sec)
+INFO:tensorflow:Saving checkpoints for 138000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0312 02:36:57.679546 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 138000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 02:37:02.766366 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 02:37:07.143831 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0312 02:37:07.144044 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0312 02:37:07.956882 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 02:37:07.979518 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 02:37:07.979627 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 02:37:15.608225 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 02:37:15.780385 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0312 02:37:15.780674 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 02:37:16.257735 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 02:37:16.257900 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 02:37:17.518224 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 02:37:17.534684 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0312 02:37:23.399460 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-12T02:37:23Z
+I0312 02:37:23.415611 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-12T02:37:23Z
+INFO:tensorflow:Graph was finalized.
+I0312 02:37:24.483228 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-138000
+I0312 02:37:24.492949 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-138000
+INFO:tensorflow:Running local_init_op.
+I0312 02:37:28.155618 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0312 02:37:28.646896 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0312 02:59:06.938642 139802594768640 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0312 02:59:06.943150 139802594768640 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0312 02:59:07.000687 139802594768640 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-12-02:59:13
+I0312 02:59:13.104070 139807195846464 evaluation.py:275] Finished evaluation at 2021-03-12-02:59:13
+INFO:tensorflow:Saving dict for global step 138000: DetectionBoxes_Precision/mAP = 0.15533532, DetectionBoxes_Precision/mAP (large) = 0.20259556, DetectionBoxes_Precision/mAP (medium) = 0.2257148, DetectionBoxes_Precision/mAP (small) = 0.05742574, DetectionBoxes_Precision/mAP@.50IOU = 0.3477817, DetectionBoxes_Precision/mAP@.75IOU = 0.14294544, DetectionBoxes_Recall/AR@1 = 0.32424963, DetectionBoxes_Recall/AR@10 = 0.41037452, DetectionBoxes_Recall/AR@100 = 0.43822137, DetectionBoxes_Recall/AR@100 (large) = 0.56406176, DetectionBoxes_Recall/AR@100 (medium) = 0.33596578, DetectionBoxes_Recall/AR@100 (small) = 0.056985293, Loss/BoxClassifierLoss/classification_loss = 0.11456624, Loss/BoxClassifierLoss/localization_loss = 0.039526496, Loss/RPNLoss/localization_loss = 0.023945326, Loss/RPNLoss/objectness_loss = 0.3512333, Loss/total_loss = 0.5292717, global_step = 138000, learning_rate = 2e-05, loss = 0.5292717
+I0312 02:59:13.104420 139807195846464 estimator.py:2049] Saving dict for global step 138000: DetectionBoxes_Precision/mAP = 0.15533532, DetectionBoxes_Precision/mAP (large) = 0.20259556, DetectionBoxes_Precision/mAP (medium) = 0.2257148, DetectionBoxes_Precision/mAP (small) = 0.05742574, DetectionBoxes_Precision/mAP@.50IOU = 0.3477817, DetectionBoxes_Precision/mAP@.75IOU = 0.14294544, DetectionBoxes_Recall/AR@1 = 0.32424963, DetectionBoxes_Recall/AR@10 = 0.41037452, DetectionBoxes_Recall/AR@100 = 0.43822137, DetectionBoxes_Recall/AR@100 (large) = 0.56406176, DetectionBoxes_Recall/AR@100 (medium) = 0.33596578, DetectionBoxes_Recall/AR@100 (small) = 0.056985293, Loss/BoxClassifierLoss/classification_loss = 0.11456624, Loss/BoxClassifierLoss/localization_loss = 0.039526496, Loss/RPNLoss/localization_loss = 0.023945326, Loss/RPNLoss/objectness_loss = 0.3512333, Loss/total_loss = 0.5292717, global_step = 138000, learning_rate = 2e-05, loss = 0.5292717
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 138000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-138000
+I0312 02:59:13.126357 139807195846464 estimator.py:2109] Saving 'checkpoint_path' summary for global step 138000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-138000
+INFO:tensorflow:global_step/sec: 0.0601759
+I0312 02:59:16.414736 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.0601759
+INFO:tensorflow:loss = 0.056240633, step = 138000 (1661.794 sec)
+I0312 02:59:16.416176 139807195846464 basic_session_run_hooks.py:260] loss = 0.056240633, step = 138000 (1661.794 sec)
+INFO:tensorflow:global_step/sec: 0.306462
+I0312 03:04:42.719940 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306462
+INFO:tensorflow:loss = 0.062276524, step = 138100 (326.305 sec)
+I0312 03:04:42.721152 139807195846464 basic_session_run_hooks.py:260] loss = 0.062276524, step = 138100 (326.305 sec)
+INFO:tensorflow:global_step/sec: 0.306525
+I0312 03:10:08.957098 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306525
+INFO:tensorflow:loss = 0.051221773, step = 138200 (326.237 sec)
+I0312 03:10:08.958314 139807195846464 basic_session_run_hooks.py:260] loss = 0.051221773, step = 138200 (326.237 sec)
+INFO:tensorflow:global_step/sec: 0.306526
+I0312 03:15:35.193921 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306526
+INFO:tensorflow:loss = 0.101719074, step = 138300 (326.237 sec)
+I0312 03:15:35.195139 139807195846464 basic_session_run_hooks.py:260] loss = 0.101719074, step = 138300 (326.237 sec)
+INFO:tensorflow:global_step/sec: 0.30653
+I0312 03:21:01.426597 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30653
+INFO:tensorflow:loss = 0.10503609, step = 138400 (326.233 sec)
+I0312 03:21:01.428284 139807195846464 basic_session_run_hooks.py:260] loss = 0.10503609, step = 138400 (326.233 sec)
+INFO:tensorflow:global_step/sec: 0.306558
+I0312 03:26:27.629109 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306558
+INFO:tensorflow:loss = 0.14712226, step = 138500 (326.202 sec)
+I0312 03:26:27.630340 139807195846464 basic_session_run_hooks.py:260] loss = 0.14712226, step = 138500 (326.202 sec)
+INFO:tensorflow:global_step/sec: 0.30647
+I0312 03:31:53.925222 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30647
+INFO:tensorflow:loss = 0.12075331, step = 138600 (326.296 sec)
+I0312 03:31:53.926416 139807195846464 basic_session_run_hooks.py:260] loss = 0.12075331, step = 138600 (326.296 sec)
+INFO:tensorflow:global_step/sec: 0.306516
+I0312 03:37:20.172645 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306516
+INFO:tensorflow:loss = 0.059181057, step = 138700 (326.247 sec)
+I0312 03:37:20.173846 139807195846464 basic_session_run_hooks.py:260] loss = 0.059181057, step = 138700 (326.247 sec)
+INFO:tensorflow:global_step/sec: 0.306536
+I0312 03:42:46.398979 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306536
+INFO:tensorflow:loss = 0.08725589, step = 138800 (326.227 sec)
+I0312 03:42:46.400885 139807195846464 basic_session_run_hooks.py:260] loss = 0.08725589, step = 138800 (326.227 sec)
+INFO:tensorflow:global_step/sec: 0.306454
+I0312 03:48:12.712424 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306454
+INFO:tensorflow:loss = 0.039050076, step = 138900 (326.313 sec)
+I0312 03:48:12.713886 139807195846464 basic_session_run_hooks.py:260] loss = 0.039050076, step = 138900 (326.313 sec)
+INFO:tensorflow:global_step/sec: 0.306507
+I0312 03:53:38.969096 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306507
+INFO:tensorflow:loss = 0.0817557, step = 139000 (326.256 sec)
+I0312 03:53:38.970322 139807195846464 basic_session_run_hooks.py:260] loss = 0.0817557, step = 139000 (326.256 sec)
+INFO:tensorflow:global_step/sec: 0.306488
+I0312 03:59:05.246408 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306488
+INFO:tensorflow:loss = 0.050789073, step = 139100 (326.277 sec)
+I0312 03:59:05.247622 139807195846464 basic_session_run_hooks.py:260] loss = 0.050789073, step = 139100 (326.277 sec)
+INFO:tensorflow:global_step/sec: 0.306495
+I0312 04:04:31.515880 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306495
+INFO:tensorflow:loss = 0.05007346, step = 139200 (326.270 sec)
+I0312 04:04:31.517590 139807195846464 basic_session_run_hooks.py:260] loss = 0.05007346, step = 139200 (326.270 sec)
+INFO:tensorflow:global_step/sec: 0.306468
+I0312 04:09:57.814483 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306468
+INFO:tensorflow:loss = 0.11845939, step = 139300 (326.298 sec)
+I0312 04:09:57.815685 139807195846464 basic_session_run_hooks.py:260] loss = 0.11845939, step = 139300 (326.298 sec)
+INFO:tensorflow:global_step/sec: 0.306514
+I0312 04:15:24.063367 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306514
+INFO:tensorflow:loss = 0.26176137, step = 139400 (326.249 sec)
+I0312 04:15:24.064561 139807195846464 basic_session_run_hooks.py:260] loss = 0.26176137, step = 139400 (326.249 sec)
+INFO:tensorflow:global_step/sec: 0.306497
+I0312 04:20:50.331198 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306497
+INFO:tensorflow:loss = 0.05749512, step = 139500 (326.268 sec)
+I0312 04:20:50.332382 139807195846464 basic_session_run_hooks.py:260] loss = 0.05749512, step = 139500 (326.268 sec)
+INFO:tensorflow:global_step/sec: 0.306418
+I0312 04:26:16.682837 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306418
+INFO:tensorflow:loss = 0.12621078, step = 139600 (326.352 sec)
+I0312 04:26:16.684555 139807195846464 basic_session_run_hooks.py:260] loss = 0.12621078, step = 139600 (326.352 sec)
+INFO:tensorflow:global_step/sec: 0.306459
+I0312 04:31:42.991021 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306459
+INFO:tensorflow:loss = 0.111159675, step = 139700 (326.314 sec)
+I0312 04:31:42.998240 139807195846464 basic_session_run_hooks.py:260] loss = 0.111159675, step = 139700 (326.314 sec)
+INFO:tensorflow:global_step/sec: 0.30647
+I0312 04:37:09.286844 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30647
+INFO:tensorflow:loss = 0.10526786, step = 139800 (326.290 sec)
+I0312 04:37:09.288683 139807195846464 basic_session_run_hooks.py:260] loss = 0.10526786, step = 139800 (326.290 sec)
+INFO:tensorflow:global_step/sec: 0.306511
+I0312 04:42:35.539700 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306511
+INFO:tensorflow:loss = 0.108280145, step = 139900 (326.252 sec)
+I0312 04:42:35.540892 139807195846464 basic_session_run_hooks.py:260] loss = 0.108280145, step = 139900 (326.252 sec)
+INFO:tensorflow:Saving checkpoints for 140000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0312 04:47:58.602319 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 140000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 04:48:03.234855 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 04:48:03.427832 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0312 04:48:03.428010 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0312 04:48:04.237102 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 04:48:04.259775 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 04:48:04.259884 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 04:48:11.845160 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 04:48:12.015476 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0312 04:48:12.015764 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 04:48:12.492094 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 04:48:12.492274 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 04:48:13.755975 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 04:48:13.772178 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0312 04:48:19.703600 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-12T04:48:19Z
+I0312 04:48:19.720247 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-12T04:48:19Z
+INFO:tensorflow:Graph was finalized.
+I0312 04:48:20.792184 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-140000
+I0312 04:48:20.801572 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-140000
+INFO:tensorflow:Running local_init_op.
+I0312 04:48:24.501516 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0312 04:48:24.994791 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0312 05:09:59.787547 139802594768640 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0312 05:09:59.792687 139802594768640 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0312 05:09:59.853719 139802594768640 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-12-05:10:06
+I0312 05:10:06.152892 139807195846464 evaluation.py:275] Finished evaluation at 2021-03-12-05:10:06
+INFO:tensorflow:Saving dict for global step 140000: DetectionBoxes_Precision/mAP = 0.17854793, DetectionBoxes_Precision/mAP (large) = 0.26480237, DetectionBoxes_Precision/mAP (medium) = 0.12784857, DetectionBoxes_Precision/mAP (small) = 0.03589109, DetectionBoxes_Precision/mAP@.50IOU = 0.33554268, DetectionBoxes_Precision/mAP@.75IOU = 0.17069937, DetectionBoxes_Recall/AR@1 = 0.3446039, DetectionBoxes_Recall/AR@10 = 0.49901265, DetectionBoxes_Recall/AR@100 = 0.50885403, DetectionBoxes_Recall/AR@100 (large) = 0.61887836, DetectionBoxes_Recall/AR@100 (medium) = 0.39027387, DetectionBoxes_Recall/AR@100 (small) = 0.03425926, Loss/BoxClassifierLoss/classification_loss = 0.115129724, Loss/BoxClassifierLoss/localization_loss = 0.035052124, Loss/RPNLoss/localization_loss = 0.02739422, Loss/RPNLoss/objectness_loss = 0.36200935, Loss/total_loss = 0.53958505, global_step = 140000, learning_rate = 1e-05, loss = 0.53958505
+I0312 05:10:06.153290 139807195846464 estimator.py:2049] Saving dict for global step 140000: DetectionBoxes_Precision/mAP = 0.17854793, DetectionBoxes_Precision/mAP (large) = 0.26480237, DetectionBoxes_Precision/mAP (medium) = 0.12784857, DetectionBoxes_Precision/mAP (small) = 0.03589109, DetectionBoxes_Precision/mAP@.50IOU = 0.33554268, DetectionBoxes_Precision/mAP@.75IOU = 0.17069937, DetectionBoxes_Recall/AR@1 = 0.3446039, DetectionBoxes_Recall/AR@10 = 0.49901265, DetectionBoxes_Recall/AR@100 = 0.50885403, DetectionBoxes_Recall/AR@100 (large) = 0.61887836, DetectionBoxes_Recall/AR@100 (medium) = 0.39027387, DetectionBoxes_Recall/AR@100 (small) = 0.03425926, Loss/BoxClassifierLoss/classification_loss = 0.115129724, Loss/BoxClassifierLoss/localization_loss = 0.035052124, Loss/RPNLoss/localization_loss = 0.02739422, Loss/RPNLoss/objectness_loss = 0.36200935, Loss/total_loss = 0.53958505, global_step = 140000, learning_rate = 1e-05, loss = 0.53958505
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 140000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-140000
+I0312 05:10:06.158270 139807195846464 estimator.py:2109] Saving 'checkpoint_path' summary for global step 140000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-140000
+INFO:tensorflow:global_step/sec: 0.060463
+I0312 05:10:09.442288 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.060463
+INFO:tensorflow:loss = 0.20309949, step = 140000 (1653.903 sec)
+I0312 05:10:09.443583 139807195846464 basic_session_run_hooks.py:260] loss = 0.20309949, step = 140000 (1653.903 sec)
+INFO:tensorflow:global_step/sec: 0.306567
+I0312 05:15:35.634947 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306567
+INFO:tensorflow:loss = 0.06912665, step = 140100 (326.193 sec)
+I0312 05:15:35.636202 139807195846464 basic_session_run_hooks.py:260] loss = 0.06912665, step = 140100 (326.193 sec)
+INFO:tensorflow:global_step/sec: 0.306532
+I0312 05:21:01.864631 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306532
+INFO:tensorflow:loss = 0.07059827, step = 140200 (326.230 sec)
+I0312 05:21:01.865868 139807195846464 basic_session_run_hooks.py:260] loss = 0.07059827, step = 140200 (326.230 sec)
+INFO:tensorflow:global_step/sec: 0.306581
+I0312 05:26:28.042472 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306581
+INFO:tensorflow:loss = 0.07434844, step = 140300 (326.178 sec)
+I0312 05:26:28.043676 139807195846464 basic_session_run_hooks.py:260] loss = 0.07434844, step = 140300 (326.178 sec)
+INFO:tensorflow:global_step/sec: 0.306462
+I0312 05:31:54.346765 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306462
+INFO:tensorflow:loss = 0.05860509, step = 140400 (326.305 sec)
+I0312 05:31:54.348600 139807195846464 basic_session_run_hooks.py:260] loss = 0.05860509, step = 140400 (326.305 sec)
+INFO:tensorflow:global_step/sec: 0.306542
+I0312 05:37:20.566164 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306542
+INFO:tensorflow:loss = 0.09063573, step = 140500 (326.219 sec)
+I0312 05:37:20.567393 139807195846464 basic_session_run_hooks.py:260] loss = 0.09063573, step = 140500 (326.219 sec)
+INFO:tensorflow:global_step/sec: 0.306558
+I0312 05:42:46.768279 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306558
+INFO:tensorflow:loss = 0.11183067, step = 140600 (326.202 sec)
+I0312 05:42:46.769504 139807195846464 basic_session_run_hooks.py:260] loss = 0.11183067, step = 140600 (326.202 sec)
+INFO:tensorflow:global_step/sec: 0.306552
+I0312 05:48:12.977569 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306552
+INFO:tensorflow:loss = 0.11719534, step = 140700 (326.209 sec)
+I0312 05:48:12.978767 139807195846464 basic_session_run_hooks.py:260] loss = 0.11719534, step = 140700 (326.209 sec)
+INFO:tensorflow:global_step/sec: 0.306607
+I0312 05:53:39.128457 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306607
+INFO:tensorflow:loss = 0.15413663, step = 140800 (326.151 sec)
+I0312 05:53:39.130228 139807195846464 basic_session_run_hooks.py:260] loss = 0.15413663, step = 140800 (326.151 sec)
+INFO:tensorflow:global_step/sec: 0.306443
+I0312 05:59:05.453332 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306443
+INFO:tensorflow:loss = 0.06383583, step = 140900 (326.324 sec)
+I0312 05:59:05.454550 139807195846464 basic_session_run_hooks.py:260] loss = 0.06383583, step = 140900 (326.324 sec)
+INFO:tensorflow:global_step/sec: 0.306558
+I0312 06:04:31.655572 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306558
+INFO:tensorflow:loss = 0.054366216, step = 141000 (326.202 sec)
+I0312 06:04:31.656780 139807195846464 basic_session_run_hooks.py:260] loss = 0.054366216, step = 141000 (326.202 sec)
+INFO:tensorflow:global_step/sec: 0.306626
+I0312 06:09:57.785524 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306626
+INFO:tensorflow:loss = 0.084241785, step = 141100 (326.130 sec)
+I0312 06:09:57.786734 139807195846464 basic_session_run_hooks.py:260] loss = 0.084241785, step = 141100 (326.130 sec)
+INFO:tensorflow:global_step/sec: 0.306584
+I0312 06:15:23.959953 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306584
+INFO:tensorflow:loss = 0.088508226, step = 141200 (326.175 sec)
+I0312 06:15:23.961636 139807195846464 basic_session_run_hooks.py:260] loss = 0.088508226, step = 141200 (326.175 sec)
+INFO:tensorflow:global_step/sec: 0.306586
+I0312 06:20:50.132583 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306586
+INFO:tensorflow:loss = 0.09022159, step = 141300 (326.172 sec)
+I0312 06:20:50.133787 139807195846464 basic_session_run_hooks.py:260] loss = 0.09022159, step = 141300 (326.172 sec)
+INFO:tensorflow:global_step/sec: 0.30652
+I0312 06:26:16.375337 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30652
+INFO:tensorflow:loss = 0.056644503, step = 141400 (326.243 sec)
+I0312 06:26:16.376539 139807195846464 basic_session_run_hooks.py:260] loss = 0.056644503, step = 141400 (326.243 sec)
+INFO:tensorflow:global_step/sec: 0.30659
+I0312 06:31:42.543404 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30659
+INFO:tensorflow:loss = 0.07095311, step = 141500 (326.168 sec)
+I0312 06:31:42.544609 139807195846464 basic_session_run_hooks.py:260] loss = 0.07095311, step = 141500 (326.168 sec)
+INFO:tensorflow:global_step/sec: 0.306598
+I0312 06:37:08.703098 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306598
+INFO:tensorflow:loss = 0.042515665, step = 141600 (326.160 sec)
+I0312 06:37:08.704955 139807195846464 basic_session_run_hooks.py:260] loss = 0.042515665, step = 141600 (326.160 sec)
+INFO:tensorflow:global_step/sec: 0.306474
+I0312 06:42:34.995336 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306474
+INFO:tensorflow:loss = 0.10579879, step = 141700 (326.292 sec)
+I0312 06:42:34.996537 139807195846464 basic_session_run_hooks.py:260] loss = 0.10579879, step = 141700 (326.292 sec)
+INFO:tensorflow:global_step/sec: 0.306398
+I0312 06:48:01.367944 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306398
+INFO:tensorflow:loss = 0.1371324, step = 141800 (326.373 sec)
+I0312 06:48:01.369127 139807195846464 basic_session_run_hooks.py:260] loss = 0.1371324, step = 141800 (326.373 sec)
+INFO:tensorflow:global_step/sec: 0.306557
+I0312 06:53:27.571464 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306557
+INFO:tensorflow:loss = 0.12562753, step = 141900 (326.204 sec)
+I0312 06:53:27.572666 139807195846464 basic_session_run_hooks.py:260] loss = 0.12562753, step = 141900 (326.204 sec)
+INFO:tensorflow:Saving checkpoints for 142000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0312 06:58:50.450397 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 142000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 06:58:54.508273 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 06:59:14.032836 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0312 06:59:14.033055 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0312 06:59:14.849861 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 06:59:14.872642 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 06:59:14.872751 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 06:59:22.500415 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 06:59:22.672190 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0312 06:59:22.672476 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 06:59:23.146614 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 06:59:23.146737 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 06:59:24.410109 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 06:59:24.426325 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0312 06:59:29.560123 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-12T06:59:29Z
+I0312 06:59:29.576488 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-12T06:59:29Z
+INFO:tensorflow:Graph was finalized.
+I0312 06:59:31.375010 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-142000
+I0312 06:59:31.383836 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-142000
+INFO:tensorflow:Running local_init_op.
+I0312 06:59:35.085086 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0312 06:59:35.577124 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0312 07:21:15.979902 139802594768640 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0312 07:21:15.989710 139802594768640 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0312 07:21:16.051699 139802594768640 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-12-07:21:22
+I0312 07:21:22.219477 139807195846464 evaluation.py:275] Finished evaluation at 2021-03-12-07:21:22
+INFO:tensorflow:Saving dict for global step 142000: DetectionBoxes_Precision/mAP = 0.15735482, DetectionBoxes_Precision/mAP (large) = 0.23395245, DetectionBoxes_Precision/mAP (medium) = 0.09631249, DetectionBoxes_Precision/mAP (small) = 0.09504951, DetectionBoxes_Precision/mAP@.50IOU = 0.31214213, DetectionBoxes_Precision/mAP@.75IOU = 0.14684111, DetectionBoxes_Recall/AR@1 = 0.3517658, DetectionBoxes_Recall/AR@10 = 0.50804657, DetectionBoxes_Recall/AR@100 = 0.52137005, DetectionBoxes_Recall/AR@100 (large) = 0.6002219, DetectionBoxes_Recall/AR@100 (medium) = 0.39064476, DetectionBoxes_Recall/AR@100 (small) = 0.09330808, Loss/BoxClassifierLoss/classification_loss = 0.12079965, Loss/BoxClassifierLoss/localization_loss = 0.04031578, Loss/RPNLoss/localization_loss = 0.030853651, Loss/RPNLoss/objectness_loss = 0.36218035, Loss/total_loss = 0.55414957, global_step = 142000, learning_rate = 1e-05, loss = 0.55414957
+I0312 07:21:22.219815 139807195846464 estimator.py:2049] Saving dict for global step 142000: DetectionBoxes_Precision/mAP = 0.15735482, DetectionBoxes_Precision/mAP (large) = 0.23395245, DetectionBoxes_Precision/mAP (medium) = 0.09631249, DetectionBoxes_Precision/mAP (small) = 0.09504951, DetectionBoxes_Precision/mAP@.50IOU = 0.31214213, DetectionBoxes_Precision/mAP@.75IOU = 0.14684111, DetectionBoxes_Recall/AR@1 = 0.3517658, DetectionBoxes_Recall/AR@10 = 0.50804657, DetectionBoxes_Recall/AR@100 = 0.52137005, DetectionBoxes_Recall/AR@100 (large) = 0.6002219, DetectionBoxes_Recall/AR@100 (medium) = 0.39064476, DetectionBoxes_Recall/AR@100 (small) = 0.09330808, Loss/BoxClassifierLoss/classification_loss = 0.12079965, Loss/BoxClassifierLoss/localization_loss = 0.04031578, Loss/RPNLoss/localization_loss = 0.030853651, Loss/RPNLoss/objectness_loss = 0.36218035, Loss/total_loss = 0.55414957, global_step = 142000, learning_rate = 1e-05, loss = 0.55414957
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 142000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-142000
+I0312 07:21:22.250007 139807195846464 estimator.py:2109] Saving 'checkpoint_path' summary for global step 142000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-142000
+INFO:tensorflow:global_step/sec: 0.0595959
+I0312 07:21:25.537804 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.0595959
+INFO:tensorflow:loss = 0.15929797, step = 142000 (1677.969 sec)
+I0312 07:21:25.541342 139807195846464 basic_session_run_hooks.py:260] loss = 0.15929797, step = 142000 (1677.969 sec)
+INFO:tensorflow:global_step/sec: 0.306563
+I0312 07:26:51.735344 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306563
+INFO:tensorflow:loss = 0.08497433, step = 142100 (326.195 sec)
+I0312 07:26:51.736587 139807195846464 basic_session_run_hooks.py:260] loss = 0.08497433, step = 142100 (326.195 sec)
+INFO:tensorflow:global_step/sec: 0.306597
+I0312 07:32:17.896032 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306597
+INFO:tensorflow:loss = 0.032143548, step = 142200 (326.161 sec)
+I0312 07:32:17.897269 139807195846464 basic_session_run_hooks.py:260] loss = 0.032143548, step = 142200 (326.161 sec)
+INFO:tensorflow:global_step/sec: 0.306654
+I0312 07:37:43.996114 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306654
+INFO:tensorflow:loss = 0.0936128, step = 142300 (326.100 sec)
+I0312 07:37:43.997331 139807195846464 basic_session_run_hooks.py:260] loss = 0.0936128, step = 142300 (326.100 sec)
+INFO:tensorflow:global_step/sec: 0.306639
+I0312 07:43:10.111977 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306639
+INFO:tensorflow:loss = 0.36017552, step = 142400 (326.116 sec)
+I0312 07:43:10.113683 139807195846464 basic_session_run_hooks.py:260] loss = 0.36017552, step = 142400 (326.116 sec)
+INFO:tensorflow:global_step/sec: 0.306644
+I0312 07:48:36.222927 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306644
+INFO:tensorflow:loss = 0.047229536, step = 142500 (326.110 sec)
+I0312 07:48:36.224129 139807195846464 basic_session_run_hooks.py:260] loss = 0.047229536, step = 142500 (326.110 sec)
+INFO:tensorflow:global_step/sec: 0.306657
+I0312 07:54:02.319804 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306657
+INFO:tensorflow:loss = 0.04675715, step = 142600 (326.097 sec)
+I0312 07:54:02.321009 139807195846464 basic_session_run_hooks.py:260] loss = 0.04675715, step = 142600 (326.097 sec)
+INFO:tensorflow:global_step/sec: 0.30663
+I0312 07:59:28.445734 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30663
+INFO:tensorflow:loss = 0.05155375, step = 142700 (326.126 sec)
+I0312 07:59:28.446946 139807195846464 basic_session_run_hooks.py:260] loss = 0.05155375, step = 142700 (326.126 sec)
+INFO:tensorflow:global_step/sec: 0.306684
+I0312 08:04:54.514721 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306684
+INFO:tensorflow:loss = 0.10401378, step = 142800 (326.070 sec)
+I0312 08:04:54.516508 139807195846464 basic_session_run_hooks.py:260] loss = 0.10401378, step = 142800 (326.070 sec)
+INFO:tensorflow:global_step/sec: 0.306667
+I0312 08:10:20.601391 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306667
+INFO:tensorflow:loss = 0.09346032, step = 142900 (326.086 sec)
+I0312 08:10:20.602598 139807195846464 basic_session_run_hooks.py:260] loss = 0.09346032, step = 142900 (326.086 sec)
+INFO:tensorflow:global_step/sec: 0.306697
+I0312 08:15:46.655657 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306697
+INFO:tensorflow:loss = 0.0898077, step = 143000 (326.054 sec)
+I0312 08:15:46.656873 139807195846464 basic_session_run_hooks.py:260] loss = 0.0898077, step = 143000 (326.054 sec)
+INFO:tensorflow:global_step/sec: 0.306695
+I0312 08:21:12.712506 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306695
+INFO:tensorflow:loss = 0.104451925, step = 143100 (326.057 sec)
+I0312 08:21:12.713710 139807195846464 basic_session_run_hooks.py:260] loss = 0.104451925, step = 143100 (326.057 sec)
+INFO:tensorflow:global_step/sec: 0.306623
+I0312 08:26:38.846334 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306623
+INFO:tensorflow:loss = 0.344431, step = 143200 (326.134 sec)
+I0312 08:26:38.848118 139807195846464 basic_session_run_hooks.py:260] loss = 0.344431, step = 143200 (326.134 sec)
+INFO:tensorflow:global_step/sec: 0.306649
+I0312 08:32:04.951589 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306649
+INFO:tensorflow:loss = 0.10535969, step = 143300 (326.105 sec)
+I0312 08:32:04.952805 139807195846464 basic_session_run_hooks.py:260] loss = 0.10535969, step = 143300 (326.105 sec)
+INFO:tensorflow:global_step/sec: 0.306704
+I0312 08:37:30.998474 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306704
+INFO:tensorflow:loss = 0.13890684, step = 143400 (326.047 sec)
+I0312 08:37:30.999684 139807195846464 basic_session_run_hooks.py:260] loss = 0.13890684, step = 143400 (326.047 sec)
+INFO:tensorflow:global_step/sec: 0.30663
+I0312 08:42:57.124919 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30663
+INFO:tensorflow:loss = 0.12769204, step = 143500 (326.127 sec)
+I0312 08:42:57.126411 139807195846464 basic_session_run_hooks.py:260] loss = 0.12769204, step = 143500 (326.127 sec)
+INFO:tensorflow:global_step/sec: 0.30662
+I0312 08:48:23.261201 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30662
+INFO:tensorflow:loss = 0.08805956, step = 143600 (326.137 sec)
+I0312 08:48:23.263041 139807195846464 basic_session_run_hooks.py:260] loss = 0.08805956, step = 143600 (326.137 sec)
+INFO:tensorflow:global_step/sec: 0.306631
+I0312 08:53:49.386100 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306631
+INFO:tensorflow:loss = 0.07906732, step = 143700 (326.124 sec)
+I0312 08:53:49.387315 139807195846464 basic_session_run_hooks.py:260] loss = 0.07906732, step = 143700 (326.124 sec)
+INFO:tensorflow:global_step/sec: 0.306596
+I0312 08:59:15.548015 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306596
+INFO:tensorflow:loss = 0.18187921, step = 143800 (326.162 sec)
+I0312 08:59:15.549233 139807195846464 basic_session_run_hooks.py:260] loss = 0.18187921, step = 143800 (326.162 sec)
+INFO:tensorflow:global_step/sec: 0.306605
+I0312 09:04:41.701025 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306605
+INFO:tensorflow:loss = 0.04068279, step = 143900 (326.153 sec)
+I0312 09:04:41.702258 139807195846464 basic_session_run_hooks.py:260] loss = 0.04068279, step = 143900 (326.153 sec)
+INFO:tensorflow:Saving checkpoints for 144000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0312 09:10:04.555867 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 144000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 09:10:09.220412 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 09:10:09.411239 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0312 09:10:09.411430 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0312 09:10:10.225816 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 09:10:10.248947 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 09:10:10.249057 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 09:10:17.860768 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 09:10:18.031076 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0312 09:10:18.031359 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 09:10:18.505200 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 09:10:18.505324 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 09:10:19.762701 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 09:10:19.778827 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0312 09:10:24.898105 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-12T09:10:24Z
+I0312 09:10:24.914110 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-12T09:10:24Z
+INFO:tensorflow:Graph was finalized.
+I0312 09:10:25.977951 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-144000
+I0312 09:10:25.986920 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-144000
+INFO:tensorflow:Running local_init_op.
+I0312 09:10:29.677428 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0312 09:10:30.162176 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0312 09:32:07.507651 139802594768640 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0312 09:32:07.513458 139802594768640 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0312 09:32:07.576677 139802594768640 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-12-09:32:13
+I0312 09:32:13.342294 139807195846464 evaluation.py:275] Finished evaluation at 2021-03-12-09:32:13
+INFO:tensorflow:Saving dict for global step 144000: DetectionBoxes_Precision/mAP = 0.1835745, DetectionBoxes_Precision/mAP (large) = 0.25023884, DetectionBoxes_Precision/mAP (medium) = 0.106446415, DetectionBoxes_Precision/mAP (small) = 0.08060502, DetectionBoxes_Precision/mAP@.50IOU = 0.33802077, DetectionBoxes_Precision/mAP@.75IOU = 0.17727089, DetectionBoxes_Recall/AR@1 = 0.44604552, DetectionBoxes_Recall/AR@10 = 0.5445212, DetectionBoxes_Recall/AR@100 = 0.5529061, DetectionBoxes_Recall/AR@100 (large) = 0.6323421, DetectionBoxes_Recall/AR@100 (medium) = 0.43958366, DetectionBoxes_Recall/AR@100 (small) = 0.10206349, Loss/BoxClassifierLoss/classification_loss = 0.108022355, Loss/BoxClassifierLoss/localization_loss = 0.038641267, Loss/RPNLoss/localization_loss = 0.029998105, Loss/RPNLoss/objectness_loss = 0.35826623, Loss/total_loss = 0.53492785, global_step = 144000, learning_rate = 1e-05, loss = 0.53492785
+I0312 09:32:13.342657 139807195846464 estimator.py:2049] Saving dict for global step 144000: DetectionBoxes_Precision/mAP = 0.1835745, DetectionBoxes_Precision/mAP (large) = 0.25023884, DetectionBoxes_Precision/mAP (medium) = 0.106446415, DetectionBoxes_Precision/mAP (small) = 0.08060502, DetectionBoxes_Precision/mAP@.50IOU = 0.33802077, DetectionBoxes_Precision/mAP@.75IOU = 0.17727089, DetectionBoxes_Recall/AR@1 = 0.44604552, DetectionBoxes_Recall/AR@10 = 0.5445212, DetectionBoxes_Recall/AR@100 = 0.5529061, DetectionBoxes_Recall/AR@100 (large) = 0.6323421, DetectionBoxes_Recall/AR@100 (medium) = 0.43958366, DetectionBoxes_Recall/AR@100 (small) = 0.10206349, Loss/BoxClassifierLoss/classification_loss = 0.108022355, Loss/BoxClassifierLoss/localization_loss = 0.038641267, Loss/RPNLoss/localization_loss = 0.029998105, Loss/RPNLoss/objectness_loss = 0.35826623, Loss/total_loss = 0.53492785, global_step = 144000, learning_rate = 1e-05, loss = 0.53492785
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 144000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-144000
+I0312 09:32:13.349037 139807195846464 estimator.py:2109] Saving 'checkpoint_path' summary for global step 144000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-144000
+INFO:tensorflow:global_step/sec: 0.0604255
+I0312 09:32:16.630507 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.0604255
+INFO:tensorflow:loss = 0.112852074, step = 144000 (1654.930 sec)
+I0312 09:32:16.631945 139807195846464 basic_session_run_hooks.py:260] loss = 0.112852074, step = 144000 (1654.930 sec)
+INFO:tensorflow:global_step/sec: 0.30657
+I0312 09:37:42.820753 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30657
+INFO:tensorflow:loss = 0.1404051, step = 144100 (326.190 sec)
+I0312 09:37:42.821990 139807195846464 basic_session_run_hooks.py:260] loss = 0.1404051, step = 144100 (326.190 sec)
+INFO:tensorflow:global_step/sec: 0.306607
+I0312 09:43:08.971273 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306607
+INFO:tensorflow:loss = 0.17707606, step = 144200 (326.151 sec)
+I0312 09:43:08.972526 139807195846464 basic_session_run_hooks.py:260] loss = 0.17707606, step = 144200 (326.151 sec)
+INFO:tensorflow:global_step/sec: 0.306599
+I0312 09:48:35.129812 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306599
+INFO:tensorflow:loss = 0.22718917, step = 144300 (326.159 sec)
+I0312 09:48:35.131042 139807195846464 basic_session_run_hooks.py:260] loss = 0.22718917, step = 144300 (326.159 sec)
+INFO:tensorflow:global_step/sec: 0.306585
+I0312 09:54:01.303477 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306585
+INFO:tensorflow:loss = 0.15809976, step = 144400 (326.174 sec)
+I0312 09:54:01.305250 139807195846464 basic_session_run_hooks.py:260] loss = 0.15809976, step = 144400 (326.174 sec)
+INFO:tensorflow:global_step/sec: 0.306559
+I0312 09:59:27.504501 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306559
+INFO:tensorflow:loss = 0.060146615, step = 144500 (326.201 sec)
+I0312 09:59:27.506232 139807195846464 basic_session_run_hooks.py:260] loss = 0.060146615, step = 144500 (326.201 sec)
+INFO:tensorflow:global_step/sec: 0.30657
+I0312 10:04:53.694447 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30657
+INFO:tensorflow:loss = 0.14997984, step = 144600 (326.194 sec)
+I0312 10:04:53.700670 139807195846464 basic_session_run_hooks.py:260] loss = 0.14997984, step = 144600 (326.194 sec)
+INFO:tensorflow:global_step/sec: 0.306611
+I0312 10:10:19.840306 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306611
+INFO:tensorflow:loss = 0.108594924, step = 144700 (326.142 sec)
+I0312 10:10:19.842456 139807195846464 basic_session_run_hooks.py:260] loss = 0.108594924, step = 144700 (326.142 sec)
+INFO:tensorflow:global_step/sec: 0.306605
+I0312 10:15:45.992466 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306605
+INFO:tensorflow:loss = 0.074169464, step = 144800 (326.151 sec)
+I0312 10:15:45.993674 139807195846464 basic_session_run_hooks.py:260] loss = 0.074169464, step = 144800 (326.151 sec)
+INFO:tensorflow:global_step/sec: 0.306582
+I0312 10:21:12.169045 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306582
+INFO:tensorflow:loss = 0.095732465, step = 144900 (326.177 sec)
+I0312 10:21:12.170277 139807195846464 basic_session_run_hooks.py:260] loss = 0.095732465, step = 144900 (326.177 sec)
+INFO:tensorflow:global_step/sec: 0.306613
+I0312 10:26:38.312584 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306613
+INFO:tensorflow:loss = 0.13116391, step = 145000 (326.144 sec)
+I0312 10:26:38.314379 139807195846464 basic_session_run_hooks.py:260] loss = 0.13116391, step = 145000 (326.144 sec)
+INFO:tensorflow:global_step/sec: 0.30656
+I0312 10:32:04.512989 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30656
+INFO:tensorflow:loss = 0.16511163, step = 145100 (326.200 sec)
+I0312 10:32:04.514228 139807195846464 basic_session_run_hooks.py:260] loss = 0.16511163, step = 145100 (326.200 sec)
+INFO:tensorflow:global_step/sec: 0.306564
+I0312 10:37:30.709129 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306564
+INFO:tensorflow:loss = 0.11928605, step = 145200 (326.196 sec)
+I0312 10:37:30.710366 139807195846464 basic_session_run_hooks.py:260] loss = 0.11928605, step = 145200 (326.196 sec)
+INFO:tensorflow:global_step/sec: 0.306564
+I0312 10:42:56.905157 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306564
+INFO:tensorflow:loss = 0.074877255, step = 145300 (326.196 sec)
+I0312 10:42:56.906380 139807195846464 basic_session_run_hooks.py:260] loss = 0.074877255, step = 145300 (326.196 sec)
+INFO:tensorflow:global_step/sec: 0.306552
+I0312 10:48:23.113777 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306552
+INFO:tensorflow:loss = 0.11314337, step = 145400 (326.209 sec)
+I0312 10:48:23.115576 139807195846464 basic_session_run_hooks.py:260] loss = 0.11314337, step = 145400 (326.209 sec)
+INFO:tensorflow:global_step/sec: 0.306582
+I0312 10:53:49.291227 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306582
+INFO:tensorflow:loss = 0.091472805, step = 145500 (326.177 sec)
+I0312 10:53:49.292428 139807195846464 basic_session_run_hooks.py:260] loss = 0.091472805, step = 145500 (326.177 sec)
+INFO:tensorflow:global_step/sec: 0.306531
+I0312 10:59:15.522791 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306531
+INFO:tensorflow:loss = 0.07645279, step = 145600 (326.232 sec)
+I0312 10:59:15.523999 139807195846464 basic_session_run_hooks.py:260] loss = 0.07645279, step = 145600 (326.232 sec)
+INFO:tensorflow:global_step/sec: 0.306522
+I0312 11:04:41.763980 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306522
+INFO:tensorflow:loss = 0.12783912, step = 145700 (326.241 sec)
+I0312 11:04:41.765197 139807195846464 basic_session_run_hooks.py:260] loss = 0.12783912, step = 145700 (326.241 sec)
+INFO:tensorflow:global_step/sec: 0.306549
+I0312 11:10:07.976285 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306549
+INFO:tensorflow:loss = 0.1580701, step = 145800 (326.213 sec)
+I0312 11:10:07.978016 139807195846464 basic_session_run_hooks.py:260] loss = 0.1580701, step = 145800 (326.213 sec)
+INFO:tensorflow:global_step/sec: 0.306541
+I0312 11:15:34.196670 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306541
+INFO:tensorflow:loss = 0.07290554, step = 145900 (326.220 sec)
+I0312 11:15:34.197913 139807195846464 basic_session_run_hooks.py:260] loss = 0.07290554, step = 145900 (326.220 sec)
+INFO:tensorflow:Saving checkpoints for 146000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0312 11:20:57.128984 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 146000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 11:21:01.272423 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 11:21:05.806880 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0312 11:21:05.807096 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0312 11:21:06.633305 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 11:21:06.656703 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 11:21:06.656813 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 11:21:14.971037 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 11:21:15.144207 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0312 11:21:15.144485 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 11:21:15.621666 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 11:21:15.621795 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 11:21:16.899327 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 11:21:16.916010 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0312 11:21:22.384067 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-12T11:21:22Z
+I0312 11:21:22.400428 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-12T11:21:22Z
+INFO:tensorflow:Graph was finalized.
+I0312 11:21:23.465716 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-146000
+I0312 11:21:23.475553 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-146000
+INFO:tensorflow:Running local_init_op.
+I0312 11:21:27.116279 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0312 11:21:27.611435 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0312 11:43:05.949207 139802594768640 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0312 11:43:05.954117 139802594768640 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0312 11:43:06.014642 139802594768640 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-12-11:43:11
+I0312 11:43:11.865010 139807195846464 evaluation.py:275] Finished evaluation at 2021-03-12-11:43:11
+INFO:tensorflow:Saving dict for global step 146000: DetectionBoxes_Precision/mAP = 0.18285452, DetectionBoxes_Precision/mAP (large) = 0.24644761, DetectionBoxes_Precision/mAP (medium) = 0.110407025, DetectionBoxes_Precision/mAP (small) = 0.1220288, DetectionBoxes_Precision/mAP@.50IOU = 0.32750103, DetectionBoxes_Precision/mAP@.75IOU = 0.17757714, DetectionBoxes_Recall/AR@1 = 0.33410665, DetectionBoxes_Recall/AR@10 = 0.45708448, DetectionBoxes_Recall/AR@100 = 0.4590798, DetectionBoxes_Recall/AR@100 (large) = 0.57856697, DetectionBoxes_Recall/AR@100 (medium) = 0.29249153, DetectionBoxes_Recall/AR@100 (small) = 0.12923077, Loss/BoxClassifierLoss/classification_loss = 0.106316976, Loss/BoxClassifierLoss/localization_loss = 0.041123834, Loss/RPNLoss/localization_loss = 0.026256321, Loss/RPNLoss/objectness_loss = 0.35639954, Loss/total_loss = 0.5300963, global_step = 146000, learning_rate = 1e-05, loss = 0.5300963
+I0312 11:43:11.865398 139807195846464 estimator.py:2049] Saving dict for global step 146000: DetectionBoxes_Precision/mAP = 0.18285452, DetectionBoxes_Precision/mAP (large) = 0.24644761, DetectionBoxes_Precision/mAP (medium) = 0.110407025, DetectionBoxes_Precision/mAP (small) = 0.1220288, DetectionBoxes_Precision/mAP@.50IOU = 0.32750103, DetectionBoxes_Precision/mAP@.75IOU = 0.17757714, DetectionBoxes_Recall/AR@1 = 0.33410665, DetectionBoxes_Recall/AR@10 = 0.45708448, DetectionBoxes_Recall/AR@100 = 0.4590798, DetectionBoxes_Recall/AR@100 (large) = 0.57856697, DetectionBoxes_Recall/AR@100 (medium) = 0.29249153, DetectionBoxes_Recall/AR@100 (small) = 0.12923077, Loss/BoxClassifierLoss/classification_loss = 0.106316976, Loss/BoxClassifierLoss/localization_loss = 0.041123834, Loss/RPNLoss/localization_loss = 0.026256321, Loss/RPNLoss/objectness_loss = 0.35639954, Loss/total_loss = 0.5300963, global_step = 146000, learning_rate = 1e-05, loss = 0.5300963
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 146000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-146000
+I0312 11:43:11.913431 139807195846464 estimator.py:2109] Saving 'checkpoint_path' summary for global step 146000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-146000
+INFO:tensorflow:global_step/sec: 0.0602047
+I0312 11:43:15.195682 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.0602047
+INFO:tensorflow:loss = 0.112350285, step = 146000 (1660.999 sec)
+I0312 11:43:15.197018 139807195846464 basic_session_run_hooks.py:260] loss = 0.112350285, step = 146000 (1660.999 sec)
+INFO:tensorflow:global_step/sec: 0.306429
+I0312 11:48:41.535505 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306429
+INFO:tensorflow:loss = 0.13622428, step = 146100 (326.340 sec)
+I0312 11:48:41.536729 139807195846464 basic_session_run_hooks.py:260] loss = 0.13622428, step = 146100 (326.340 sec)
+INFO:tensorflow:global_step/sec: 0.306477
+I0312 11:54:07.823861 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306477
+INFO:tensorflow:loss = 0.10197589, step = 146200 (326.288 sec)
+I0312 11:54:07.825083 139807195846464 basic_session_run_hooks.py:260] loss = 0.10197589, step = 146200 (326.288 sec)
+INFO:tensorflow:global_step/sec: 0.306406
+I0312 11:59:34.187814 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306406
+INFO:tensorflow:loss = 0.059925035, step = 146300 (326.364 sec)
+I0312 11:59:34.189038 139807195846464 basic_session_run_hooks.py:260] loss = 0.059925035, step = 146300 (326.364 sec)
+INFO:tensorflow:global_step/sec: 0.306425
+I0312 12:05:00.532125 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306425
+INFO:tensorflow:loss = 0.09635853, step = 146400 (326.345 sec)
+I0312 12:05:00.534033 139807195846464 basic_session_run_hooks.py:260] loss = 0.09635853, step = 146400 (326.345 sec)
+INFO:tensorflow:global_step/sec: 0.306431
+I0312 12:10:26.869795 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306431
+INFO:tensorflow:loss = 0.10430651, step = 146500 (326.337 sec)
+I0312 12:10:26.871003 139807195846464 basic_session_run_hooks.py:260] loss = 0.10430651, step = 146500 (326.337 sec)
+INFO:tensorflow:global_step/sec: 0.306369
+I0312 12:15:53.273486 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306369
+INFO:tensorflow:loss = 0.11023684, step = 146600 (326.404 sec)
+I0312 12:15:53.274689 139807195846464 basic_session_run_hooks.py:260] loss = 0.11023684, step = 146600 (326.404 sec)
+INFO:tensorflow:global_step/sec: 0.306399
+I0312 12:21:19.645121 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306399
+INFO:tensorflow:loss = 0.17436348, step = 146700 (326.372 sec)
+I0312 12:21:19.646345 139807195846464 basic_session_run_hooks.py:260] loss = 0.17436348, step = 146700 (326.372 sec)
+INFO:tensorflow:global_step/sec: 0.306486
+I0312 12:26:45.924592 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306486
+INFO:tensorflow:loss = 0.04973486, step = 146800 (326.280 sec)
+I0312 12:26:45.926373 139807195846464 basic_session_run_hooks.py:260] loss = 0.04973486, step = 146800 (326.280 sec)
+INFO:tensorflow:global_step/sec: 0.306486
+I0312 12:32:12.203737 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306486
+INFO:tensorflow:loss = 0.08439185, step = 146900 (326.279 sec)
+I0312 12:32:12.204953 139807195846464 basic_session_run_hooks.py:260] loss = 0.08439185, step = 146900 (326.279 sec)
+INFO:tensorflow:global_step/sec: 0.306364
+I0312 12:37:38.612922 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306364
+INFO:tensorflow:loss = 0.32618678, step = 147000 (326.409 sec)
+I0312 12:37:38.614132 139807195846464 basic_session_run_hooks.py:260] loss = 0.32618678, step = 147000 (326.409 sec)
+INFO:tensorflow:global_step/sec: 0.30645
+I0312 12:43:04.929935 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30645
+INFO:tensorflow:loss = 0.09545581, step = 147100 (326.318 sec)
+I0312 12:43:04.931771 139807195846464 basic_session_run_hooks.py:260] loss = 0.09545581, step = 147100 (326.318 sec)
+INFO:tensorflow:global_step/sec: 0.306421
+I0312 12:48:31.278053 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306421
+INFO:tensorflow:loss = 0.114458986, step = 147200 (326.353 sec)
+I0312 12:48:31.285139 139807195846464 basic_session_run_hooks.py:260] loss = 0.114458986, step = 147200 (326.353 sec)
+INFO:tensorflow:global_step/sec: 0.306452
+I0312 12:53:57.593374 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306452
+INFO:tensorflow:loss = 0.18394274, step = 147300 (326.310 sec)
+I0312 12:53:57.595193 139807195846464 basic_session_run_hooks.py:260] loss = 0.18394274, step = 147300 (326.310 sec)
+INFO:tensorflow:global_step/sec: 0.306423
+I0312 12:59:23.940114 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306423
+INFO:tensorflow:loss = 0.34566304, step = 147400 (326.346 sec)
+I0312 12:59:23.941358 139807195846464 basic_session_run_hooks.py:260] loss = 0.34566304, step = 147400 (326.346 sec)
+INFO:tensorflow:global_step/sec: 0.30649
+I0312 13:04:50.214541 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30649
+INFO:tensorflow:loss = 0.08262725, step = 147500 (326.274 sec)
+I0312 13:04:50.215758 139807195846464 basic_session_run_hooks.py:260] loss = 0.08262725, step = 147500 (326.274 sec)
+INFO:tensorflow:global_step/sec: 0.306503
+I0312 13:10:16.475241 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306503
+INFO:tensorflow:loss = 0.0922119, step = 147600 (326.261 sec)
+I0312 13:10:16.476963 139807195846464 basic_session_run_hooks.py:260] loss = 0.0922119, step = 147600 (326.261 sec)
+INFO:tensorflow:global_step/sec: 0.30653
+I0312 13:15:42.707992 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30653
+INFO:tensorflow:loss = 0.089729525, step = 147700 (326.232 sec)
+I0312 13:15:42.709233 139807195846464 basic_session_run_hooks.py:260] loss = 0.089729525, step = 147700 (326.232 sec)
+INFO:tensorflow:global_step/sec: 0.30649
+I0312 13:21:08.983055 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30649
+INFO:tensorflow:loss = 0.07400329, step = 147800 (326.275 sec)
+I0312 13:21:08.984285 139807195846464 basic_session_run_hooks.py:260] loss = 0.07400329, step = 147800 (326.275 sec)
+INFO:tensorflow:global_step/sec: 0.306504
+I0312 13:26:35.243299 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306504
+INFO:tensorflow:loss = 0.048796255, step = 147900 (326.260 sec)
+I0312 13:26:35.244519 139807195846464 basic_session_run_hooks.py:260] loss = 0.048796255, step = 147900 (326.260 sec)
+INFO:tensorflow:Saving checkpoints for 148000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0312 13:31:58.125440 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 148000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 13:32:02.020911 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 13:32:02.208488 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0312 13:32:02.208657 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0312 13:32:03.018718 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 13:32:03.041450 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 13:32:03.041560 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 13:32:10.650835 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 13:32:10.822407 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0312 13:32:10.822683 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 13:32:11.294923 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 13:32:11.295052 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 13:32:12.550819 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 13:32:12.566939 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0312 13:32:18.434558 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-12T13:32:18Z
+I0312 13:32:18.450638 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-12T13:32:18Z
+INFO:tensorflow:Graph was finalized.
+I0312 13:32:19.516861 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-148000
+I0312 13:32:19.526555 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-148000
+INFO:tensorflow:Running local_init_op.
+I0312 13:32:23.192178 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0312 13:32:23.683357 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0312 13:53:59.446408 139802594768640 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0312 13:53:59.451574 139802594768640 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0312 13:53:59.512541 139802594768640 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-12-13:54:05
+I0312 13:54:05.316350 139807195846464 evaluation.py:275] Finished evaluation at 2021-03-12-13:54:05
+INFO:tensorflow:Saving dict for global step 148000: DetectionBoxes_Precision/mAP = 0.1862955, DetectionBoxes_Precision/mAP (large) = 0.22308701, DetectionBoxes_Precision/mAP (medium) = 0.17155659, DetectionBoxes_Precision/mAP (small) = 0.11346966, DetectionBoxes_Precision/mAP@.50IOU = 0.3367406, DetectionBoxes_Precision/mAP@.75IOU = 0.18894872, DetectionBoxes_Recall/AR@1 = 0.4016845, DetectionBoxes_Recall/AR@10 = 0.5506863, DetectionBoxes_Recall/AR@100 = 0.55985636, DetectionBoxes_Recall/AR@100 (large) = 0.5731777, DetectionBoxes_Recall/AR@100 (medium) = 0.36088687, DetectionBoxes_Recall/AR@100 (small) = 0.13284314, Loss/BoxClassifierLoss/classification_loss = 0.10192206, Loss/BoxClassifierLoss/localization_loss = 0.035187446, Loss/RPNLoss/localization_loss = 0.028194072, Loss/RPNLoss/objectness_loss = 0.35890236, Loss/total_loss = 0.5242059, global_step = 148000, learning_rate = 1e-05, loss = 0.5242059
+I0312 13:54:05.316759 139807195846464 estimator.py:2049] Saving dict for global step 148000: DetectionBoxes_Precision/mAP = 0.1862955, DetectionBoxes_Precision/mAP (large) = 0.22308701, DetectionBoxes_Precision/mAP (medium) = 0.17155659, DetectionBoxes_Precision/mAP (small) = 0.11346966, DetectionBoxes_Precision/mAP@.50IOU = 0.3367406, DetectionBoxes_Precision/mAP@.75IOU = 0.18894872, DetectionBoxes_Recall/AR@1 = 0.4016845, DetectionBoxes_Recall/AR@10 = 0.5506863, DetectionBoxes_Recall/AR@100 = 0.55985636, DetectionBoxes_Recall/AR@100 (large) = 0.5731777, DetectionBoxes_Recall/AR@100 (medium) = 0.36088687, DetectionBoxes_Recall/AR@100 (small) = 0.13284314, Loss/BoxClassifierLoss/classification_loss = 0.10192206, Loss/BoxClassifierLoss/localization_loss = 0.035187446, Loss/RPNLoss/localization_loss = 0.028194072, Loss/RPNLoss/objectness_loss = 0.35890236, Loss/total_loss = 0.5242059, global_step = 148000, learning_rate = 1e-05, loss = 0.5242059
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 148000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-148000
+I0312 13:54:05.321484 139807195846464 estimator.py:2109] Saving 'checkpoint_path' summary for global step 148000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-148000
+INFO:tensorflow:global_step/sec: 0.060483
+I0312 13:54:08.600003 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.060483
+INFO:tensorflow:loss = 0.027484171, step = 148000 (1653.357 sec)
+I0312 13:54:08.601335 139807195846464 basic_session_run_hooks.py:260] loss = 0.027484171, step = 148000 (1653.357 sec)
+INFO:tensorflow:global_step/sec: 0.306474
+I0312 13:59:34.892509 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306474
+INFO:tensorflow:loss = 0.11022977, step = 148100 (326.292 sec)
+I0312 13:59:34.893832 139807195846464 basic_session_run_hooks.py:260] loss = 0.11022977, step = 148100 (326.292 sec)
+INFO:tensorflow:global_step/sec: 0.306433
+I0312 14:05:01.228183 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306433
+INFO:tensorflow:loss = 0.07554824, step = 148200 (326.336 sec)
+I0312 14:05:01.229410 139807195846464 basic_session_run_hooks.py:260] loss = 0.07554824, step = 148200 (326.336 sec)
+INFO:tensorflow:global_step/sec: 0.306496
+I0312 14:10:27.497197 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306496
+INFO:tensorflow:loss = 0.06664444, step = 148300 (326.269 sec)
+I0312 14:10:27.498414 139807195846464 basic_session_run_hooks.py:260] loss = 0.06664444, step = 148300 (326.269 sec)
+INFO:tensorflow:global_step/sec: 0.306427
+I0312 14:15:53.839526 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306427
+INFO:tensorflow:loss = 0.049426045, step = 148400 (326.343 sec)
+I0312 14:15:53.841381 139807195846464 basic_session_run_hooks.py:260] loss = 0.049426045, step = 148400 (326.343 sec)
+INFO:tensorflow:global_step/sec: 0.306449
+I0312 14:21:20.158375 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306449
+INFO:tensorflow:loss = 0.07362092, step = 148500 (326.318 sec)
+I0312 14:21:20.159587 139807195846464 basic_session_run_hooks.py:260] loss = 0.07362092, step = 148500 (326.318 sec)
+INFO:tensorflow:global_step/sec: 0.306418
+I0312 14:26:46.510006 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306418
+INFO:tensorflow:loss = 0.09161128, step = 148600 (326.352 sec)
+I0312 14:26:46.511221 139807195846464 basic_session_run_hooks.py:260] loss = 0.09161128, step = 148600 (326.352 sec)
+INFO:tensorflow:global_step/sec: 0.306351
+I0312 14:32:12.932919 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306351
+INFO:tensorflow:loss = 0.043294895, step = 148700 (326.423 sec)
+I0312 14:32:12.934136 139807195846464 basic_session_run_hooks.py:260] loss = 0.043294895, step = 148700 (326.423 sec)
+INFO:tensorflow:global_step/sec: 0.306405
+I0312 14:37:39.298727 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306405
+INFO:tensorflow:loss = 0.015337543, step = 148800 (326.367 sec)
+I0312 14:37:39.300793 139807195846464 basic_session_run_hooks.py:260] loss = 0.015337543, step = 148800 (326.367 sec)
+INFO:tensorflow:global_step/sec: 0.306427
+I0312 14:43:05.640383 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306427
+INFO:tensorflow:loss = 0.085402116, step = 148900 (326.341 sec)
+I0312 14:43:05.641588 139807195846464 basic_session_run_hooks.py:260] loss = 0.085402116, step = 148900 (326.341 sec)
+INFO:tensorflow:global_step/sec: 0.30641
+I0312 14:48:32.000777 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30641
+INFO:tensorflow:loss = 0.14589345, step = 149000 (326.360 sec)
+I0312 14:48:32.001987 139807195846464 basic_session_run_hooks.py:260] loss = 0.14589345, step = 149000 (326.360 sec)
+INFO:tensorflow:global_step/sec: 0.306357
+I0312 14:53:58.417434 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306357
+INFO:tensorflow:loss = 0.06520907, step = 149100 (326.417 sec)
+I0312 14:53:58.418633 139807195846464 basic_session_run_hooks.py:260] loss = 0.06520907, step = 149100 (326.417 sec)
+INFO:tensorflow:global_step/sec: 0.306435
+I0312 14:59:24.751063 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306435
+INFO:tensorflow:loss = 0.12924491, step = 149200 (326.334 sec)
+I0312 14:59:24.752906 139807195846464 basic_session_run_hooks.py:260] loss = 0.12924491, step = 149200 (326.334 sec)
+INFO:tensorflow:global_step/sec: 0.306397
+I0312 15:04:51.124642 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306397
+INFO:tensorflow:loss = 0.075329594, step = 149300 (326.373 sec)
+I0312 15:04:51.125858 139807195846464 basic_session_run_hooks.py:260] loss = 0.075329594, step = 149300 (326.373 sec)
+INFO:tensorflow:global_step/sec: 0.306453
+I0312 15:10:17.438790 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306453
+INFO:tensorflow:loss = 0.05806431, step = 149400 (326.314 sec)
+I0312 15:10:17.440014 139807195846464 basic_session_run_hooks.py:260] loss = 0.05806431, step = 149400 (326.314 sec)
+INFO:tensorflow:global_step/sec: 0.306466
+I0312 15:15:43.739599 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306466
+INFO:tensorflow:loss = 0.06215403, step = 149500 (326.301 sec)
+I0312 15:15:43.740816 139807195846464 basic_session_run_hooks.py:260] loss = 0.06215403, step = 149500 (326.301 sec)
+INFO:tensorflow:global_step/sec: 0.306503
+I0312 15:21:10.000402 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306503
+INFO:tensorflow:loss = 0.115285106, step = 149600 (326.261 sec)
+I0312 15:21:10.002258 139807195846464 basic_session_run_hooks.py:260] loss = 0.115285106, step = 149600 (326.261 sec)
+INFO:tensorflow:global_step/sec: 0.306485
+I0312 15:26:36.280481 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306485
+INFO:tensorflow:loss = 0.042058263, step = 149700 (326.280 sec)
+I0312 15:26:36.282165 139807195846464 basic_session_run_hooks.py:260] loss = 0.042058263, step = 149700 (326.280 sec)
+INFO:tensorflow:global_step/sec: 0.306462
+I0312 15:32:02.585287 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306462
+INFO:tensorflow:loss = 0.098586135, step = 149800 (326.311 sec)
+I0312 15:32:02.593235 139807195846464 basic_session_run_hooks.py:260] loss = 0.098586135, step = 149800 (326.311 sec)
+INFO:tensorflow:global_step/sec: 0.30642
+I0312 15:37:28.935032 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30642
+INFO:tensorflow:loss = 0.17616856, step = 149900 (326.344 sec)
+I0312 15:37:28.936867 139807195846464 basic_session_run_hooks.py:260] loss = 0.17616856, step = 149900 (326.344 sec)
+INFO:tensorflow:Saving checkpoints for 150000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0312 15:42:52.012601 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 150000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 15:42:55.940218 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 15:43:00.850155 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0312 15:43:00.850375 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0312 15:43:01.661496 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 15:43:01.684239 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 15:43:01.684348 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 15:43:09.306229 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 15:43:09.477258 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0312 15:43:09.477532 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 15:43:10.657037 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 15:43:10.657263 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 15:43:11.932473 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 15:43:11.948719 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0312 15:43:17.105470 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-12T15:43:17Z
+I0312 15:43:17.121535 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-12T15:43:17Z
+INFO:tensorflow:Graph was finalized.
+I0312 15:43:18.187515 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-150000
+I0312 15:43:18.197382 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-150000
+INFO:tensorflow:Running local_init_op.
+I0312 15:43:21.850600 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0312 15:43:22.349017 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0312 16:05:00.774486 139802594768640 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0312 16:05:00.779815 139802594768640 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0312 16:05:00.839801 139802594768640 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-12-16:05:06
+I0312 16:05:06.647668 139807195846464 evaluation.py:275] Finished evaluation at 2021-03-12-16:05:06
+INFO:tensorflow:Saving dict for global step 150000: DetectionBoxes_Precision/mAP = 0.1719511, DetectionBoxes_Precision/mAP (large) = 0.23430566, DetectionBoxes_Precision/mAP (medium) = 0.20556146, DetectionBoxes_Precision/mAP (small) = 0.0977102, DetectionBoxes_Precision/mAP@.50IOU = 0.32758704, DetectionBoxes_Precision/mAP@.75IOU = 0.16547671, DetectionBoxes_Recall/AR@1 = 0.36066326, DetectionBoxes_Recall/AR@10 = 0.47315583, DetectionBoxes_Recall/AR@100 = 0.47762957, DetectionBoxes_Recall/AR@100 (large) = 0.585808, DetectionBoxes_Recall/AR@100 (medium) = 0.4184301, DetectionBoxes_Recall/AR@100 (small) = 0.1, Loss/BoxClassifierLoss/classification_loss = 0.09452892, Loss/BoxClassifierLoss/localization_loss = 0.038072396, Loss/RPNLoss/localization_loss = 0.029680127, Loss/RPNLoss/objectness_loss = 0.35759938, Loss/total_loss = 0.51988107, global_step = 150000, learning_rate = 1e-05, loss = 0.51988107
+I0312 16:05:06.648041 139807195846464 estimator.py:2049] Saving dict for global step 150000: DetectionBoxes_Precision/mAP = 0.1719511, DetectionBoxes_Precision/mAP (large) = 0.23430566, DetectionBoxes_Precision/mAP (medium) = 0.20556146, DetectionBoxes_Precision/mAP (small) = 0.0977102, DetectionBoxes_Precision/mAP@.50IOU = 0.32758704, DetectionBoxes_Precision/mAP@.75IOU = 0.16547671, DetectionBoxes_Recall/AR@1 = 0.36066326, DetectionBoxes_Recall/AR@10 = 0.47315583, DetectionBoxes_Recall/AR@100 = 0.47762957, DetectionBoxes_Recall/AR@100 (large) = 0.585808, DetectionBoxes_Recall/AR@100 (medium) = 0.4184301, DetectionBoxes_Recall/AR@100 (small) = 0.1, Loss/BoxClassifierLoss/classification_loss = 0.09452892, Loss/BoxClassifierLoss/localization_loss = 0.038072396, Loss/RPNLoss/localization_loss = 0.029680127, Loss/RPNLoss/objectness_loss = 0.35759938, Loss/total_loss = 0.51988107, global_step = 150000, learning_rate = 1e-05, loss = 0.51988107
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 150000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-150000
+I0312 16:05:06.682474 139807195846464 estimator.py:2109] Saving 'checkpoint_path' summary for global step 150000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-150000
+INFO:tensorflow:global_step/sec: 0.0602035
+I0312 16:05:09.967133 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.0602035
+INFO:tensorflow:loss = 0.0780562, step = 150000 (1661.032 sec)
+I0312 16:05:09.968631 139807195846464 basic_session_run_hooks.py:260] loss = 0.0780562, step = 150000 (1661.032 sec)
+INFO:tensorflow:global_step/sec: 0.306462
+I0312 16:10:36.272180 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306462
+INFO:tensorflow:loss = 0.10042829, step = 150100 (326.305 sec)
+I0312 16:10:36.273414 139807195846464 basic_session_run_hooks.py:260] loss = 0.10042829, step = 150100 (326.305 sec)
+INFO:tensorflow:global_step/sec: 0.306435
+I0312 16:16:02.605732 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306435
+INFO:tensorflow:loss = 0.14779288, step = 150200 (326.334 sec)
+I0312 16:16:02.606968 139807195846464 basic_session_run_hooks.py:260] loss = 0.14779288, step = 150200 (326.334 sec)
+INFO:tensorflow:global_step/sec: 0.306511
+I0312 16:21:28.858544 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306511
+INFO:tensorflow:loss = 0.050141174, step = 150300 (326.253 sec)
+I0312 16:21:28.859753 139807195846464 basic_session_run_hooks.py:260] loss = 0.050141174, step = 150300 (326.253 sec)
+INFO:tensorflow:global_step/sec: 0.30644
+I0312 16:26:55.186334 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30644
+INFO:tensorflow:loss = 0.09508478, step = 150400 (326.328 sec)
+I0312 16:26:55.188059 139807195846464 basic_session_run_hooks.py:260] loss = 0.09508478, step = 150400 (326.328 sec)
+INFO:tensorflow:global_step/sec: 0.306502
+I0312 16:32:21.448512 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306502
+INFO:tensorflow:loss = 0.14911704, step = 150500 (326.262 sec)
+I0312 16:32:21.449776 139807195846464 basic_session_run_hooks.py:260] loss = 0.14911704, step = 150500 (326.262 sec)
+INFO:tensorflow:global_step/sec: 0.306481
+I0312 16:37:47.733243 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306481
+INFO:tensorflow:loss = 0.14608932, step = 150600 (326.285 sec)
+I0312 16:37:47.734459 139807195846464 basic_session_run_hooks.py:260] loss = 0.14608932, step = 150600 (326.285 sec)
+INFO:tensorflow:global_step/sec: 0.306475
+I0312 16:43:14.024124 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306475
+INFO:tensorflow:loss = 0.14635296, step = 150700 (326.291 sec)
+I0312 16:43:14.025346 139807195846464 basic_session_run_hooks.py:260] loss = 0.14635296, step = 150700 (326.291 sec)
+INFO:tensorflow:global_step/sec: 0.306455
+I0312 16:48:40.336016 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306455
+INFO:tensorflow:loss = 0.04738664, step = 150800 (326.312 sec)
+I0312 16:48:40.337844 139807195846464 basic_session_run_hooks.py:260] loss = 0.04738664, step = 150800 (326.312 sec)
+INFO:tensorflow:global_step/sec: 0.306465
+I0312 16:54:06.637118 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306465
+INFO:tensorflow:loss = 0.052921128, step = 150900 (326.300 sec)
+I0312 16:54:06.638334 139807195846464 basic_session_run_hooks.py:260] loss = 0.052921128, step = 150900 (326.300 sec)
+INFO:tensorflow:global_step/sec: 0.306536
+I0312 16:59:32.863301 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306536
+INFO:tensorflow:loss = 0.033856746, step = 151000 (326.226 sec)
+I0312 16:59:32.864522 139807195846464 basic_session_run_hooks.py:260] loss = 0.033856746, step = 151000 (326.226 sec)
+INFO:tensorflow:global_step/sec: 0.306484
+I0312 17:04:59.144794 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306484
+INFO:tensorflow:loss = 0.070601344, step = 151100 (326.281 sec)
+I0312 17:04:59.146010 139807195846464 basic_session_run_hooks.py:260] loss = 0.070601344, step = 151100 (326.281 sec)
+INFO:tensorflow:global_step/sec: 0.306509
+I0312 17:10:25.399533 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306509
+INFO:tensorflow:loss = 0.19235395, step = 151200 (326.255 sec)
+I0312 17:10:25.401347 139807195846464 basic_session_run_hooks.py:260] loss = 0.19235395, step = 151200 (326.255 sec)
+INFO:tensorflow:global_step/sec: 0.3065
+I0312 17:15:51.663724 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.3065
+INFO:tensorflow:loss = 0.097173125, step = 151300 (326.264 sec)
+I0312 17:15:51.664928 139807195846464 basic_session_run_hooks.py:260] loss = 0.097173125, step = 151300 (326.264 sec)
+INFO:tensorflow:global_step/sec: 0.306521
+I0312 17:21:17.905605 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306521
+INFO:tensorflow:loss = 0.13632071, step = 151400 (326.242 sec)
+I0312 17:21:17.906801 139807195846464 basic_session_run_hooks.py:260] loss = 0.13632071, step = 151400 (326.242 sec)
+INFO:tensorflow:global_step/sec: 0.306504
+I0312 17:26:44.165236 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306504
+INFO:tensorflow:loss = 0.22673102, step = 151500 (326.260 sec)
+I0312 17:26:44.166444 139807195846464 basic_session_run_hooks.py:260] loss = 0.22673102, step = 151500 (326.260 sec)
+INFO:tensorflow:global_step/sec: 0.306495
+I0312 17:32:10.434657 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306495
+INFO:tensorflow:loss = 0.11963079, step = 151600 (326.270 sec)
+I0312 17:32:10.436561 139807195846464 basic_session_run_hooks.py:260] loss = 0.11963079, step = 151600 (326.270 sec)
+INFO:tensorflow:global_step/sec: 0.306503
+I0312 17:37:36.695309 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306503
+INFO:tensorflow:loss = 0.31217784, step = 151700 (326.260 sec)
+I0312 17:37:36.696517 139807195846464 basic_session_run_hooks.py:260] loss = 0.31217784, step = 151700 (326.260 sec)
+INFO:tensorflow:global_step/sec: 0.306506
+I0312 17:43:02.952780 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306506
+INFO:tensorflow:loss = 0.09373061, step = 151800 (326.257 sec)
+I0312 17:43:02.953976 139807195846464 basic_session_run_hooks.py:260] loss = 0.09373061, step = 151800 (326.257 sec)
+INFO:tensorflow:global_step/sec: 0.30654
+I0312 17:48:29.174285 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30654
+INFO:tensorflow:loss = 0.1633693, step = 151900 (326.222 sec)
+I0312 17:48:29.175488 139807195846464 basic_session_run_hooks.py:260] loss = 0.1633693, step = 151900 (326.222 sec)
+INFO:tensorflow:Saving checkpoints for 152000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0312 17:53:52.194511 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 152000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 17:53:56.049830 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 17:53:56.232056 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0312 17:53:56.232222 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0312 17:53:57.037621 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 17:53:57.060605 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 17:53:57.060714 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 17:54:05.405478 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 17:54:05.577045 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0312 17:54:05.577332 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 17:54:06.053343 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 17:54:06.053470 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 17:54:07.325592 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 17:54:07.341850 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0312 17:54:12.517288 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-12T17:54:12Z
+I0312 17:54:12.533697 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-12T17:54:12Z
+INFO:tensorflow:Graph was finalized.
+I0312 17:54:13.609743 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-152000
+I0312 17:54:13.619859 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-152000
+INFO:tensorflow:Running local_init_op.
+I0312 17:54:17.282076 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0312 17:54:17.791319 139807195846464 session_manager.py:502] Done running local_init_op.
+INFO:tensorflow:Performing evaluation on 1020 images.
+I0312 18:15:54.343015 139802594768640 coco_evaluation.py:293] Performing evaluation on 1020 images.
+INFO:tensorflow:Loading and preparing annotation results...
+I0312 18:15:54.351561 139802594768640 coco_tools.py:116] Loading and preparing annotation results...
+INFO:tensorflow:DONE (t=0.06s)
+I0312 18:15:54.411915 139802594768640 coco_tools.py:138] DONE (t=0.06s)
+INFO:tensorflow:Finished evaluation at 2021-03-12-18:16:00
+I0312 18:16:00.143902 139807195846464 evaluation.py:275] Finished evaluation at 2021-03-12-18:16:00
+INFO:tensorflow:Saving dict for global step 152000: DetectionBoxes_Precision/mAP = 0.18212228, DetectionBoxes_Precision/mAP (large) = 0.24402404, DetectionBoxes_Precision/mAP (medium) = 0.16504349, DetectionBoxes_Precision/mAP (small) = 0.106806934, DetectionBoxes_Precision/mAP@.50IOU = 0.3553375, DetectionBoxes_Precision/mAP@.75IOU = 0.16994068, DetectionBoxes_Recall/AR@1 = 0.41182107, DetectionBoxes_Recall/AR@10 = 0.5092425, DetectionBoxes_Recall/AR@100 = 0.51705956, DetectionBoxes_Recall/AR@100 (large) = 0.59469485, DetectionBoxes_Recall/AR@100 (medium) = 0.31761828, DetectionBoxes_Recall/AR@100 (small) = 0.11168583, Loss/BoxClassifierLoss/classification_loss = 0.10123252, Loss/BoxClassifierLoss/localization_loss = 0.03972527, Loss/RPNLoss/localization_loss = 0.028166994, Loss/RPNLoss/objectness_loss = 0.3593884, Loss/total_loss = 0.5285129, global_step = 152000, learning_rate = 1e-05, loss = 0.5285129
+I0312 18:16:00.144281 139807195846464 estimator.py:2049] Saving dict for global step 152000: DetectionBoxes_Precision/mAP = 0.18212228, DetectionBoxes_Precision/mAP (large) = 0.24402404, DetectionBoxes_Precision/mAP (medium) = 0.16504349, DetectionBoxes_Precision/mAP (small) = 0.106806934, DetectionBoxes_Precision/mAP@.50IOU = 0.3553375, DetectionBoxes_Precision/mAP@.75IOU = 0.16994068, DetectionBoxes_Recall/AR@1 = 0.41182107, DetectionBoxes_Recall/AR@10 = 0.5092425, DetectionBoxes_Recall/AR@100 = 0.51705956, DetectionBoxes_Recall/AR@100 (large) = 0.59469485, DetectionBoxes_Recall/AR@100 (medium) = 0.31761828, DetectionBoxes_Recall/AR@100 (small) = 0.11168583, Loss/BoxClassifierLoss/classification_loss = 0.10123252, Loss/BoxClassifierLoss/localization_loss = 0.03972527, Loss/RPNLoss/localization_loss = 0.028166994, Loss/RPNLoss/objectness_loss = 0.3593884, Loss/total_loss = 0.5285129, global_step = 152000, learning_rate = 1e-05, loss = 0.5285129
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 152000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-152000
+I0312 18:16:00.151164 139807195846464 estimator.py:2109] Saving 'checkpoint_path' summary for global step 152000: /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-152000
+INFO:tensorflow:global_step/sec: 0.0604499
+I0312 18:16:03.437188 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.0604499
+INFO:tensorflow:loss = 0.14898412, step = 152000 (1654.268 sec)
+I0312 18:16:03.443400 139807195846464 basic_session_run_hooks.py:260] loss = 0.14898412, step = 152000 (1654.268 sec)
+INFO:tensorflow:global_step/sec: 0.306426
+I0312 18:21:29.780304 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306426
+INFO:tensorflow:loss = 0.07008647, step = 152100 (326.338 sec)
+I0312 18:21:29.781527 139807195846464 basic_session_run_hooks.py:260] loss = 0.07008647, step = 152100 (326.338 sec)
+INFO:tensorflow:global_step/sec: 0.306432
+I0312 18:26:56.116865 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306432
+INFO:tensorflow:loss = 0.10613813, step = 152200 (326.337 sec)
+I0312 18:26:56.118080 139807195846464 basic_session_run_hooks.py:260] loss = 0.10613813, step = 152200 (326.337 sec)
+INFO:tensorflow:global_step/sec: 0.306383
+I0312 18:32:22.506069 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306383
+INFO:tensorflow:loss = 0.049388994, step = 152300 (326.389 sec)
+I0312 18:32:22.507281 139807195846464 basic_session_run_hooks.py:260] loss = 0.049388994, step = 152300 (326.389 sec)
+INFO:tensorflow:global_step/sec: 0.306375
+I0312 18:37:48.903923 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306375
+INFO:tensorflow:loss = 0.09824943, step = 152400 (326.398 sec)
+I0312 18:37:48.905763 139807195846464 basic_session_run_hooks.py:260] loss = 0.09824943, step = 152400 (326.398 sec)
+INFO:tensorflow:global_step/sec: 0.306394
+I0312 18:43:15.281464 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306394
+INFO:tensorflow:loss = 0.108018994, step = 152500 (326.377 sec)
+I0312 18:43:15.282686 139807195846464 basic_session_run_hooks.py:260] loss = 0.108018994, step = 152500 (326.377 sec)
+INFO:tensorflow:global_step/sec: 0.306393
+I0312 18:48:41.659824 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306393
+INFO:tensorflow:loss = 0.07748098, step = 152600 (326.378 sec)
+I0312 18:48:41.661031 139807195846464 basic_session_run_hooks.py:260] loss = 0.07748098, step = 152600 (326.378 sec)
+INFO:tensorflow:global_step/sec: 0.306451
+I0312 18:54:07.975919 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306451
+INFO:tensorflow:loss = 0.06673744, step = 152700 (326.316 sec)
+I0312 18:54:07.977131 139807195846464 basic_session_run_hooks.py:260] loss = 0.06673744, step = 152700 (326.316 sec)
+INFO:tensorflow:global_step/sec: 0.306356
+I0312 18:59:34.393556 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306356
+INFO:tensorflow:loss = 0.08809305, step = 152800 (326.418 sec)
+I0312 18:59:34.395309 139807195846464 basic_session_run_hooks.py:260] loss = 0.08809305, step = 152800 (326.418 sec)
+INFO:tensorflow:global_step/sec: 0.306345
+I0312 19:05:00.823268 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306345
+INFO:tensorflow:loss = 0.062142413, step = 152900 (326.429 sec)
+I0312 19:05:00.824485 139807195846464 basic_session_run_hooks.py:260] loss = 0.062142413, step = 152900 (326.429 sec)
+INFO:tensorflow:global_step/sec: 0.306357
+I0312 19:10:27.239557 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306357
+INFO:tensorflow:loss = 0.0855292, step = 153000 (326.416 sec)
+I0312 19:10:27.240761 139807195846464 basic_session_run_hooks.py:260] loss = 0.0855292, step = 153000 (326.416 sec)
+INFO:tensorflow:global_step/sec: 0.306351
+I0312 19:15:53.661996 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306351
+INFO:tensorflow:loss = 0.13579647, step = 153100 (326.422 sec)
+I0312 19:15:53.663217 139807195846464 basic_session_run_hooks.py:260] loss = 0.13579647, step = 153100 (326.422 sec)
+INFO:tensorflow:global_step/sec: 0.306302
+I0312 19:21:20.137610 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306302
+INFO:tensorflow:loss = 0.031454563, step = 153200 (326.477 sec)
+I0312 19:21:20.139783 139807195846464 basic_session_run_hooks.py:260] loss = 0.031454563, step = 153200 (326.477 sec)
+INFO:tensorflow:global_step/sec: 0.306358
+I0312 19:26:46.553557 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306358
+INFO:tensorflow:loss = 0.10344728, step = 153300 (326.415 sec)
+I0312 19:26:46.554770 139807195846464 basic_session_run_hooks.py:260] loss = 0.10344728, step = 153300 (326.415 sec)
+INFO:tensorflow:global_step/sec: 0.306377
+I0312 19:32:12.948477 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306377
+INFO:tensorflow:loss = 0.04133423, step = 153400 (326.395 sec)
+I0312 19:32:12.949689 139807195846464 basic_session_run_hooks.py:260] loss = 0.04133423, step = 153400 (326.395 sec)
+INFO:tensorflow:global_step/sec: 0.30635
+I0312 19:37:39.372107 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.30635
+INFO:tensorflow:loss = 0.08565461, step = 153500 (326.424 sec)
+I0312 19:37:39.373352 139807195846464 basic_session_run_hooks.py:260] loss = 0.08565461, step = 153500 (326.424 sec)
+INFO:tensorflow:global_step/sec: 0.306268
+I0312 19:43:05.883315 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306268
+INFO:tensorflow:loss = 0.09402933, step = 153600 (326.512 sec)
+I0312 19:43:05.885265 139807195846464 basic_session_run_hooks.py:260] loss = 0.09402933, step = 153600 (326.512 sec)
+INFO:tensorflow:global_step/sec: 0.306348
+I0312 19:48:32.309046 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306348
+INFO:tensorflow:loss = 0.056324948, step = 153700 (326.425 sec)
+I0312 19:48:32.310281 139807195846464 basic_session_run_hooks.py:260] loss = 0.056324948, step = 153700 (326.425 sec)
+INFO:tensorflow:global_step/sec: 0.306301
+I0312 19:53:58.784891 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306301
+INFO:tensorflow:loss = 0.05984273, step = 153800 (326.476 sec)
+I0312 19:53:58.786098 139807195846464 basic_session_run_hooks.py:260] loss = 0.05984273, step = 153800 (326.476 sec)
+INFO:tensorflow:global_step/sec: 0.306297
+I0312 19:59:25.265747 139807195846464 basic_session_run_hooks.py:692] global_step/sec: 0.306297
+INFO:tensorflow:loss = 0.10992855, step = 153900 (326.481 sec)
+I0312 19:59:25.266941 139807195846464 basic_session_run_hooks.py:260] loss = 0.10992855, step = 153900 (326.481 sec)
+INFO:tensorflow:Saving checkpoints for 154000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+I0312 20:04:48.471133 139807195846464 basic_session_run_hooks.py:606] Saving checkpoints for 154000 into /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt.
+INFO:tensorflow:Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 20:04:52.417493 139807195846464 dataset_builder.py:163] Reading unweighted datasets: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+I0312 20:05:05.670360 139807195846464 dataset_builder.py:80] Reading record datasets for input file: ['/home/fortson/alnah005/transferLearning/data/eval-?????-of-00001.tfrecord']
+INFO:tensorflow:Number of filenames to read: 6117
+I0312 20:05:05.670573 139807195846464 dataset_builder.py:81] Number of filenames to read: 6117
+INFO:tensorflow:Calling model_fn.
+I0312 20:05:06.481569 139807195846464 estimator.py:1148] Calling model_fn.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 20:05:06.504661 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 20:05:06.504771 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 20:05:14.824994 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 20:05:14.998059 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:depth of additional conv before box predictor: 0
+I0312 20:05:14.998343 139807195846464 convolutional_box_predictor.py:156] depth of additional conv before box predictor: 0
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 20:05:15.474773 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 20:05:15.474898 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 20:05:16.745356 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Scale of 0 disables regularizer.
+I0312 20:05:16.761825 139807195846464 regularizers.py:99] Scale of 0 disables regularizer.
+INFO:tensorflow:Done calling model_fn.
+I0312 20:05:22.221127 139807195846464 estimator.py:1150] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2021-03-12T20:05:22Z
+I0312 20:05:22.237212 139807195846464 evaluation.py:255] Starting evaluation at 2021-03-12T20:05:22Z
+INFO:tensorflow:Graph was finalized.
+I0312 20:05:23.303986 139807195846464 monitored_session.py:240] Graph was finalized.
+INFO:tensorflow:Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-154000
+I0312 20:05:23.314142 139807195846464 saver.py:1284] Restoring parameters from /home/fortson/alnah005/transferLearning/mymodel_experiement2/model.ckpt-154000
+INFO:tensorflow:Running local_init_op.
+I0312 20:05:26.952921 139807195846464 session_manager.py:500] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I0312 20:05:27.447362 139807195846464 session_manager.py:502] Done running local_init_op.
+slurmstepd: error: *** JOB 1469937 ON cn3016 CANCELLED AT 2021-03-12T20:21:58 DUE TO TIME LIMIT ***
