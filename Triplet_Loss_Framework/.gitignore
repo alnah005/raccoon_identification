@@ -1,2 +1,5 @@
 *.sif
 *.out
+*NIST/
+*nist/
+*Nist/
