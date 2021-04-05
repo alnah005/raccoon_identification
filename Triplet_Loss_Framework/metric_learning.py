@@ -26,9 +26,9 @@ import torch
 import torch.nn as nn
 from PIL import Image
 import logging
-import matplotlib.pyplot as plt
-from cycler import cycler
-import record_keeper
+# import matplotlib.pyplot as plt
+# from cycler import cycler
+# import record_keeper
 import pytorch_metric_learning
 logging.getLogger().setLevel(logging.INFO)
 logging.info("VERSION %s"%pytorch_metric_learning.__version__)
