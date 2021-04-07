@@ -106,7 +106,7 @@ def test_implem(train_set, test_set, model, accuracy_calculator, data_device):
 
 def test_model(train_set, test_set, model, epoch, data_device):
     print("Computing validation set accuracy for epoch {}".format(epoch))
-    accuracy_calculator = AccuracyCalculator(include = ("precision_at_1",,),avg_of_avgs=True, k = 1)
+    accuracy_calculator = AccuracyCalculator(include = ("precision_at_1",),avg_of_avgs=True, k = 1)
     test_implem(train_set, test_set, model, accuracy_calculator, data_device)
 
 distance = distances.LpDistance(normalize_embeddings=True,p=2,power=1)
