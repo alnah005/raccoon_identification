@@ -8,7 +8,7 @@ file: metric_learning.py
 
 @created: 2021-04-05T11:18:24.742Z-05:00
 
-@last-modified: 2021-04-06T20:12:01.226Z-05:00
+@last-modified: 2021-04-06T20:15:28.641Z-05:00
 """
 
 # standard library
@@ -103,12 +103,10 @@ def test_implem(train_set, test_set, model, accuracy_calculator, data_device):
                                                 train_labels,
                                                 False)
     print("Validation set accuracy (Precision@1) = {}".format(accuracies["precision_at_1"]))
-    print("Validation set accuracy (r_precision) = {}".format(accuracies["r_precision"]))
-    print("Validation set accuracy (mean_average_precision_at_r) = {}".format(accuracies["mean_average_precision_at_r"]))
 
 def test_model(train_set, test_set, model, epoch, data_device):
     print("Computing validation set accuracy for epoch {}".format(epoch))
-    accuracy_calculator = AccuracyCalculator(include = ("precision_at_1","r_precision","mean_average_precision_at_r",),avg_of_avgs=True, k = 1)
+    accuracy_calculator = AccuracyCalculator(include = ("precision_at_1",,),avg_of_avgs=True, k = 1)
     test_implem(train_set, test_set, model, accuracy_calculator, data_device)
 
 distance = distances.LpDistance(normalize_embeddings=True,p=2,power=1)
