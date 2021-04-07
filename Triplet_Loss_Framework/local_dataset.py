@@ -30,6 +30,7 @@ class RaccoonDataset(object):
         # load all image files, sorting them to
         # ensure that they are aligned
         self.imgs = list(sorted([i for i in os.listdir(self.img_folder) if (('.png' in i) or ('.jpg' in i) or ('.jpeg' in i))]))
+        self.transforms = transforms
 
     def refresh(self):
         self.imgs = list(sorted(os.listdir(os.path.join(self.root, self.img_folder))))

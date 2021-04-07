@@ -71,7 +71,7 @@ trunk_optimizer = torch.optim.Adam(trunk.parameters(), lr=0.0001, weight_decay=0
 
 # Set the image transforms
 train_transform = transforms.Compose([
-                                    # transforms.Resize(64),
+                                    transforms.Resize((250,200)),
                                     # transforms.RandomResizedCrop(scale=(0.16, 1), ratio=(0.75, 1.33), size=64),
                                     transforms.Lambda(lambda image: image.convert('RGB')),
                                     transforms.RandomHorizontalFlip(0.5),
@@ -80,7 +80,7 @@ train_transform = transforms.Compose([
                                     ])
 
 val_transform = transforms.Compose([
-                                    # transforms.Resize(64),
+                                    transforms.Resize((250,200)),
                                     transforms.Lambda(lambda image: image.convert('RGB')),
                                     transforms.ToTensor(),
                                     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
@@ -117,10 +117,10 @@ miner = miners.TripletMarginMiner(margin = 0.2, distance = distance, type_of_tri
 
 
 # Set other training parameters
-batch_size = 6
+batch_size = 64
 num_epochs = 20
-train_dataset = DS.RaccoonDataset(img_folder="../Generate_Individual_IDs_dataset/croppedImages/train",transforms = train_transform)
-val_dataset = DS.RaccoonDataset(img_folder="../Generate_Individual_IDs_dataset/croppedImages/test", transforms = val_transform)
+train_dataset = DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/train",transforms = train_transform)
+val_dataset = DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/test", transforms = val_transform)
 
 train_loader = torch.utils.data.DataLoader(train_dataset,pin_memory=True, batch_size=batch_size, shuffle=True,num_workers=1)
 test_loader = torch.utils.data.DataLoader(val_dataset,pin_memory=True, batch_size=batch_size,num_workers=1)
