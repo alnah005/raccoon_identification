@@ -8,7 +8,7 @@ file: metric_learning.py
 
 @created: 2021-04-05T11:18:24.742Z-05:00
 
-@last-modified: 2021-04-05T15:34:02.097Z-05:00
+@last-modified: 2021-04-06T19:23:55.199Z-05:00
 """
 
 # standard library
@@ -26,9 +26,7 @@ import torch
 import torch.nn as nn
 from PIL import Image
 import logging
-# import matplotlib.pyplot as plt
-# from cycler import cycler
-# import record_keeper
+import local_dataset as DS
 import pytorch_metric_learning
 logging.getLogger().setLevel(logging.INFO)
 logging.info("VERSION %s"%pytorch_metric_learning.__version__)
@@ -88,13 +86,6 @@ val_transform = transforms.Compose([
                                     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
                                     ])
 
-def get_MNIST(train):
-    # return datasets.MNIST(
-    #         './',
-    #         train=train,
-    #         download=True,
-    #         transform=train_transform if train else val_transform)
-    return datasets.FashionMNIST(root = './', train=train, download=True, transform=train_transform if train else val_transform)
 def get_all_embeddings(dataset, model, data_device):
     # dataloader_num_workers has to be 0 to avoid pid error
     # This only happens when within multiprocessing
@@ -126,12 +117,13 @@ miner = miners.TripletMarginMiner(margin = 0.2, distance = distance, type_of_tri
 
 
 # Set other training parameters
-batch_size = 256
-num_epochs = 4
-train_dataset = get_MNIST(True)
-val_dataset = get_MNIST(False)
-train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True,num_workers=2)
-test_loader = torch.utils.data.DataLoader(val_dataset, batch_size=batch_size,num_workers=2)
+batch_size = 6
+num_epochs = 20
+train_dataset = DS.RaccoonDataset(img_folder="../Generate_Individual_IDs_dataset/croppedImages/train",transforms = train_transform)
+val_dataset = DS.RaccoonDataset(img_folder="../Generate_Individual_IDs_dataset/croppedImages/test", transforms = val_transform)
+
+train_loader = torch.utils.data.DataLoader(train_dataset,pin_memory=True, batch_size=batch_size, shuffle=True,num_workers=1)
+test_loader = torch.utils.data.DataLoader(val_dataset,pin_memory=True, batch_size=batch_size,num_workers=1)
 
 num_batches = np.ceil(len(train_dataset) / batch_size)
 for epoch in range(num_epochs):
