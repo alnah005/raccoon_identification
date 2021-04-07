@@ -8,10 +8,12 @@ file: config.py
 
 @created: 2021-04-07T09:33:39.899Z-05:00
 
-@last-modified: 2021-04-07T09:59:28.358Z-05:00
+@last-modified: 2021-04-07T12:17:01.628Z-05:00
 """
 
 # standard library
+import os
+
 # 3rd party packages
 from torchvision import transforms, models
 import torch.nn as nn
@@ -28,10 +30,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 class MLP(nn.Module):
     # layer_sizes[0] is the dimension of the input
     # layer_sizes[-1] is the dimension of the output
-    def __init__(self, layer_sizes, trunk, final_relu=False):
+    def __init__(self, layer_sizes, final_relu=False):
         super().__init__()
         layer_list = []
-        self.trunk = trunk
         layer_sizes = [int(x) for x in layer_sizes]
         num_layers = len(layer_sizes) - 1
         final_relu_layer = num_layers if final_relu else num_layers - 1
@@ -45,7 +46,77 @@ class MLP(nn.Module):
         self.last_linear = self.net[-1]
 
     def forward(self, x):
-        return self.net(self.trunk(x))
+        return self.net(x)
+
+class Embedder(nn.Module):
+    def __init__(self, trunk,embedder_head, trunk_optimizer,embedder_head_optimizer,checkpointLocation="./experiment"):
+        super().__init__()
+        self.trunk = trunk
+        self.embedder_head = embedder_head
+        self.trunk_optimizer = trunk_optimizer
+        self.embedder_head_optimizer = embedder_head_optimizer
+        self.checkpointLocation = checkpointLocation
+        if not(os.path.isdir(checkpointLocation)):
+            os.mkdir(checkpointLocation)
+
+    def __call__(self,x):
+        return self.forward(x)
+    
+    def train(self):
+        self.embedder_head.train()
+        self.trunk.train()
+
+    def eval(self):
+        self.embedder_head.eval()
+        self.trunk.eval()
+
+    def optimize(self):
+        self.embedder_head_optimizer.backward()
+        self.trunk_optimizer.backward()
+
+    def zero_grad(self):
+        self.trunk_optimizer.zero_grad()
+        self.embedder_head_optimizer.zero_grad()
+
+    def forward(self, x):
+        return self.embedder_head(self.trunk(x))
+
+    def save(self, epoch):
+        torch.save({
+            'epoch': epoch,
+            'trunk_state_dict': self.trunk.state_dict(),
+            'trunk_optimizer_state_dict': self.trunk_optimizer.state_dict(),
+            'embedder_head_state_dict': self.embedder_head.state_dict(),
+            'embedder_head_optimizer_state_dict': self.embedder_head_optimizer.state_dict(),
+            }, os.path.join(self.checkpointLocation,f"model_{epoch}.pt"))
+    
+    def load(self):
+        path = self._findMostRecent()
+        if (len(path) == 0):
+            return None
+        checkpoint = torch.load(os.path.join(self.checkpointLocation,path))
+        self.trunk.load_state_dict(checkpoint['trunk_state_dict'])
+        self.trunk_optimizer.load_state_dict(checkpoint['trunk_optimizer_state_dict'])
+        self.embedder_head.load_state_dict(checkpoint['embedder_head_state_dict'])
+        self.embedder_head_optimizer.load_state_dict(checkpoint['embedder_head_optimizer_state_dict'])
+        epoch = checkpoint['epoch']
+        self.train()
+        return epoch
+    
+    def _findMostRecent(self) -> str:
+        model_ckps = list(sorted([i for i in os.listdir(self.checkpointLocation) if ('.pt' in i)]))
+        if (len(model_ckps) == 0):
+            return ""
+        latest_model = ""
+        maximum_epoch = 0
+        for i in model_ckps:
+            _, epoch = i.split('_')
+            epoch = int(epoch[:-3])
+            if (epoch > maximum_epoch):
+                maximum_epoch = epoch
+                latest_model = i
+        print(f"Loading model {latest_model} at epoch {maximum_epoch}")
+        return latest_model
 
 # Set the image transforms
 train_transform = transforms.Compose([
@@ -71,13 +142,16 @@ trunk.fc = common_functions.Identity()
 trunk = torch.nn.DataParallel(trunk.to(device))
 
 # Set embedder model. This takes in the output of the trunk and outputs 64 dimensional embeddings
-embedder = torch.nn.DataParallel(MLP([trunk_output_size, 64],trunk).to(device))
+embedder_head = torch.nn.DataParallel(MLP([trunk_output_size, 64]).to(device))
 
 
 # Set optimizers
-embedder_optimizer = torch.optim.Adam(embedder.parameters(), lr=0.001, weight_decay=0.0001)
+embedder_head_optimizer = torch.optim.Adam(embedder_head.parameters(), lr=0.001, weight_decay=0.0001)
 trunk_optimizer = torch.optim.Adam(trunk.parameters(), lr=0.0001, weight_decay=0.0001)
 
+embedder = Embedder(trunk,embedder_head,trunk_optimizer,embedder_head_optimizer,checkpointLocation="/home/fortson/alnah005/raccoon_identification/Triplet_Loss_Framework/experiment")
+
+# Set Metric learning parameters
 distance = distances.LpDistance(normalize_embeddings=True,p=2,power=1)
 reducer_dict = {"triplet": reducers.ThresholdReducer(0.1), "triplet": reducers.MeanReducer()}
 reducer = reducers.MultipleReducers(reducer_dict)
@@ -88,8 +162,10 @@ miner = miners.TripletMarginMiner(margin = 0.2, distance = distance, type_of_tri
 # Set other training parameters
 batch_size = 64
 num_epochs = 20
+
 train_dataset = DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/train",transforms = train_transform)
 val_dataset = DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/test", transforms = val_transform)
+
 
 train_loader = torch.utils.data.DataLoader(train_dataset,pin_memory=True, batch_size=batch_size, shuffle=True,num_workers=1)
 test_loader = torch.utils.data.DataLoader(val_dataset,pin_memory=True, batch_size=batch_size,num_workers=1)
@@ -97,3 +173,5 @@ test_loader = torch.utils.data.DataLoader(val_dataset,pin_memory=True, batch_siz
 feedback_every = 10
 def feedback_callback(epoch, i, loss, miner) -> str:
     return f"Epoch {epoch} Iteration {i}: Loss = {loss}, Number of mined triplets = {miner.num_triplets}"
+
+save_model_every_epochs = 3

@@ -8,7 +8,7 @@ file: metric_learning.py
 
 @created: 2021-04-05T11:18:24.742Z-05:00
 
-@last-modified: 2021-04-07T10:01:27.953Z-05:00
+@last-modified: 2021-04-07T12:15:08.682Z-05:00
 """
 
 # standard library
@@ -23,10 +23,9 @@ import pytorch_metric_learning
 # local source
 from config_local import (
     train_transform, val_transform, device,
-    torch, embedder, embedder_optimizer,
-    trunk_optimizer, train_dataset, batch_size,num_epochs,
+    torch, embedder,train_dataset, batch_size,num_epochs,
     train_loader, miner, metric_loss, val_dataset,
-    feedback_every, feedback_callback
+    feedback_every, feedback_callback, save_model_every_epochs
     )
 
 logging.getLogger().setLevel(logging.INFO)
@@ -58,22 +57,26 @@ def test_model(train_set, test_set, model, epoch, data_device):
     accuracy_calculator = AccuracyCalculator(include = ("precision_at_1",),avg_of_avgs=True, k = 1)
     test_implem(train_set, test_set, model, accuracy_calculator, data_device)
 
+checkpoint_epoch = embedder.load()
+if (checkpoint_epoch is None):
+    print("Starting training from scratch")
+    checkpoint_epoch = 0
 
-for epoch in range(num_epochs):
+for epoch in range(checkpoint_epoch,num_epochs):
     epoch_loss = 0.
     print("Starting epoch {}".format(epoch))
     for i, (data, target) in enumerate(train_loader):
         data, target = data.to(device), target.to(device)
-        embedder_optimizer.zero_grad()
-        trunk_optimizer.zero_grad()
+        embedder.zero_grad()
         output = embedder(data)
         hard_pairs = miner(output, target)
         loss = metric_loss(output, target, hard_pairs)
         epoch_loss += loss.item()
         loss.backward()
-        embedder_optimizer.step()
-        trunk_optimizer.step()
+        embedder.optimize()
         if i % feedback_every == 0:
             print(feedback_callback(epoch, i, loss, miner.num_triplets))
+    if epoch % save_model_every_epochs ==0:
+        embedder.save(epoch)
     print('Epoch {}, average loss {}'.format(epoch, epoch_loss/len(train_loader)))
     test_model(train_dataset, val_dataset, embedder, epoch, device)
