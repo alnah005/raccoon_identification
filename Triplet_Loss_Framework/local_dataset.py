@@ -4,21 +4,24 @@ file: dataset.py
 
 @author: Suhail.Alnahari
 
-@description: 
+@description: Pytorch Custom dataset that expects raccoon images and a label csv file
 
 @created: 2021-04-06T18:27:51.082Z-05:00
 
-@last-modified: 2021-04-06T19:20:09.208Z-05:00
+@last-modified: 2021-04-07T10:01:00.910Z-05:00
 """
 
 # standard library
-# 3rd party packages
-# local source
 import os
+
+# 3rd party packages
 import pandas as pd
 from PIL import Image
+import torch.utils.data as data
 
-class RaccoonDataset(object):
+# local source
+
+class RaccoonDataset(data.Dataset):
     labels =None
     def __init__(self,
                  img_folder = "../Generate_Individual_IDs_dataset/croppedImages",
