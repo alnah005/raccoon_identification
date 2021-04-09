@@ -1,0 +1,1010 @@
+/panfs/roc/groups/11/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments
+INFO:    Could not find any nv files on this host!
+MOFED version '5.1-2.5.8' not available in this container.
+No matching alternate version found.
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Connectivity
+
+
+: 0it [00:00, ?it/s]
+	 none num_cluster
+
+:   0%|          | 0/20 [00:00<?, ?it/s][A
+
+		 3 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 3 linkage 
+: 1it [00:06,  6.23s/it][A[A
+
+		 3 linkage 
+: 2it [00:12,  6.17s/it][A[A
+
+		 3 linkage 
+: 3it [00:18,  6.12s/it][A[A
+
+		 3 linkage 
+: 4it [00:23,  5.81s/it][A[A		 3 linkage 
+: 4it [00:23,  5.84s/it]
+
+	 none num_cluster
+
+:   5%|▌         | 1/20 [00:25<07:54, 25.00s/it][A
+
+		 5 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 5 linkage 
+: 1it [00:06,  6.08s/it][A[A
+
+		 5 linkage 
+: 2it [00:12,  6.06s/it][A[A
+
+		 5 linkage 
+: 3it [00:18,  6.03s/it][A[A
+
+		 5 linkage 
+: 4it [00:23,  5.75s/it][A[A		 5 linkage 
+: 4it [00:23,  5.79s/it]
+
+	 none num_cluster
+
+:  10%|█         | 2/20 [00:49<07:29, 24.95s/it][A
+
+		 7 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 7 linkage 
+: 1it [00:06,  6.17s/it][A[A
+
+		 7 linkage 
+: 2it [00:12,  6.10s/it][A[A
+
+		 7 linkage 
+: 3it [00:18,  6.09s/it][A[A
+
+		 7 linkage 
+: 4it [00:23,  5.77s/it][A[A		 7 linkage 
+: 4it [00:23,  5.80s/it]
+
+	 none num_cluster
+
+:  15%|█▌        | 3/20 [01:14<07:03, 24.89s/it][A
+
+		 8 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 8 linkage 
+: 1it [00:06,  6.44s/it][A[A
+
+		 8 linkage 
+: 2it [00:12,  6.26s/it][A[A
+
+		 8 linkage 
+: 3it [00:18,  6.19s/it][A[A
+
+		 8 linkage 
+: 4it [00:23,  5.86s/it][A[A		 8 linkage 
+: 4it [00:23,  5.85s/it]
+
+	 none num_cluster
+
+:  20%|██        | 4/20 [01:39<06:38, 24.94s/it][A
+
+		 9 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 9 linkage 
+: 1it [00:06,  6.03s/it][A[A
+
+		 9 linkage 
+: 2it [00:11,  6.00s/it][A[A
+
+		 9 linkage 
+: 3it [00:17,  5.94s/it][A[A
+
+		 9 linkage 
+: 4it [00:22,  5.67s/it][A[A		 9 linkage 
+: 4it [00:22,  5.70s/it]
+
+	 none num_cluster
+
+:  25%|██▌       | 5/20 [02:04<06:12, 24.81s/it][A
+
+		 10 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 10 linkage 
+: 1it [00:05,  5.99s/it][A[A
+
+		 10 linkage 
+: 2it [00:11,  5.96s/it][A[A
+
+		 10 linkage 
+: 3it [00:17,  5.94s/it][A[A
+
+		 10 linkage 
+: 4it [00:22,  5.65s/it][A[A		 10 linkage 
+: 4it [00:22,  5.69s/it]
+
+	 none num_cluster
+
+:  30%|███       | 6/20 [02:28<05:45, 24.69s/it][A
+
+		 11 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 11 linkage 
+: 1it [00:05,  5.99s/it][A[A
+
+		 11 linkage 
+: 2it [00:11,  5.94s/it][A[A
+
+		 11 linkage 
+: 3it [00:17,  5.90s/it][A[A
+
+		 11 linkage 
+: 4it [00:22,  5.64s/it][A[A		 11 linkage 
+: 4it [00:22,  5.66s/it]
+
+	 none num_cluster
+
+:  35%|███▌      | 7/20 [02:52<05:19, 24.59s/it][A
+
+		 12 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 12 linkage 
+: 1it [00:05,  5.90s/it][A[A
+
+		 12 linkage 
+: 2it [00:11,  5.93s/it][A[A
+
+		 12 linkage 
+: 3it [00:17,  5.96s/it][A[A
+
+		 12 linkage 
+: 4it [00:22,  5.68s/it][A[A		 12 linkage 
+: 4it [00:22,  5.74s/it]
+
+	 none num_cluster
+
+:  40%|████      | 8/20 [03:17<04:54, 24.57s/it][A
+
+		 15 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 15 linkage 
+: 1it [00:05,  5.90s/it][A[A
+
+		 15 linkage 
+: 2it [00:11,  5.87s/it][A[A
+
+		 15 linkage 
+: 3it [00:17,  5.99s/it][A[A
+
+		 15 linkage 
+: 4it [00:22,  5.68s/it][A[A		 15 linkage 
+: 4it [00:22,  5.74s/it]
+
+	 none num_cluster
+
+:  45%|████▌     | 9/20 [03:42<04:30, 24.61s/it][A
+
+		 17 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 17 linkage 
+: 1it [00:05,  5.99s/it][A[A
+
+		 17 linkage 
+: 2it [00:11,  5.93s/it][A[A
+
+		 17 linkage 
+: 3it [00:17,  5.89s/it][A[A
+
+		 17 linkage 
+: 4it [00:22,  5.64s/it][A[A		 17 linkage 
+: 4it [00:22,  5.66s/it]
+
+	 none num_cluster
+
+:  50%|█████     | 10/20 [04:06<04:05, 24.54s/it][A
+
+		 20 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 20 linkage 
+: 1it [00:05,  5.92s/it][A[A
+
+		 20 linkage 
+: 2it [00:12,  5.97s/it][A[A
+
+		 20 linkage 
+: 3it [00:17,  5.95s/it][A[A
+
+		 20 linkage 
+: 4it [00:22,  5.66s/it][A[A		 20 linkage 
+: 4it [00:22,  5.72s/it]
+
+	 none num_cluster
+
+:  55%|█████▌    | 11/20 [04:31<03:40, 24.55s/it][A
+
+		 21 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 21 linkage 
+: 1it [00:06,  6.12s/it][A[A
+
+		 21 linkage 
+: 2it [00:11,  6.03s/it][A[A
+
+		 21 linkage 
+: 3it [00:18,  6.06s/it][A[A
+
+		 21 linkage 
+: 4it [00:23,  5.75s/it][A[A		 21 linkage 
+: 4it [00:23,  5.78s/it]
+
+	 none num_cluster
+
+:  60%|██████    | 12/20 [04:55<03:17, 24.65s/it][A
+
+		 23 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 23 linkage 
+: 1it [00:05,  5.90s/it][A[A
+
+		 23 linkage 
+: 2it [00:11,  5.90s/it][A[A
+
+		 23 linkage 
+: 3it [00:17,  5.91s/it][A[A
+
+		 23 linkage 
+: 4it [00:22,  5.63s/it][A[A		 23 linkage 
+: 4it [00:22,  5.68s/it]
+
+	 none num_cluster
+
+:  65%|██████▌   | 13/20 [05:20<02:52, 24.57s/it][A
+
+		 24 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 24 linkage 
+: 1it [00:06,  6.12s/it][A[A
+
+		 24 linkage 
+: 2it [00:12,  6.06s/it][A[A
+
+		 24 linkage 
+: 3it [00:18,  6.12s/it][A[A
+
+		 24 linkage 
+: 4it [00:23,  5.81s/it][A[A		 24 linkage 
+: 4it [00:23,  5.84s/it]
+
+	 none num_cluster
+
+:  70%|███████   | 14/20 [05:45<02:28, 24.72s/it][A
+
+		 25 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 25 linkage 
+: 1it [00:06,  6.09s/it][A[A
+
+		 25 linkage 
+: 2it [00:11,  6.01s/it][A[A
+
+		 25 linkage 
+: 3it [00:17,  5.98s/it][A[A
+
+		 25 linkage 
+: 4it [00:22,  5.69s/it][A[A		 25 linkage 
+: 4it [00:22,  5.70s/it]
+
+	 none num_cluster
+
+:  75%|███████▌  | 15/20 [06:09<02:03, 24.64s/it][A
+
+		 26 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 26 linkage 
+: 1it [00:05,  5.94s/it][A[A
+
+		 26 linkage 
+: 2it [00:11,  5.95s/it][A[A
+
+		 26 linkage 
+: 3it [00:17,  5.95s/it][A[A
+
+		 26 linkage 
+: 4it [00:22,  5.68s/it][A[A		 26 linkage 
+: 4it [00:22,  5.73s/it]
+
+	 none num_cluster
+
+:  80%|████████  | 16/20 [06:34<01:38, 24.64s/it][A
+
+		 27 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 27 linkage 
+: 1it [00:06,  6.04s/it][A[A
+
+		 27 linkage 
+: 2it [00:11,  5.98s/it][A[A
+
+		 27 linkage 
+: 3it [00:17,  5.93s/it][A[A
+
+		 27 linkage 
+: 4it [00:22,  5.68s/it][A[A		 27 linkage 
+: 4it [00:22,  5.70s/it]
+
+	 none num_cluster
+
+:  85%|████████▌ | 17/20 [06:58<01:13, 24.58s/it][A
+
+		 28 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 28 linkage 
+: 1it [00:05,  5.94s/it][A[A
+
+		 28 linkage 
+: 2it [00:11,  5.92s/it][A[A
+
+		 28 linkage 
+: 3it [00:17,  5.92s/it][A[A
+
+		 28 linkage 
+: 4it [00:22,  5.65s/it][A[A		 28 linkage 
+: 4it [00:22,  5.69s/it]
+
+	 none num_cluster
+
+:  90%|█████████ | 18/20 [07:23<00:49, 24.52s/it][A
+
+		 29 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 29 linkage 
+: 1it [00:05,  5.96s/it][A[A
+
+		 29 linkage 
+: 2it [00:11,  5.96s/it][A[A
+
+		 29 linkage 
+: 3it [00:17,  5.93s/it][A[A
+
+		 29 linkage 
+: 4it [00:22,  5.65s/it][A[A		 29 linkage 
+: 4it [00:22,  5.70s/it]
+
+	 none num_cluster
+
+:  95%|█████████▌| 19/20 [07:47<00:24, 24.44s/it][A
+
+		 30 linkage 
+: 0it [00:00, ?it/s][A[A
+
+		 30 linkage 
+: 1it [00:05,  5.99s/it][A[A
+
+		 30 linkage 
+: 2it [00:11,  5.94s/it][A[A
+
+		 30 linkage 
+: 3it [00:17,  5.91s/it][A[A
+
+		 30 linkage 
+: 4it [00:22,  5.63s/it][A[A		 30 linkage 
+: 4it [00:22,  5.66s/it]
+
+	 none num_cluster
+
+: 100%|██████████| 20/20 [08:11<00:00, 24.42s/it][A	 none num_cluster
+
+: 100%|██████████| 20/20 [08:11<00:00, 24.60s/it]
+Connectivity
+
+
+: 1it [08:12, 492.00s/it]
+	 labels num_cluster
+
+:   0%|          | 0/20 [00:00<?, ?it/s][A/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/clustering.py:69: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure(figsize=(10, 4))
+
+
+		 3 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 3 linkage 
+: 1it [00:17, 17.42s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 3 linkage 
+: 2it [00:34, 17.18s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 3 linkage 
+: 3it [01:00, 20.08s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 3 linkage 
+: 4it [01:06, 15.75s/it][A[A		 3 linkage 
+: 4it [01:06, 16.64s/it]
+
+	 labels num_cluster
+
+:   5%|▌         | 1/20 [01:08<21:33, 68.09s/it][A
+
+		 5 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 5 linkage 
+: 1it [00:17, 17.07s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 5 linkage 
+: 2it [00:33, 16.93s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 5 linkage 
+: 3it [01:00, 19.87s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 5 linkage 
+: 4it [01:06, 15.63s/it][A[A		 5 linkage 
+: 4it [01:06, 16.54s/it]
+
+	 labels num_cluster
+
+:  10%|█         | 2/20 [02:15<20:23, 67.95s/it][A
+
+		 7 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 7 linkage 
+: 1it [00:17, 17.31s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 7 linkage 
+: 2it [00:33, 17.09s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 7 linkage 
+: 3it [01:00, 20.09s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 7 linkage 
+: 4it [01:06, 15.72s/it][A[A		 7 linkage 
+: 4it [01:06, 16.63s/it]
+
+	 labels num_cluster
+
+:  15%|█▌        | 3/20 [03:23<19:16, 68.01s/it][A
+
+		 8 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 8 linkage 
+: 1it [00:17, 17.39s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 8 linkage 
+: 2it [00:34, 17.19s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 8 linkage 
+: 3it [01:01, 20.16s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 8 linkage 
+: 4it [01:06, 15.82s/it][A[A		 8 linkage 
+: 4it [01:06, 16.73s/it]
+
+	 labels num_cluster
+
+:  20%|██        | 4/20 [04:32<18:10, 68.17s/it][A
+
+		 9 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 9 linkage 
+: 1it [00:17, 17.32s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 9 linkage 
+: 2it [00:34, 17.13s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 9 linkage 
+: 3it [01:06, 20.15s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 9 linkage 
+: 4it [01:12, 17.43s/it][A[A		 9 linkage 
+: 4it [01:12, 18.08s/it]
+
+	 labels num_cluster
+
+:  25%|██▌       | 5/20 [05:46<17:28, 69.91s/it][A
+
+		 10 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 10 linkage 
+: 1it [00:17, 17.33s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 10 linkage 
+: 2it [00:34, 17.14s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 10 linkage 
+: 3it [01:00, 20.08s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 10 linkage 
+: 4it [01:06, 15.81s/it][A[A		 10 linkage 
+: 4it [01:06, 16.70s/it]
+
+	 labels num_cluster
+
+:  30%|███       | 6/20 [06:54<16:11, 69.43s/it][A
+
+		 11 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 11 linkage 
+: 1it [00:17, 17.31s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 11 linkage 
+: 2it [00:34, 17.21s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 11 linkage 
+: 3it [01:01, 20.19s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 11 linkage 
+: 4it [01:06, 15.80s/it][A[A		 11 linkage 
+: 4it [01:07, 16.75s/it]
+
+	 labels num_cluster
+
+:  35%|███▌      | 7/20 [08:03<14:59, 69.22s/it][A
+
+		 12 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 12 linkage 
+: 1it [00:17, 17.41s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 12 linkage 
+: 2it [00:34, 17.19s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 12 linkage 
+: 3it [01:01, 20.21s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 12 linkage 
+: 4it [01:07, 15.87s/it][A[A		 12 linkage 
+: 4it [01:07, 16.77s/it]
+
+	 labels num_cluster
+
+:  40%|████      | 8/20 [09:12<13:48, 69.06s/it][A
+
+		 15 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 15 linkage 
+: 1it [00:17, 17.62s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 15 linkage 
+: 2it [00:34, 17.36s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 15 linkage 
+: 3it [01:01, 20.32s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 15 linkage 
+: 4it [01:07, 15.94s/it][A[A		 15 linkage 
+: 4it [01:07, 16.83s/it]
+
+	 labels num_cluster
+
+:  45%|████▌     | 9/20 [10:21<12:39, 69.02s/it][A
+
+		 17 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 17 linkage 
+: 1it [00:17, 17.33s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 17 linkage 
+: 2it [00:34, 17.19s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 17 linkage 
+: 3it [01:01, 20.10s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 17 linkage 
+: 4it [01:06, 15.84s/it][A[A		 17 linkage 
+: 4it [01:06, 16.75s/it]
+
+	 labels num_cluster
+
+:  50%|█████     | 10/20 [11:29<11:28, 68.88s/it][A
+
+		 20 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 20 linkage 
+: 1it [00:17, 17.33s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 20 linkage 
+: 2it [00:34, 17.14s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 20 linkage 
+: 3it [01:01, 20.17s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 20 linkage 
+: 4it [01:06, 15.80s/it][A[A		 20 linkage 
+: 4it [01:06, 16.72s/it]
+
+	 labels num_cluster
+
+:  55%|█████▌    | 11/20 [12:38<10:18, 68.76s/it][A
+
+		 21 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 21 linkage 
+: 1it [00:17, 17.37s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 21 linkage 
+: 2it [00:34, 17.21s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 21 linkage 
+: 3it [01:01, 20.23s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 21 linkage 
+: 4it [01:07, 15.82s/it][A[A		 21 linkage 
+: 4it [01:07, 16.75s/it]
+
+	 labels num_cluster
+
+:  60%|██████    | 12/20 [13:46<09:09, 68.75s/it][A
+
+		 23 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 23 linkage 
+: 1it [00:17, 17.60s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 23 linkage 
+: 2it [00:34, 17.34s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 23 linkage 
+: 3it [01:01, 20.32s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 23 linkage 
+: 4it [01:07, 15.91s/it][A[A		 23 linkage 
+: 4it [01:07, 16.81s/it]
+
+	 labels num_cluster
+
+:  65%|██████▌   | 13/20 [14:55<08:01, 68.76s/it][A
+
+		 24 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 24 linkage 
+: 1it [00:17, 17.42s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 24 linkage 
+: 2it [00:34, 17.25s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 24 linkage 
+: 3it [01:01, 20.30s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 24 linkage 
+: 4it [01:07, 15.92s/it][A[A		 24 linkage 
+: 4it [01:07, 16.85s/it]
+
+	 labels num_cluster
+
+:  70%|███████   | 14/20 [16:04<06:52, 68.79s/it][A
+
+		 25 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 25 linkage 
+: 1it [00:17, 17.62s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 25 linkage 
+: 2it [00:34, 17.38s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 25 linkage 
+: 3it [01:01, 20.37s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 25 linkage 
+: 4it [01:07, 16.02s/it][A[A		 25 linkage 
+: 4it [01:07, 16.92s/it]
+
+	 labels num_cluster
+
+:  75%|███████▌  | 15/20 [17:13<05:44, 68.95s/it][A
+
+		 26 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 26 linkage 
+: 1it [00:17, 17.68s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 26 linkage 
+: 2it [00:34, 17.46s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 26 linkage 
+: 3it [01:01, 20.37s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 26 linkage 
+: 4it [01:07, 16.00s/it][A[A		 26 linkage 
+: 4it [01:07, 16.90s/it]
+
+	 labels num_cluster
+
+:  80%|████████  | 16/20 [18:22<04:36, 69.02s/it][A
+
+		 27 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 27 linkage 
+: 1it [00:17, 17.29s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 27 linkage 
+: 2it [00:34, 17.12s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 27 linkage 
+: 3it [01:01, 20.09s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 27 linkage 
+: 4it [01:06, 15.81s/it][A[A		 27 linkage 
+: 4it [01:06, 16.72s/it]
+
+	 labels num_cluster
+
+:  85%|████████▌ | 17/20 [19:31<03:26, 68.87s/it][A
+
+		 28 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 28 linkage 
+: 1it [00:17, 17.12s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 28 linkage 
+: 2it [00:33, 16.97s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 28 linkage 
+: 3it [01:00, 20.00s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 28 linkage 
+: 4it [01:06, 15.74s/it][A[A		 28 linkage 
+: 4it [01:06, 16.66s/it]
+
+	 labels num_cluster
+
+:  90%|█████████ | 18/20 [20:39<02:17, 68.64s/it][A
+
+		 29 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 29 linkage 
+: 1it [00:17, 17.20s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 29 linkage 
+: 2it [00:33, 17.01s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 29 linkage 
+: 3it [01:01, 20.14s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 29 linkage 
+: 4it [01:07, 15.87s/it][A[A		 29 linkage 
+: 4it [01:07, 16.78s/it]
+
+	 labels num_cluster
+
+:  95%|█████████▌| 19/20 [21:48<01:08, 68.60s/it][A
+
+		 30 linkage 
+: 0it [00:00, ?it/s][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 30 linkage 
+: 1it [00:17, 17.32s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 30 linkage 
+: 2it [00:34, 17.21s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:247: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity='euclidean')
+
+
+		 30 linkage 
+: 3it [01:01, 20.18s/it][A[A/opt/conda/lib/python3.6/site-packages/sklearn/cluster/_agglomerative.py:502: UserWarning: the number of connected components of the connectivity matrix is 30 > 1. Completing it to avoid stopping the tree early.
+  affinity=affinity)
+
+
+		 30 linkage 
+: 4it [01:07, 15.88s/it][A[A		 30 linkage 
+: 4it [01:07, 16.82s/it]
+
+	 labels num_cluster
+
+: 100%|██████████| 20/20 [22:56<00:00, 68.68s/it][A	 labels num_cluster
+
+: 100%|██████████| 20/20 [22:56<00:00, 68.85s/it]
+Connectivity
+
+
+: 2it [31:08, 757.49s/it]Connectivity
+
+
+: 2it [31:08, 934.49s/it]
