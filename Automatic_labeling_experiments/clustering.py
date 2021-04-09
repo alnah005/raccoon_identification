@@ -8,7 +8,7 @@ file: clustering.py
 
 @created: 2021-04-08T17:50:09.624Z-05:00
 
-@last-modified: 2021-04-09T11:20:34.826Z-05:00
+@last-modified: 2021-04-09T15:00:42.861Z-05:00
 """
 
 # standard library
@@ -18,12 +18,14 @@ file: clustering.py
 import time
 import matplotlib.pyplot as plt
 import numpy as np
-
+from typing import Dict
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.neighbors import kneighbors_graph
+from sklearn.metrics import silhouette_score
 import torch
 from scipy.sparse import csr_matrix
 from tqdm import tqdm
+import pandas as pd
 
 def to_one_hot(y, n_dims=None):
     """ Take integer tensor with n dims and convert it to 1-hot representation with n+1 dims. """
@@ -59,9 +61,11 @@ tsne = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_label
 # the data
 # knn_graph = kneighbors_graph(X, 30, include_self=False)
 conn = ["none","labels"]
-
+sil: Dict[str,Dict[int,Dict[str,float]]] = {}
 for conn_index, connectivity in tqdm(enumerate((None, labels_connection)),desc="Connectivity\n\n\n"):
-    for n_clusters in tqdm((3,5,10,20,30,40,50),desc=f"\t {conn[conn_index]} num_cluster\n\n"):
+    sil[conn[conn_index]] = {}
+    for n_clusters in tqdm((3,5,7,8,9,10,11,12,15,17,20,21,23,24,25,26,27,28,29,30),desc=f"\t {conn[conn_index]} num_cluster\n\n"):
+        sil[conn[conn_index]][n_clusters] = {}
         plt.figure(figsize=(10, 4))
         for index, linkage in tqdm(enumerate(('average',
                                          'complete',
@@ -74,6 +78,7 @@ for conn_index, connectivity in tqdm(enumerate((None, labels_connection)),desc="
             t0 = time.time()
             model.fit(X)
             elapsed_time = time.time() - t0
+            sil[conn[conn_index]][n_clusters][linkage] = silhouette_score(X, model.labels_, metric = 'euclidean')
             plt.scatter(tsne[:, 0], tsne[:, 1], c=model.labels_,
                         cmap=plt.cm.nipy_spectral)
             plt.title('linkage=%s\n(time %.2fs)' % (linkage, elapsed_time),
@@ -86,3 +91,13 @@ for conn_index, connectivity in tqdm(enumerate((None, labels_connection)),desc="
             plt.suptitle('n_cluster=%i, connectivity=%r' %
                          (n_clusters, connectivity is not None), size=17)
         plt.savefig(f"/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/{conn[conn_index]}_{n_clusters}_{index}_{linkage}_64_FashionMNIST.png")
+
+for i in sil.keys():
+    result = []
+    for j in sil[i].keys():
+        cluster_size = [j]
+        for k in sil[i][j].keys():
+            cluster_size.append(sil[i][j][k])
+        result.append(cluster_size)
+    pd.DataFrame(np.asarray(result),columns=["cluster_size"]+list(sil[i][j].keys())).to_csv(f"/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/{i}.csv",index=False)
+    
