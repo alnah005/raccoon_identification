@@ -8,7 +8,7 @@ file: clustering.py
 
 @created: 2021-04-08T17:50:09.624Z-05:00
 
-@last-modified: 2021-04-09T15:00:42.861Z-05:00
+@last-modified: 2021-04-09T17:42:09.417Z-05:00
 """
 
 # standard library
@@ -36,9 +36,9 @@ def to_one_hot(y, n_dims=None):
         y_one_hot[i,y.view(-1,)[i]] = 1
     return y_one_hot
 
-X = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/test_imgs_FashionMNIST_64_30classes.pt")
+X = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/test_imgs_FashionMNIST_64_100classes.pt")
 
-Graph = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/test_label_FashionMNIST_64_30classes.pt")
+Graph = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/test_label_FashionMNIST_64_100classes.pt")
 
 one_hot = to_one_hot(Graph)
 
@@ -52,7 +52,7 @@ labels_connection = csr_matrix(labels_connection)
 # from sklearn.manifold import TSNE
 # tsne_model = TSNE(n_components=2, random_state=0,n_iter=5000,n_iter_without_progress=500,perplexity=35)
 # tsne = tsne_model.fit_transform(X.cpu().detach().numpy())
-tsne = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/tsne_FashionMNIST_64_30classes.pt")
+tsne = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/tsne_FashionMNIST_64_100classes.pt")
 
 # Create a graph capturing local connectivity. Larger number of neighbors
 # will give more homogeneous clusters to the cost of computation
