@@ -8,7 +8,7 @@ file: clustering.py
 
 @created: 2021-04-08T17:50:09.624Z-05:00
 
-@last-modified: 2021-04-09T17:42:09.417Z-05:00
+@last-modified: 2021-04-12T10:44:46.575Z-05:00
 """
 
 # standard library
@@ -26,6 +26,8 @@ import torch
 from scipy.sparse import csr_matrix
 from tqdm import tqdm
 import pandas as pd
+from scipy import stats
+import random
 
 def to_one_hot(y, n_dims=None):
     """ Take integer tensor with n dims and convert it to 1-hot representation with n+1 dims. """
@@ -36,9 +38,9 @@ def to_one_hot(y, n_dims=None):
         y_one_hot[i,y.view(-1,)[i]] = 1
     return y_one_hot
 
-X = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/test_imgs_FashionMNIST_64_100classes.pt")
+X = torch.load("test_imgs_FashionMNIST_64_100classes.pt")[:1000]
 
-Graph = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/test_label_FashionMNIST_64_100classes.pt")
+Graph = torch.load("test_label_FashionMNIST_64_100classes.pt")[:1000]
 
 one_hot = to_one_hot(Graph)
 
@@ -52,7 +54,7 @@ labels_connection = csr_matrix(labels_connection)
 # from sklearn.manifold import TSNE
 # tsne_model = TSNE(n_components=2, random_state=0,n_iter=5000,n_iter_without_progress=500,perplexity=35)
 # tsne = tsne_model.fit_transform(X.cpu().detach().numpy())
-tsne = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/tsne_FashionMNIST_64_100classes.pt")
+tsne = torch.load("tsne_FashionMNIST_64_100classes.pt")[:1000]
 
 # Create a graph capturing local connectivity. Larger number of neighbors
 # will give more homogeneous clusters to the cost of computation
@@ -90,14 +92,74 @@ for conn_index, connectivity in tqdm(enumerate((None, labels_connection)),desc="
                                 left=0, right=1)
             plt.suptitle('n_cluster=%i, connectivity=%r' %
                          (n_clusters, connectivity is not None), size=17)
-        plt.savefig(f"/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/{conn[conn_index]}_{n_clusters}_{index}_{linkage}_64_FashionMNIST.png")
+        plt.savefig(f"{conn[conn_index]}_{n_clusters}_{index}_{linkage}_64_FashionMNIST.png")
 
+results = {i:None for i in sil.keys()}
 for i in sil.keys():
     result = []
     for j in sil[i].keys():
         cluster_size = [j]
         for k in sil[i][j].keys():
             cluster_size.append(sil[i][j][k])
-        result.append(cluster_size)
-    pd.DataFrame(np.asarray(result),columns=["cluster_size"]+list(sil[i][j].keys())).to_csv(f"/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/{i}.csv",index=False)
+        result.append(cluster_size+[np.average(cluster_size[1:])])
+    results[i] = pd.DataFrame(np.asarray(result),columns=["cluster_size"]+list(sil[i][j].keys())+['coeff_avg'])
+    results[i].to_csv(f"{i}.csv",index=False)
+
+optimal_cluster_sizes = [int(results[i]['cluster_size'][results[i]['coeff_avg'].argmax()]) for i in sil.keys()]
+
+
+X_train = torch.load("train_imgs_FashionMNIST_64_100classes.pt")[:1000]
+
+Graph_train = torch.load("train_label_FashionMNIST_64_100classes.pt")[:1000]
+
+one_hot_train = to_one_hot(Graph_train)
+
+labels_connection_train = one_hot_train@one_hot_train.T
+for i in range(labels_connection_train.shape[0]):
+    labels_connection_train[i,i] = 0
     
+labels_connection_train = csr_matrix(labels_connection_train)
+
+new_train_labels = {i:None for i in sil.keys()}
+for index,connectivity in enumerate((None, labels_connection_train)):
+    model = AgglomerativeClustering(
+        linkage='ward',
+        connectivity=connectivity,
+        n_clusters=optimal_cluster_sizes[index])
+    model.fit(X_train)
+    new_train_labels[conn[index]] = model.labels_
+
+def isIsomorphic(str1, str2):          
+    dict_str1 = {}
+    dict_str2 = {}
+    
+    for i, value in enumerate(str1):
+        dict_str1[value] = dict_str1.get(value, []) + [i]
+            
+    for j, value in enumerate(str2):
+        dict_str2[value] = dict_str2.get(value, []) + [j]
+    
+    if sorted(dict_str1.values()) == sorted(dict_str2.values()):
+        return True
+    else:
+        return False
+
+final_labels = []
+uniqs = 0
+for n in range(len(X_train)):
+    uniq = True
+    label = None
+    for i in sil.keys():
+        if (label is None):
+            label = new_train_labels[i][n]
+            continue
+        if (label != new_train_labels[i][n]):
+            uniq = False
+            break
+    if (uniq):
+        final_labels.append(label)
+        uniqs += 1
+    else:
+        final_labels.append(random.choice([new_train_labels[c][n] for c in sil.keys()]))
+
+
