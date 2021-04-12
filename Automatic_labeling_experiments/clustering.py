@@ -8,7 +8,7 @@ file: clustering.py
 
 @created: 2021-04-08T17:50:09.624Z-05:00
 
-@last-modified: 2021-04-12T10:44:46.575Z-05:00
+@last-modified: 2021-04-12T11:00:31.323Z-05:00
 """
 
 # standard library
@@ -110,56 +110,16 @@ optimal_cluster_sizes = [int(results[i]['cluster_size'][results[i]['coeff_avg'].
 
 X_train = torch.load("train_imgs_FashionMNIST_64_100classes.pt")[:1000]
 
-Graph_train = torch.load("train_label_FashionMNIST_64_100classes.pt")[:1000]
+clus = random.choice(optimal_cluster_sizes)
+model = AgglomerativeClustering(
+    linkage='ward',
+    connectivity=None,
+    n_clusters=clus)
+model.fit(torch.cat((X_train,X)))
+new_train_labels = model.labels_
 
-one_hot_train = to_one_hot(Graph_train)
+torch.save(torch.tensor(new_train_labels[:len(X_train)]),f"train_labels_FashionMNIST_64_100classes_to_{clus}classes.pt")
+torch.save(torch.tensor(new_train_labels[len(X_train):]),f"test_labels_FashionMNIST_64_100classes_to_{clus}classes.pt")
 
-labels_connection_train = one_hot_train@one_hot_train.T
-for i in range(labels_connection_train.shape[0]):
-    labels_connection_train[i,i] = 0
-    
-labels_connection_train = csr_matrix(labels_connection_train)
-
-new_train_labels = {i:None for i in sil.keys()}
-for index,connectivity in enumerate((None, labels_connection_train)):
-    model = AgglomerativeClustering(
-        linkage='ward',
-        connectivity=connectivity,
-        n_clusters=optimal_cluster_sizes[index])
-    model.fit(X_train)
-    new_train_labels[conn[index]] = model.labels_
-
-def isIsomorphic(str1, str2):          
-    dict_str1 = {}
-    dict_str2 = {}
-    
-    for i, value in enumerate(str1):
-        dict_str1[value] = dict_str1.get(value, []) + [i]
-            
-    for j, value in enumerate(str2):
-        dict_str2[value] = dict_str2.get(value, []) + [j]
-    
-    if sorted(dict_str1.values()) == sorted(dict_str2.values()):
-        return True
-    else:
-        return False
-
-final_labels = []
-uniqs = 0
-for n in range(len(X_train)):
-    uniq = True
-    label = None
-    for i in sil.keys():
-        if (label is None):
-            label = new_train_labels[i][n]
-            continue
-        if (label != new_train_labels[i][n]):
-            uniq = False
-            break
-    if (uniq):
-        final_labels.append(label)
-        uniqs += 1
-    else:
-        final_labels.append(random.choice([new_train_labels[c][n] for c in sil.keys()]))
 
 
