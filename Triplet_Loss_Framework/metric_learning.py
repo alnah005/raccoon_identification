@@ -94,6 +94,6 @@ torch.save(result_test_label.cpu(),os.path.join(checkpoint_loc,'test_label.pt'))
 
 from sklearn.manifold import TSNE
 tsne_model = TSNE(n_components=2, random_state=0,n_iter=10000,n_iter_without_progress=500,perplexity=35)
-embedding = [embedder.forward(sample[0].cuda()).detach() for sample in val_dataset]
+embedding = [embedder.forward(sample[0].unsqueeze(dim=0).cuda()).detach() for sample in val_dataset]
 tsne = tsne_model.fit_transform(torch.cat(embedding,dim=0).cpu().detach().numpy())
-torch.save(torch.tensor(tsne),os.path.join(checkpoint_loc,'tsne_FashionMNIST_64_100classes.pt'))
+torch.save(torch.tensor(tsne),os.path.join(checkpoint_loc,'tsne.pt'))

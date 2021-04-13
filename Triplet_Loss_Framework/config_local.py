@@ -158,7 +158,7 @@ def read_checkpoint_config(ckpt_loc="/home/fortson/alnah005/raccoon_identificati
         f = open(os.path.join(ckpt_loc,config_name),'a')
         f.write(f"experiment_{len(lines)}\n")
         f.close()
-        return os.path.join(ckpt_loc,lines[-1]),os.path.join(ckpt_loc,f"experiment_{len(lines)}")
+        return os.path.join(ckpt_loc,lines[-1].replace('\n','')),os.path.join(ckpt_loc,f"experiment_{len(lines)}")
     else:
         f = open(os.path.join(ckpt_loc,config_name),'a')
         f.write('experiment_0\n')
@@ -207,7 +207,7 @@ class DatasetWrapper(torch.utils.data.Dataset):
             print("no refresh method found")     
     def __iter__(self):
         try:
-            self.dataset.__iter__()
+            return self.dataset.__iter__()
         except:
             print("no iter method found")     
 
@@ -218,7 +218,7 @@ val_dataset = DatasetWrapper(DS.RaccoonDataset(img_folder="/home/fortson/alnah00
 train_loader = torch.utils.data.DataLoader(train_dataset,pin_memory=True, batch_size=batch_size, shuffle=True,num_workers=1)
 test_loader = torch.utils.data.DataLoader(val_dataset,pin_memory=True, batch_size=batch_size,num_workers=1)
 
-feedback_every = 10
+feedback_every = 3
 def feedback_callback(epoch, i, loss, miner) -> str:
     return f"Epoch {epoch} Iteration {i}: Loss = {loss}, Number of mined triplets = {miner.num_triplets}"
 
