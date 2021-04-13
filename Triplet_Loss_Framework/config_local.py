@@ -8,7 +8,7 @@ file: config.py
 
 @created: 2021-04-07T09:33:39.899Z-05:00
 
-@last-modified: 2021-04-13T13:54:04.659Z-05:00
+@last-modified: 2021-04-13T14:07:16.773Z-05:00
 """
 
 # standard library
@@ -181,9 +181,10 @@ batch_size = 64
 num_epochs = 20
 
 class DatasetWrapper(torch.utils.data.Dataset):
-    def __init__(self,dataset,train=True):
+    def __init__(self,dataset,train=True,split_targets=False):
         self.dataset = dataset
         self.targets = None
+        self.split_targets = split_targets
         if not(prev_checkpoint is None):
             if (train):
                 print("loading from "+os.path.join(prev_checkpoint,'train_clustering_labels.pt'))
@@ -194,6 +195,8 @@ class DatasetWrapper(torch.utils.data.Dataset):
     
     def __getitem__(self, idx):
         img, target = self.dataset[idx]
+        if (self.split_targets):
+            target += (idx%10)*10
         if not(self.targets is None):
             target = self.targets[idx].item()
         return img, target
@@ -217,8 +220,8 @@ class DatasetWrapper(torch.utils.data.Dataset):
 # train_dataset = DatasetWrapper(DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/train",transforms = train_transform))
 # val_dataset = DatasetWrapper(DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/test", transforms = val_transform),train=False)
 
-train_dataset = DatasetWrapper(datasets.FashionMNIST(root = './', train=True, download=True, transform=train_transform))
-val_dataset = DatasetWrapper(datasets.FashionMNIST(root = './', train=True, download=True, transform=val_transform),train=False)
+train_dataset = DatasetWrapper(datasets.FashionMNIST(root = './', train=True, download=True, transform=train_transform),split_targets=True)
+val_dataset = DatasetWrapper(datasets.FashionMNIST(root = './', train=True, download=True, transform=val_transform),train=False,split_targets=True)
 
 
 train_loader = torch.utils.data.DataLoader(train_dataset,pin_memory=True, batch_size=batch_size, shuffle=True,num_workers=1)
