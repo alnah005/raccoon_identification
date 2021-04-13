@@ -8,7 +8,7 @@ file: config.py
 
 @created: 2021-04-07T09:33:39.899Z-05:00
 
-@last-modified: 2021-04-13T13:33:50.757Z-05:00
+@last-modified: 2021-04-13T13:37:31.677Z-05:00
 """
 
 # standard library
@@ -206,9 +206,11 @@ class DatasetWrapper(torch.utils.data.Dataset):
             self.dataset.refresh()
         except:
             print("no refresh method found")     
-    def __iter__(self):
+    def __iter__(self,idx=0):
         try:
-            return self.dataset.__iter__()
+            while(idx < len(self)):
+                idx+= 1
+                yield self[idx-1]
         except:
             print("no iter method found")     
 
