@@ -19,7 +19,7 @@ from torchvision import transforms, models
 import torch.nn as nn
 import torch
 from pytorch_metric_learning.utils import common_functions
-from pytorch_metric_learning import losses, miners, distances, reducers, samplers, trainers, testers
+from pytorch_metric_learning import losses, miners, distances, reducers
 
 # local source
 import local_dataset as DS
@@ -71,8 +71,8 @@ class Embedder(nn.Module):
         self.trunk.eval()
 
     def optimize(self):
-        self.embedder_head_optimizer.backward()
-        self.trunk_optimizer.backward()
+        self.embedder_head_optimizer.step()
+        self.trunk_optimizer.step()
 
     def zero_grad(self):
         self.trunk_optimizer.zero_grad()

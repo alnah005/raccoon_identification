@@ -17,6 +17,7 @@ import logging
 # 3rd party packages
 import pytorch_metric_learning.utils.logging_presets as logging_presets
 from pytorch_metric_learning.utils.accuracy_calculator import AccuracyCalculator
+from pytorch_metric_learning import testers
 import numpy as np
 import pytorch_metric_learning
 
@@ -75,7 +76,7 @@ for epoch in range(checkpoint_epoch,num_epochs):
         loss.backward()
         embedder.optimize()
         if i % feedback_every == 0:
-            print(feedback_callback(epoch, i, loss, miner.num_triplets))
+            print(feedback_callback(epoch, i, loss, miner))
     if epoch % save_model_every_epochs ==0:
         embedder.save(epoch)
     print('Epoch {}, average loss {}'.format(epoch, epoch_loss/len(train_loader)))
