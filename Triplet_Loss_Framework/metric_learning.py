@@ -8,7 +8,7 @@ file: metric_learning.py
 
 @created: 2021-04-05T11:18:24.742Z-05:00
 
-@last-modified: 2021-04-13T12:06:37.042Z-05:00
+@last-modified: 2021-04-13T15:04:21.939Z-05:00
 """
 
 # standard library
@@ -44,16 +44,17 @@ def get_all_embeddings(dataset, model, data_device):
 
 ### compute accuracy using AccuracyCalculator from pytorch-metric-learning ###
 def test_implem(train_set, test_set, model, accuracy_calculator, data_device):
-    train_embeddings, train_labels = get_all_embeddings(train_set, model, data_device)
-    test_embeddings, test_labels = get_all_embeddings(test_set, model, data_device)
-    print("Computing accuracy")
-    accuracies = accuracy_calculator.get_accuracy(test_embeddings, 
-                                                train_embeddings,
-                                                test_labels,
-                                                train_labels,
-                                                False)
-    print("Validation set accuracy (Precision@1) = {}".format(accuracies["precision_at_1"]))
-    print("Validation set accuracies blob:\n {}".format(accuracies))
+    with torch.no_grad():
+        train_embeddings, train_labels = get_all_embeddings(train_set, model, data_device)
+        test_embeddings, test_labels = get_all_embeddings(test_set, model, data_device)
+        print("Computing accuracy")
+        accuracies = accuracy_calculator.get_accuracy(test_embeddings, 
+                                                    train_embeddings,
+                                                    test_labels,
+                                                    train_labels,
+                                                    False)
+        print("Validation set accuracy (Precision@1) = {}".format(accuracies["precision_at_1"]))
+        print("Validation set accuracies blob:\n {}".format(accuracies))
 
 def test_model(train_set, test_set, model, epoch, data_device):
     print("Computing validation set accuracy for epoch {}".format(epoch))
