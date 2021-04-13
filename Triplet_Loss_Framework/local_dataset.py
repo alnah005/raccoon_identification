@@ -8,7 +8,7 @@ file: dataset.py
 
 @created: 2021-04-06T18:27:51.082Z-05:00
 
-@last-modified: 2021-04-07T10:01:00.910Z-05:00
+@last-modified: 2021-04-13T10:55:09.697Z-05:00
 """
 
 # standard library
@@ -69,3 +69,9 @@ class RaccoonDataset(data.Dataset):
 
     def __len__(self):
         return len(self.imgs)
+
+    def __iter__(self,idx=0):
+        while(idx < len(self)):
+            idx+= 1
+            yield self[idx-1]
+
