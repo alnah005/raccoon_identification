@@ -10,3 +10,6 @@ cd $SLURM_SUBMIT_DIR
 module load singularity
 pwd
 singularity exec --nv -i ../Triplet_Loss_Framework/nv_od_local_v1.sif  raccoon_identification/Automatic_labeling_experiments/commands.sh
+cd $SLURM_SUBMIT_DIR
+cd ../Triplet_Loss_Framework
+sbatch job.sh
