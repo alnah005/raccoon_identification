@@ -8,14 +8,14 @@ file: config.py
 
 @created: 2021-04-07T09:33:39.899Z-05:00
 
-@last-modified: 2021-04-13T13:37:31.677Z-05:00
+@last-modified: 2021-04-13T13:54:04.659Z-05:00
 """
 
 # standard library
 import os
 
 # 3rd party packages
-from torchvision import transforms, models
+from torchvision import transforms, models, datasets
 import torch.nn as nn
 import torch
 from pytorch_metric_learning.utils import common_functions
@@ -214,8 +214,11 @@ class DatasetWrapper(torch.utils.data.Dataset):
         except:
             print("no iter method found")     
 
-train_dataset = DatasetWrapper(DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/train",transforms = train_transform))
-val_dataset = DatasetWrapper(DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/test", transforms = val_transform),train=False)
+# train_dataset = DatasetWrapper(DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/train",transforms = train_transform))
+# val_dataset = DatasetWrapper(DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/test", transforms = val_transform),train=False)
+
+train_dataset = DatasetWrapper(datasets.FashionMNIST(root = './', train=True, download=True, transform=train_transform))
+val_dataset = DatasetWrapper(datasets.FashionMNIST(root = './', train=True, download=True, transform=val_transform),train=False)
 
 
 train_loader = torch.utils.data.DataLoader(train_dataset,pin_memory=True, batch_size=batch_size, shuffle=True,num_workers=1)
