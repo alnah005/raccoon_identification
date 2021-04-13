@@ -8,7 +8,7 @@ file: config.py
 
 @created: 2021-04-07T09:33:39.899Z-05:00
 
-@last-modified: 2021-04-13T14:07:16.773Z-05:00
+@last-modified: 2021-04-13T14:54:36.968Z-05:00
 """
 
 # standard library
@@ -120,7 +120,7 @@ class Embedder(nn.Module):
 
 # Set the image transforms
 train_transform = transforms.Compose([
-                                    transforms.Resize((250,200)),
+                                    # transforms.Resize((250,200)),
                                     # transforms.RandomResizedCrop(scale=(0.16, 1), ratio=(0.75, 1.33), size=64),
                                     transforms.Lambda(lambda image: image.convert('RGB')),
                                     transforms.RandomHorizontalFlip(0.5),
@@ -129,7 +129,7 @@ train_transform = transforms.Compose([
                                     ])
 
 val_transform = transforms.Compose([
-                                    transforms.Resize((250,200)),
+                                    # transforms.Resize((250,200)),
                                     transforms.Lambda(lambda image: image.convert('RGB')),
                                     transforms.ToTensor(),
                                     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
@@ -221,11 +221,11 @@ class DatasetWrapper(torch.utils.data.Dataset):
 # val_dataset = DatasetWrapper(DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/test", transforms = val_transform),train=False)
 
 train_dataset = DatasetWrapper(datasets.FashionMNIST(root = './', train=True, download=True, transform=train_transform),split_targets=True)
-val_dataset = DatasetWrapper(datasets.FashionMNIST(root = './', train=True, download=True, transform=val_transform),train=False,split_targets=True)
+val_dataset = DatasetWrapper(datasets.FashionMNIST(root = './', train=False, download=True, transform=val_transform),train=False,split_targets=True)
 
 
-train_loader = torch.utils.data.DataLoader(train_dataset,pin_memory=True, batch_size=batch_size, shuffle=True,num_workers=1)
-test_loader = torch.utils.data.DataLoader(val_dataset,pin_memory=True, batch_size=batch_size,num_workers=1)
+train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True,num_workers=1)
+test_loader = torch.utils.data.DataLoader(val_dataset, batch_size=batch_size,num_workers=1)
 
 feedback_every = 3
 def feedback_callback(epoch, i, loss, miner) -> str:
