@@ -8,7 +8,7 @@ file: clustering.py
 
 @created: 2021-04-08T17:50:09.624Z-05:00
 
-@last-modified: 2021-04-13T13:01:34.756Z-05:00
+@last-modified: 2021-04-13T13:34:31.415Z-05:00
 """
 
 # standard library
@@ -47,7 +47,7 @@ def read_checkpoint_config(ckpt_loc="/home/fortson/alnah005/raccoon_identificati
     return os.path.join(ckpt_loc,lines[-1].replace('\n',''))
     
 checkpoint_loc = read_checkpoint_config()
-
+print("loading from "+checkpoint_loc)
 X = torch.load(os.path.join(checkpoint_loc, "test_imgs.pt"))
 
 Graph = torch.load(os.path.join(checkpoint_loc,"test_label.pt"))

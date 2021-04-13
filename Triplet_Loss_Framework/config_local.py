@@ -8,7 +8,7 @@ file: config.py
 
 @created: 2021-04-07T09:33:39.899Z-05:00
 
-@last-modified: 2021-04-13T12:54:38.030Z-05:00
+@last-modified: 2021-04-13T13:33:50.757Z-05:00
 """
 
 # standard library
@@ -186,8 +186,10 @@ class DatasetWrapper(torch.utils.data.Dataset):
         self.targets = None
         if not(prev_checkpoint is None):
             if (train):
+                print("loading from "+os.path.join(prev_checkpoint,'train_clustering_labels.pt'))
                 self.targets = torch.load(os.path.join(prev_checkpoint,'train_clustering_labels.pt'))
             else:
+                print("loading from "+os.path.join(prev_checkpoint,'test_clustering_labels.pt'))
                 self.targets = torch.load(os.path.join(prev_checkpoint,'test_clustering_labels.pt'))
     
     def __getitem__(self, idx):
