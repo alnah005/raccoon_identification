@@ -8,7 +8,7 @@ file: config.py
 
 @created: 2021-04-07T09:33:39.899Z-05:00
 
-@last-modified: 2021-04-13T11:30:04.521Z-05:00
+@last-modified: 2021-04-13T12:06:14.718Z-05:00
 """
 
 # standard library
@@ -158,14 +158,14 @@ def read_checkpoint_config(ckpt_loc="/home/fortson/alnah005/raccoon_identificati
         f = open(os.path.join(ckpt_loc,config_name),'a')
         f.write(f"experiment_{len(lines)}\n")
         f.close()
-        return os.path.join(ckpt_loc,f"experiment_{len(lines)}")
+        return os.path.join(ckpt_loc,lines[-1]),os.path.join(ckpt_loc,f"experiment_{len(lines)}")
     else:
         f = open(os.path.join(ckpt_loc,config_name),'a')
         f.write('experiment_0\n')
         f.close()
-        return os.path.join(ckpt_loc,'experiment_0')
+        return None, os.path.join(ckpt_loc,'experiment_0')
 
-checkpoint_loc = read_checkpoint_config()
+prev_checkpoint,checkpoint_loc = read_checkpoint_config()
 
 embedder = Embedder(trunk,embedder_head,trunk_optimizer,embedder_head_optimizer,checkpointLocation=checkpoint_loc)
 
@@ -181,8 +181,38 @@ miner = miners.TripletMarginMiner(margin = 0.2, distance = distance, type_of_tri
 batch_size = 64
 num_epochs = 20
 
-train_dataset = DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/train",transforms = train_transform)
-val_dataset = DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/test", transforms = val_transform)
+class DatasetWrapper(torch.utils.data.Dataset):
+    def __init__(self,dataset,train=True):
+        self.dataset = dataset
+        self.targets = None
+        if not(prev_checkpoint is None):
+            if (train):
+                self.targets = torch.load(os.path.join(prev_checkpoint,'train_clustering_labels.pt'))
+            else:
+                self.targets = torch.load(os.path.join(prev_checkpoint,'test_clustering_labels.pt'))
+    
+    def __getitem__(self, idx):
+        img, target = self.dataset[idx]
+        if not(self.targets is None):
+            target = self.targets[idx].item()
+        return img, target
+    
+    def __len__(self):
+        return len(self.dataset)
+
+    def refresh(self):
+        try:
+            self.dataset.refresh()
+        except:
+            print("no refresh method found")     
+    def __iter__(self):
+        try:
+            self.dataset.__iter__()
+        except:
+            print("no iter method found")     
+
+train_dataset = DatasetWrapper(DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/train",transforms = train_transform))
+val_dataset = DatasetWrapper(DS.RaccoonDataset(img_folder="/home/fortson/alnah005/raccoon_identification/Generate_Individual_IDs_dataset/croppedImages/test", transforms = val_transform),train=False)
 
 
 train_loader = torch.utils.data.DataLoader(train_dataset,pin_memory=True, batch_size=batch_size, shuffle=True,num_workers=1)
