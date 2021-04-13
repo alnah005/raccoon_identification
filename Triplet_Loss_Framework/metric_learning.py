@@ -8,7 +8,7 @@ file: metric_learning.py
 
 @created: 2021-04-05T11:18:24.742Z-05:00
 
-@last-modified: 2021-04-13T15:11:26.711Z-05:00
+@last-modified: 2021-04-13T15:17:54.232Z-05:00
 """
 
 # standard library
@@ -36,14 +36,14 @@ logging.info("VERSION %s"%pytorch_metric_learning.__version__)
 
 
 
-def get_all_embeddings(dataset, model, data_device):
+def get_all_embeddings(dataset, model):
     # dataloader_num_workers has to be 0 to avoid pid error
     # This only happens when within multiprocessing
     tester = testers.BaseTester(dataloader_num_workers=0)
     return tester.get_all_embeddings(dataset, model)
 
 ### compute accuracy using AccuracyCalculator from pytorch-metric-learning ###
-def test_implem(train_set, test_set, model, accuracy_calculator, data_device):
+def test_implem(train_set, test_set, model, accuracy_calculator):
     with torch.no_grad():
         train_embeddings, train_labels = get_all_embeddings(train_set, model)
         test_embeddings, test_labels = get_all_embeddings(test_set, model)
@@ -58,8 +58,8 @@ def test_implem(train_set, test_set, model, accuracy_calculator, data_device):
 
 def test_model(train_set, test_set, model, epoch, data_device):
     print("Computing validation set accuracy for epoch {}".format(epoch))
-    accuracy_calculator = AccuracyCalculator(include = ("precision_at_1",),avg_of_avgs=True, k = 1)
-    test_implem(train_set, test_set, model, accuracy_calculator, data_device)
+    accuracy_calculator = AccuracyCalculator(include = ("precision_at_1",), k = 1)
+    test_implem(train_set, test_set, model, accuracy_calculator)
 
 checkpoint_epoch = embedder.load()
 if (checkpoint_epoch is None):
@@ -85,8 +85,8 @@ for epoch in range(checkpoint_epoch,num_epochs):
     print('Epoch {}, average loss {}'.format(epoch, epoch_loss/len(train_loader)))
     test_model(train_dataset, val_dataset, embedder, epoch, device)
 
-result_train_img, result_train_label = get_all_embeddings(train_dataset,embedder,device)
-result_test_img, result_test_label = get_all_embeddings(val_dataset,embedder,device)
+result_train_img, result_train_label = get_all_embeddings(train_dataset,embedder)
+result_test_img, result_test_label = get_all_embeddings(val_dataset,embedder)
 
 torch.save(result_train_img.cpu(),os.path.join(checkpoint_loc,'train_imgs.pt'))
 torch.save(result_test_img.cpu(),os.path.join(checkpoint_loc,'test_imgs.pt'))
