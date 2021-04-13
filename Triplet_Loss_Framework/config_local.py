@@ -8,7 +8,7 @@ file: config.py
 
 @created: 2021-04-07T09:33:39.899Z-05:00
 
-@last-modified: 2021-04-13T12:06:14.718Z-05:00
+@last-modified: 2021-04-13T12:54:38.030Z-05:00
 """
 
 # standard library
@@ -153,7 +153,6 @@ def read_checkpoint_config(ckpt_loc="/home/fortson/alnah005/raccoon_identificati
     f = open(os.path.join(ckpt_loc,config_name))
     lines = f.readlines()
     f.close()
-    print(lines)
     if (len(lines) > 0):
         f = open(os.path.join(ckpt_loc,config_name),'a')
         f.write(f"experiment_{len(lines)}\n")

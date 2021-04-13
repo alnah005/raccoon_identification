@@ -8,7 +8,7 @@ file: clustering.py
 
 @created: 2021-04-08T17:50:09.624Z-05:00
 
-@last-modified: 2021-04-12T11:03:19.679Z-05:00
+@last-modified: 2021-04-13T13:01:34.756Z-05:00
 """
 
 # standard library
@@ -28,6 +28,7 @@ from tqdm import tqdm
 import pandas as pd
 from scipy import stats
 import random
+import os
 
 def to_one_hot(y, n_dims=None):
     """ Take integer tensor with n dims and convert it to 1-hot representation with n+1 dims. """
@@ -38,9 +39,18 @@ def to_one_hot(y, n_dims=None):
         y_one_hot[i,y.view(-1,)[i]] = 1
     return y_one_hot
 
-X = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/test_imgs_FashionMNIST_64_100classes.pt")
+def read_checkpoint_config(ckpt_loc="/home/fortson/alnah005/raccoon_identification/Triplet_Loss_Framework/experiment",config_name='config.txt'):
+    f = open(os.path.join(ckpt_loc,config_name))
+    lines = f.readlines()
+    f.close()
+    assert len(lines) > 0
+    return os.path.join(ckpt_loc,lines[-1].replace('\n',''))
+    
+checkpoint_loc = read_checkpoint_config()
 
-Graph = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/test_label_FashionMNIST_64_100classes.pt")
+X = torch.load(os.path.join(checkpoint_loc, "test_imgs.pt"))
+
+Graph = torch.load(os.path.join(checkpoint_loc,"test_label.pt"))
 
 one_hot = to_one_hot(Graph)
 
@@ -54,7 +64,7 @@ labels_connection = csr_matrix(labels_connection)
 # from sklearn.manifold import TSNE
 # tsne_model = TSNE(n_components=2, random_state=0,n_iter=5000,n_iter_without_progress=500,perplexity=35)
 # tsne = tsne_model.fit_transform(X.cpu().detach().numpy())
-tsne = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/tsne_FashionMNIST_64_100classes.pt")
+tsne = torch.load(os.path.join(checkpoint_loc, "tsne.pt"))
 
 # Create a graph capturing local connectivity. Larger number of neighbors
 # will give more homogeneous clusters to the cost of computation
@@ -92,7 +102,7 @@ for conn_index, connectivity in tqdm(enumerate((None, labels_connection)),desc="
                                 left=0, right=1)
             plt.suptitle('n_cluster=%i, connectivity=%r' %
                          (n_clusters, connectivity is not None), size=17)
-        plt.savefig(f"/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/{conn[conn_index]}_{n_clusters}_{index}_{linkage}_64_FashionMNIST.png")
+        plt.savefig(os.path.join(checkpoint_loc, f"{conn[conn_index]}_{n_clusters}_{index}_{linkage}.png"))
 
 results = {i:None for i in sil.keys()}
 for i in sil.keys():
@@ -103,12 +113,12 @@ for i in sil.keys():
             cluster_size.append(sil[i][j][k])
         result.append(cluster_size+[np.average(cluster_size[1:])])
     results[i] = pd.DataFrame(np.asarray(result),columns=["cluster_size"]+list(sil[i][j].keys())+['coeff_avg'])
-    results[i].to_csv(f"/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/{i}.csv",index=False)
+    results[i].to_csv(os.path.join(checkpoint_loc, f"{i}.csv"),index=False)
 
 optimal_cluster_sizes = [int(results[i]['cluster_size'][results[i]['coeff_avg'].argmax()]) for i in sil.keys()]
 
 
-X_train = torch.load("/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/train_imgs_FashionMNIST_64_100classes.pt")
+X_train = torch.load(os.path.join(checkpoint_loc, "train_imgs.pt"))
 
 clus = random.choice(optimal_cluster_sizes)
 model = AgglomerativeClustering(
@@ -118,8 +128,8 @@ model = AgglomerativeClustering(
 model.fit(torch.cat((X_train,X)))
 new_train_labels = model.labels_
 
-torch.save(torch.tensor(new_train_labels[:len(X_train)]),f"/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/train_labels_FashionMNIST_64_100classes_to_{clus}classes.pt")
-torch.save(torch.tensor(new_train_labels[len(X_train):]),f"/home/fortson/alnah005/raccoon_identification/Automatic_labeling_experiments/test_labels_FashionMNIST_64_100classes_to_{clus}classes.pt")
+torch.save(torch.tensor(new_train_labels[:len(X_train)]),os.path.join(checkpoint_loc, "train_clustering_labels.pt"))
+torch.save(torch.tensor(new_train_labels[len(X_train):]),os.path.join(checkpoint_loc, "test_clustering_labels.pt"))
 
 
 
