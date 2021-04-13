@@ -8,7 +8,7 @@ file: metric_learning.py
 
 @created: 2021-04-05T11:18:24.742Z-05:00
 
-@last-modified: 2021-04-13T15:04:21.939Z-05:00
+@last-modified: 2021-04-13T15:11:26.711Z-05:00
 """
 
 # standard library
@@ -39,14 +39,14 @@ logging.info("VERSION %s"%pytorch_metric_learning.__version__)
 def get_all_embeddings(dataset, model, data_device):
     # dataloader_num_workers has to be 0 to avoid pid error
     # This only happens when within multiprocessing
-    tester = testers.BaseTester(dataloader_num_workers=0, data_device=data_device)
+    tester = testers.BaseTester(dataloader_num_workers=0)
     return tester.get_all_embeddings(dataset, model)
 
 ### compute accuracy using AccuracyCalculator from pytorch-metric-learning ###
 def test_implem(train_set, test_set, model, accuracy_calculator, data_device):
     with torch.no_grad():
-        train_embeddings, train_labels = get_all_embeddings(train_set, model, data_device)
-        test_embeddings, test_labels = get_all_embeddings(test_set, model, data_device)
+        train_embeddings, train_labels = get_all_embeddings(train_set, model)
+        test_embeddings, test_labels = get_all_embeddings(test_set, model)
         print("Computing accuracy")
         accuracies = accuracy_calculator.get_accuracy(test_embeddings, 
                                                     train_embeddings,
