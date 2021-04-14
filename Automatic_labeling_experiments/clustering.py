@@ -8,7 +8,7 @@ file: clustering.py
 
 @created: 2021-04-08T17:50:09.624Z-05:00
 
-@last-modified: 2021-04-13T13:34:31.415Z-05:00
+@last-modified: 2021-04-14T14:43:13.828Z-05:00
 """
 
 # standard library
@@ -50,15 +50,15 @@ checkpoint_loc = read_checkpoint_config()
 print("loading from "+checkpoint_loc)
 X = torch.load(os.path.join(checkpoint_loc, "test_imgs.pt"))
 
-Graph = torch.load(os.path.join(checkpoint_loc,"test_label.pt"))
+# Graph = torch.load(os.path.join(checkpoint_loc,"test_label.pt"))
 
-one_hot = to_one_hot(Graph)
+# one_hot = to_one_hot(Graph)
 
-labels_connection = one_hot@one_hot.T
-for i in range(labels_connection.shape[0]):
-    labels_connection[i,i] = 0
+# labels_connection = one_hot@one_hot.T
+# for i in range(labels_connection.shape[0]):
+#     labels_connection[i,i] = 0
     
-labels_connection = csr_matrix(labels_connection)
+# labels_connection = csr_matrix(labels_connection)
 
 
 # from sklearn.manifold import TSNE
@@ -74,7 +74,7 @@ tsne = torch.load(os.path.join(checkpoint_loc, "tsne.pt"))
 # knn_graph = kneighbors_graph(X, 30, include_self=False)
 conn = ["none","labels"]
 sil: Dict[str,Dict[int,Dict[str,float]]] = {}
-for conn_index, connectivity in tqdm(enumerate((None, labels_connection)),desc="Connectivity\n\n\n"):
+for conn_index, connectivity in tqdm(enumerate([None]),desc="Connectivity\n\n\n"):
     sil[conn[conn_index]] = {}
     for n_clusters in tqdm((3,5,7,8,9,10,11,12,15,17,20,21,23,24,25,26,27,28,29,30),desc=f"\t {conn[conn_index]} num_cluster\n\n"):
         sil[conn[conn_index]][n_clusters] = {}
