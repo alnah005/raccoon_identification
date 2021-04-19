@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --time=00:59:00
+#SBATCH --time=02:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mem=32GB
 #SBATCH --job-name=triplet_loss_raccoons

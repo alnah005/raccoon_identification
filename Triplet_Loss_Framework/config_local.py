@@ -8,7 +8,7 @@ file: config.py
 
 @created: 2021-04-07T09:33:39.899Z-05:00
 
-@last-modified: 2021-04-13T14:54:36.968Z-05:00
+@last-modified: 2021-04-19T10:00:01.801Z-05:00
 """
 
 # standard library
@@ -142,7 +142,7 @@ trunk.fc = common_functions.Identity()
 trunk = torch.nn.DataParallel(trunk.to(device))
 
 # Set embedder model. This takes in the output of the trunk and outputs 64 dimensional embeddings
-embedder_head = torch.nn.DataParallel(MLP([trunk_output_size, 64]).to(device))
+embedder_head = torch.nn.DataParallel(MLP([trunk_output_size, 2]).to(device))
 
 
 # Set optimizers
@@ -178,7 +178,7 @@ miner = miners.TripletMarginMiner(margin = 0.2, distance = distance, type_of_tri
 
 # Set other training parameters
 batch_size = 64
-num_epochs = 20
+num_epochs = 25
 
 class DatasetWrapper(torch.utils.data.Dataset):
     def __init__(self,dataset,train=True,split_targets=False):
@@ -227,8 +227,8 @@ val_dataset = DatasetWrapper(datasets.FashionMNIST(root = './', train=False, dow
 train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True,num_workers=1)
 test_loader = torch.utils.data.DataLoader(val_dataset, batch_size=batch_size,num_workers=1)
 
-feedback_every = 3
+feedback_every = 2
 def feedback_callback(epoch, i, loss, miner) -> str:
     return f"Epoch {epoch} Iteration {i}: Loss = {loss}, Number of mined triplets = {miner.num_triplets}"
 
-save_model_every_epochs = 3
+save_model_every_epochs = 20
